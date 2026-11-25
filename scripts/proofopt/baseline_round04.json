@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "round": 4,
+  "parent_commit": "2c9dc67d12650948a3c1401fd5e96a743f89a984",
+  "experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "upstream_main_observed": "07be9a52ebbee066d706195cad0f6863880f9284",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "roots": [
+    "riemannHypothesis",
+    "riemannZeta_eq_zero_re",
+    "LFunction_ne_zero_of_half_lt_re",
+    "LFunction_eq_zero_re",
+    "LFunction_eq_zero_re_of_isPrimitive"
+  ],
+  "root_source_check": {
+    "passed": true,
+    "main_blob": "eb95ca808793dd61984cc853ab5630f54a74490c",
+    "export_targets_blob": "e2d4c02bac8a1411eae85af0376c1aad3b6b5294"
+  },
+  "tests": {
+    "runtime": "V8 exact library/test functions",
+    "passed": 21,
+    "tests": [
+      "alpha-renamed binders interned",
+      "reachable DAG excludes dead declarations",
+      "missing ownership fails closed",
+      "unknown ownership is null not zero",
+      "metadata erased without losing references",
+      "universe structure preserved",
+      "numeric and string name components distinct",
+      "duplicate index rejected",
+      "unknown variant and missing indices rejected",
+      "unknown format rejected",
+      "unresolved reachable constant rejected",
+      "inductive metadata and recursor RHS retained",
+      "literal implicit support retained",
+      "per-root axiom growth not hidden in union",
+      "unexpected baseline axiom rejected",
+      "root statement survives index renumbering",
+      "changed root type and ownership drift rejected",
+      "graph adapter preserves dependency references",
+      "10000-deep DAG uses iterative traversal",
+      "published Nat.add_succ: independent raw reference oracle",
+      "v3.1 schema migration of published fixture preserves metrics"
+    ],
+    "real_sample": {
+      "raw": {
+        "lines": 572,
+        "names": 103,
+        "levels": 15,
+        "expressions": 434,
+        "declarations": 32
+      },
+      "reachable": 27,
+      "raw_reachable_expression_ids": 337,
+      "normalized_dag": {
+        "type": 169,
+        "value": 234,
+        "combined": 337
+      },
+      "axioms": [],
+      "format": "3.0.0"
+    },
+    "node_cli": null,
+    "lean_capture": null,
+    "published_fixture": {
+      "repository": "leanprover/lean4export",
+      "ref": "df81913eee5519d5a88ae5b0fd701b5298cc29ab",
+      "path": "examples/Nat.add_succ.ndjson",
+      "blob": "d3cd35f1313b4e78b5fded9886e450112aa75def"
+    }
+  },
+  "metrics": {
+    "project_live_declarations": {
+      "baseline": null,
+      "after": null
+    },
+    "normalized_kernel_dag": {
+      "baseline": null,
+      "after": null
+    },
+    "clean_build_cpu_seconds": {
+      "baseline": null,
+      "after": null
+    }
+  },
+  "protected_files_changed": 0,
+  "limitations": [
+    "No actual RH export available",
+    "Lean/Lake absent; shell GitHub DNS fails",
+    "Fork Actions runs empty before push; artifact endpoint unsupported",
+    "OwnerManifest Lean uncompiled; capture script and Node CLI unexecuted",
+    "Published fixture from Lean exporter, not RH; v3.1 test is migrated fixture",
+    "Structural guard not a type checker or evidence of proof compression"
+  ]
+}
