@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "round": 3,
+  "parent_commit": "1c258eca3d2499438b40e4f110207dac3128991f",
+  "experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "upstream_main_observed": "07be9a52ebbee066d706195cad0f6863880f9284",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "roots": [
+    "riemannHypothesis",
+    "riemannZeta_eq_zero_re",
+    "LFunction_ne_zero_of_half_lt_re",
+    "LFunction_eq_zero_re",
+    "LFunction_eq_zero_re_of_isPrimitive"
+  ],
+  "tests": {
+    "runtime": "V8",
+    "passed": 13,
+    "randomCases": 240,
+    "tests": [
+      "shared dependency requires both edits",
+      "type and kernel references cannot be removed",
+      "external traversal is not a free dependency hiding trick",
+      "pre-existing dead declarations are excluded",
+      "multi-root closure and individual net",
+      "new axiom rejected",
+      "new cycle rejected; baseline metadata cycles allowed",
+      "alternatives conflict and budget is weighted",
+      "stale replacement, protected roots and missing refs fail closed",
+      "truncated enumeration cannot certify optimality",
+      "JSONL parser roundtrip",
+      "independent exhaustive random oracle",
+      "pinned Main source projection integration"
+    ],
+    "node_cli": null,
+    "lean_compile": null
+  },
+  "source_projection": {
+    "blob": "eb95ca808793dd61984cc853ab5630f54a74490c",
+    "nodes": 5,
+    "edges": 4
+  },
+  "metrics": {
+    "project_live_declarations": {
+      "baseline": null,
+      "after": null
+    },
+    "normalized_kernel_dag": {
+      "baseline": null,
+      "after": null
+    },
+    "clean_build_cpu_seconds": {
+      "baseline": null,
+      "after": null
+    }
+  },
+  "protected_files_changed": 0,
+  "limitations": [
+    "Lean/Lake absent and shell DNS fails",
+    "kernel extractor uncompiled",
+    "source projection is not kernel data",
+    "graph candidate search does not validate proof legality",
+    "upstream proof files untouched"
+  ]
+}

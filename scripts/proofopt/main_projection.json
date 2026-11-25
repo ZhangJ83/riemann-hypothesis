@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "measurement": "source-projection",
+  "roots": [
+    "riemannHypothesis",
+    "riemannZeta_eq_zero_re",
+    "LFunction_ne_zero_of_half_lt_re",
+    "LFunction_eq_zero_re",
+    "LFunction_eq_zero_re_of_isPrimitive"
+  ],
+  "source": {
+    "commit": "91b273530883b723ef4422436e0dc3557749325a",
+    "blob": "eb95ca808793dd61984cc853ab5630f54a74490c",
+    "path": "src/Main.lean",
+    "scope": "only explicit references among five final theorem declarations; all other constants omitted"
+  },
+  "nodes": [
+    {
+      "name": "LFunction_ne_zero_of_half_lt_re",
+      "module": "Main",
+      "project": true,
+      "kind": "thm",
+      "type": [],
+      "kernel": [],
+      "value": []
+    },
+    {
+      "name": "riemannHypothesis",
+      "module": "Main",
+      "project": true,
+      "kind": "thm",
+      "type": [],
+      "kernel": [],
+      "value": [
+        "LFunction_ne_zero_of_half_lt_re"
+      ]
+    },
+    {
+      "name": "riemannZeta_eq_zero_re",
+      "module": "Main",
+      "project": true,
+      "kind": "thm",
+      "type": [],
+      "kernel": [],
+      "value": [
+        "riemannHypothesis"
+      ]
+    },
+    {
+      "name": "LFunction_eq_zero_re",
+      "module": "Main",
+      "project": true,
+      "kind": "thm",
+      "type": [],
+      "kernel": [],
+      "value": [
+        "LFunction_ne_zero_of_half_lt_re"
+      ]
+    },
+    {
+      "name": "LFunction_eq_zero_re_of_isPrimitive",
+      "module": "Main",
+      "project": true,
+      "kind": "thm",
+      "type": [],
+      "kernel": [],
+      "value": [
+        "LFunction_eq_zero_re"
+      ]
+    }
+  ]
+}
