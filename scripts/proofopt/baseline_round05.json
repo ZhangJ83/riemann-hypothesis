@@ -1,0 +1,376 @@
+{
+  "schema": 1,
+  "round": 5,
+  "parent_commit": "9893a30525b5e76ed9bd856c1493cb7a3fe2aab5",
+  "experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "upstream_main_observed": "756a70250dcba9162b99d4ea35c186558434c17e",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "source_path": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/VwinOfRow.lean",
+  "source_before_blob": "39416381a6f0e699c3c25b7e421590742e615a83",
+  "upstream_source_blob": "a72739a9722f504b00d33ab3842e23067081040d",
+  "source_candidate": {
+    "eligible_wrappers": 25,
+    "rewritten_callers": 9,
+    "replaced_calls": 33,
+    "affected_wrappers": 22,
+    "wrappers_with_only_declaration_text": 22,
+    "wrappers": [
+      {
+        "name": "UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_open",
+        "replaced": 4,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 5
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.global_artin_reciprocity_of_open",
+        "replaced": 2,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 3
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.hecke_ladic_character_de_rham_of_open",
+        "replaced": 3,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 4
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.jacquet_shalika_rigidity_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.segment_representation_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.poitou_tate_normalised_of_open",
+        "replaced": 2,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 3
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.global_euler_char_of_open",
+        "replaced": 2,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 3
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.localEulerChar_alt",
+        "replaced": 2,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 3
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.local_finiteness_of_open",
+        "replaced": 2,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 3
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.local_tate_duality_of_open",
+        "replaced": 2,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 3
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.bloch_kato_local_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.global_finiteness_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.unramified_orthogonality_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.local_euler_char_k_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.local_finiteness_k_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.local_tate_duality_k_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.bernstein_unitary_product_irreducible_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.bernstein_zelevinsky_finiteness_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.bernstein_zelevinsky_geometric_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.automorphic_forms_finite_gl_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.clozel_cohomological_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      },
+      {
+        "name": "UpperTheory.LiteratureTheorems.jacquet_shalika_of_open",
+        "replaced": 1,
+        "remaining_text_occurrences_in_file": 1,
+        "before_text_occurrences_in_file": 2
+      }
+    ],
+    "edits": [
+      {
+        "caller": "UpperTheory.LiteratureTheorems.algebraic_character_wd_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.algebraic_character_wd_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.global_artin_reciprocity_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.algebraic_character_wd_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.hecke_ladic_character_de_rham_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.gelfand_kazhdan_dual_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.jacquet_shalika_rigidity_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.zelevinsky_polynomial_ring_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.segment_representation_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.hecke_ladic_character_crystalline_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.hecke_ladic_character_crystalline_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.hecke_ladic_character_de_rham_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.hecke_ladic_character_above_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.hecke_ladic_character_above_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.hecke_ladic_character_de_rham_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.greenberg_wiles_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.poitou_tate_normalised_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.greenberg_wiles_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.global_euler_char_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.greenberg_wiles_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.localEulerChar_alt",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.greenberg_wiles_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.local_finiteness_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.greenberg_wiles_of_open",
+        "wrapper": "UpperTheory.LiteratureTheorems.local_tate_duality_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.bloch_kato_local_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.poitou_tate_normalised_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.global_euler_char_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.global_finiteness_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.localEulerChar_alt",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.local_finiteness_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.local_tate_duality_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.unramified_orthogonality_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.local_euler_char_k_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.local_finiteness_k_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.LiteratureTheorems.galois_cohomology_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.local_tate_duality_k_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.One.Join.local_inputs_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.bernstein_unitary_product_irreducible_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.One.Join.local_inputs_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.bernstein_zelevinsky_finiteness_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.One.Join.local_inputs_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.bernstein_zelevinsky_geometric_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.One.Join.automorphic_inputs_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.One.Join.automorphic_inputs_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.global_artin_reciprocity_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.One.Join.automorphic_inputs_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.automorphic_forms_finite_gl_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.One.Join.automorphic_inputs_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.clozel_cohomological_of_open",
+        "occurrences": 1
+      },
+      {
+        "caller": "UpperTheory.One.Join.automorphic_inputs_from_literature",
+        "wrapper": "UpperTheory.LiteratureTheorems.jacquet_shalika_of_open",
+        "occurrences": 1
+      }
+    ],
+    "scope": "two explicitly selected clump members; proof bodies only",
+    "kernel_verified": false
+  },
+  "upstream_dry_run": {
+    "eligible_wrappers": 25,
+    "rewritten_callers": 9,
+    "replaced_calls": 33,
+    "affected_wrappers": 22,
+    "applied": false
+  },
+  "tests": {
+    "runtime": "V8 exact pass and test functions",
+    "passed": 17,
+    "names": [
+      "fixed fork baseline integration",
+      "current upstream integration",
+      "both pinned versions select the same wrapper/caller edges",
+      "all 33 call replacements audited",
+      "each recorded fully-qualified wrapper occurrence falls to its declaration",
+      "idempotent baseline",
+      "idempotent current upstream",
+      "headers and wrapper bodies unchanged",
+      "restoring nine original proof bodies restores the entire source",
+      "typed underlying constant replaces OpenImageCondition call",
+      "projection-style source terms are not blindly substituted",
+      "nontrivial dependent wrapper not classified as a simple constant",
+      "missing clump fails closed",
+      "duplicate clump fails closed",
+      "unexpected caller binder fails closed",
+      "comment in target proof fails closed",
+      "single name with unused parameter required"
+    ],
+    "node_cli_executed": false,
+    "lean_kernel_executed": false
+  },
+  "metrics": {
+    "project_live_declarations": {
+      "baseline": null,
+      "after": null
+    },
+    "normalized_kernel_dag": {
+      "baseline": null,
+      "after": null
+    },
+    "clean_build_cpu_seconds": {
+      "baseline": null,
+      "after": null
+    }
+  },
+  "protected_files_changed": 0,
+  "limits": [
+    "No Lean/Lake installed; shell GitHub DNS fails",
+    "No complete RH export at pinned baseline located; sampled run artifacts contain no solution export",
+    "Historical solution export reported in upstream NOTES.md is about 61.57 GB, not the pinned baseline",
+    "Source-only proof-body candidate; no verified dependency reduction; original declarations retained pending cross-module usage scan and compilation",
+    "Fork Actions currently no runs; no upstream PR"
+  ]
+}
