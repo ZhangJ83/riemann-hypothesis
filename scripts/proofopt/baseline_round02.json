@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "round": 2,
+  "experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "upstream_main_observed": "98d36aafeeb30c1f40fdda96c3574faa34dfa413",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "roots": [
+    "riemannHypothesis",
+    "riemannZeta_eq_zero_re",
+    "LFunction_ne_zero_of_half_lt_re",
+    "LFunction_eq_zero_re",
+    "LFunction_eq_zero_re_of_isPrimitive"
+  ],
+  "metrics": {
+    "project_live_declarations": {
+      "baseline": null,
+      "after": null
+    },
+    "normalized_kernel_dag": {
+      "baseline": null,
+      "after": null
+    },
+    "clean_build_cpu_seconds": {
+      "baseline": null,
+      "after": null
+    }
+  },
+  "validation": {
+    "python_tests": 12,
+    "python_tests_passed": 12,
+    "random_oracle_cases": 144,
+    "lean_kernel": null,
+    "comparator": null,
+    "nanoda": null,
+    "full_ci": null
+  },
+  "historical_proxy": {
+    "source_commit": "3ef0ba5b002bbfe06e22a7860a44d0bb9c85bf98",
+    "source_blob": "7c26d8ab76b15c0a4f84bd6d1aca0188e17fb137",
+    "structures": 862,
+    "fields": 2449,
+    "associated_constants": 4062,
+    "components": 760,
+    "largest_component": 14,
+    "local_subsets": 22528,
+    "checkpoints": [
+      {
+        "budget": 20,
+        "optimal": 1607,
+        "greedy": 1603
+      },
+      {
+        "budget": 30,
+        "optimal": 1887,
+        "greedy": 1863
+      },
+      {
+        "budget": 50,
+        "optimal": 2273,
+        "greedy": 2236
+      },
+      {
+        "budget": 100,
+        "optimal": 2868,
+        "greedy": 2839
+      },
+      {
+        "budget": 200,
+        "optimal": 3487,
+        "greedy": 3420
+      },
+      {
+        "budget": 232,
+        "optimal": 3605,
+        "greedy": 3527
+      },
+      {
+        "budget": 516,
+        "optimal": 4062,
+        "greedy": 4042
+      }
+    ]
+  },
+  "notes": [
+    "historical proxy, not kernel reachability or actual savings",
+    "shell network unavailable; Lean/Lake absent",
+    "no protected file edited",
+    "previous source-level analyzer has uncorrected escape and graph-model issues"
+  ]
+}
