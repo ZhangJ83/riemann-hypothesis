@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "round": 6,
+  "parent_commit": "bea186bdff32af5ac7b86d14fb0eca0fe8aab458",
+  "experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "upstream_main_observed": "686902ae1da717a63faf52d2dc6a50e5722942cd",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "implementation": {
+    "backend": "sqlite-v1",
+    "normalization": "structural-v1",
+    "code_blob": "50d8b48b6f0c163ab845f7fcdae1cd02f57cf932",
+    "test_blob": "18e66fb428976b505abb9c21938888ab60488682"
+  },
+  "tests": {
+    "command": "cd scripts/proofopt && python3 -m unittest -v test_disk_metrics",
+    "executed": true,
+    "passed": 12,
+    "total": 12,
+    "elapsed_seconds": 0.893,
+    "environment": "Linux container, Python stdlib sqlite3"
+  },
+  "actual_export_fixture": {
+    "source": "https://github.com/leanprover/lean4export/blob/df81913eee5519d5a88ae5b0fd701b5298cc29ab/examples/Nat.add_succ.ndjson",
+    "source_blob": "d3cd35f1313b4e78b5fded9886e450112aa75def",
+    "prefix_lines": 51,
+    "prefix_blob": "4740977d6e9317754ac392e22af5e01c443f76f8",
+    "sha256": "fae6ca9151f6000b2205b9053eb1b445c6f77bbc919d0982fc9320f64b521f12",
+    "roots": [
+      "Nat",
+      "Nat.rec"
+    ],
+    "union": {
+      "declarations": 4,
+      "type_dag": 22,
+      "value_dag": 29,
+      "combined_dag": 36
+    },
+    "round04_reference_crosscheck": "identical"
+  },
+  "stress_benchmarks": [
+    {
+      "synthetic_app_depth": 100000,
+      "input_bytes": 4578504,
+      "db_bytes": 10948608,
+      "combined_dag": 100004,
+      "wall_seconds": 5.03,
+      "user_seconds": 5.2,
+      "system_seconds": 0.21,
+      "max_rss_kib": 116620
+    },
+    {
+      "synthetic_app_depth": 500000,
+      "input_bytes": 23778504,
+      "db_bytes": 56774656,
+      "combined_dag": 500004,
+      "wall_seconds": 26.13,
+      "user_seconds": 25.6,
+      "system_seconds": 0.86,
+      "max_rss_kib": 144144
+    }
+  ],
+  "benchmark_scope": "synthetic syntax only; not well-typed proof or build benchmark. 100k measured before compare-output-only patch; measure path unchanged. No comparison to old memory backend at scale; no full export claim.",
+  "protected_files_same_as_experiment_baseline": [
+    "src/Challenge.lean",
+    "comparator.json",
+    "export-targets.txt",
+    "comparator/FormalConjecturesChallenge.lean",
+    "comparator/formal-conjectures.json",
+    "comparator/formal-conjectures-export-targets.txt"
+  ],
+  "flagship": {
+    "project_dependency_reduction": null,
+    "kernel_dag_reduction": null,
+    "clean_build_cpu_reduction": null,
+    "lean_compiled": false,
+    "comparator_verified": false,
+    "nanoda_verified": false,
+    "upstream_merged_prs": 0
+  },
+  "blockers": [
+    "lean/lake absent in execution container",
+    "GitHub git transport DNS failure; connector works",
+    "no full project kernel export; local available disk about 30 GiB",
+    "full-scale disk usage and exact parser parity for all variants unverified"
+  ]
+}
