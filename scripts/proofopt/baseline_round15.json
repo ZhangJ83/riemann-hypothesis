@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "round": 15,
+  "parent": "fa3fd61a9b279df7d358d967d1713e0b6f39fd04",
+  "branch": "proofopt/round15-anti-unification",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "observed_upstream_main": "0d9138b2061a0839b906283edb340291ed9a688d",
+  "observed_fork_main": "91b273530883b723ef4422436e0dc3557749325a",
+  "historical_readable_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "historical_dependencies": {
+    "lean": "v4.37.0-rc1",
+    "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+    "tauceti": "e0e414ce57522ba17560057ad0d7f2edab91bf0c"
+  },
+  "tests": {
+    "isolate_assertions_passed": 1562,
+    "node_cli": "pending",
+    "lean": "pending",
+    "real_data": "pending",
+    "round14_workflow": "not accessible through PR-filtered commit workflow endpoint"
+  },
+  "candidate_policy": {
+    "sample": "project theorem names with Lean hash modulo 16 == 0",
+    "export_nodes_cap": 1500000,
+    "window": 32,
+    "attempt_budget": 100000,
+    "top": 100,
+    "max_holes": 8,
+    "closed_holes_only": true,
+    "exact_reconstruction": true,
+    "typed": false
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "other_projects_verified": 0,
+    "upstream_prs_merged": 0
+  },
+  "limitations": [
+    "Syntactic candidates only; no type checking, no theorem insertion, no actual saving.",
+    "Sampled root export and bounded search are not exhaustive; prior readable snapshot is not original baseline.",
+    "Lean exporter and Actions not yet executed in this run."
+  ]
+}

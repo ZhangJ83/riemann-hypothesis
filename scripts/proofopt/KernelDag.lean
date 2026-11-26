@@ -152,6 +152,55 @@ private def readScope (path : String) (limit : Nat) :
   require (out.size > 0) "empty scope"
   return out
 
+
+-- Optional bounded interchange for syntactic candidate discovery. Original
+-- metric computation is unchanged; the export samples by declaration name.
+private structure ExportRoot where
+  name : String
+  moduleName : String
+  typeId : Nat
+  proofId : Nat
+  levels : List Name
+
+private def Key.exportParts : Key → String × Json
+  | .bvar i => ("bvar", toJson i)
+  | .sort u => ("sort", toJson (reprStr u))
+  | .const n us => ("const", Json.arr #[toJson (reprStr n), toJson (us.map reprStr)])
+  | .app _ _ => ("app", Json.null)
+  | .lam _ _ => ("lam", Json.null)
+  | .forallE _ _ => ("forallE", Json.null)
+  | .letE _ _ _ => ("letE", Json.null)
+  | .natLit n => ("natLit", toJson (toString n))
+  | .strLit s => ("strLit", toJson s)
+  | .proj n i _ => ("proj", Json.arr #[toJson (reprStr n), toJson i])
+  | .invalid => ("invalid", Json.null)
+
+private def exportCandidates (path : String) (d : Dag) (roots : Array ExportRoot) : IO Unit := do
+  require (roots.size > 0) "empty candidate sample"
+  let mut selected := Array.replicate d.keys.size false
+  for r in roots do
+    selected := (selected.set! r.typeId true).set! r.proofId true
+  let mut total := 0
+  for j in [:d.keys.size] do
+    let i := d.keys.size - 1 - j
+    if selected[i]! then
+      total := total + 1
+      for child in d.keys[i]!.children do
+        selected := selected.set! child true
+  require (total <= 1500000) "candidate export exceeds node budget; no partial export"
+  IO.FS.withFile path .write fun h => do
+    for i in [:d.keys.size] do
+      if selected[i]! then
+        let key := d.keys[i]!
+        let (tag, atom) := key.exportParts
+        let row := Json.arr #[toJson "n", toJson i, toJson tag, atom, toJson key.children]
+        h.putStrLn row.compress
+    for r in roots do
+      let row := Json.arr #[toJson "r", toJson r.name, toJson r.moduleName,
+        toJson r.typeId, toJson r.proofId, toJson (r.levels.map reprStr)]
+      h.putStrLn row.compress
+  IO.println ("AU_EXPORT roots=" ++ toString roots.size ++ " nodes=" ++ toString total)
+
 unsafe def main (args : List String) : IO UInt32 := do
   if args == ["--self-test"] then return ← selfTest
   let output :: scopeFile :: moduleFile :: roots := args |
@@ -172,6 +221,8 @@ unsafe def main (args : List String) : IO UInt32 := do
   let mut theoremValues := 0
   let mut recursorRules := 0
   let mut missingOpaque := 0
+  let exportPath ← IO.getEnv "PROOFOPT_AU_EXPORT"
+  let mut exportRoots : Array ExportRoot := #[]
   let mut twins : Std.HashMap (Nat × Nat × List Name) (Array (String × String)) := {}
   for c in constants do
     let name := c.name.toString
@@ -194,6 +245,9 @@ unsafe def main (args : List String) : IO UInt32 := do
       d := dNext
       if isProject && isTheorem then
         theoremValues := theoremValues + 1
+        if exportPath.isSome && hash name % 16 == 0 then
+          exportRoots := exportRoots.push { name := name, moduleName := m.toString,
+            typeId := tid, proofId := vid, levels := c.levelParams }
         let key := (tid, vid, c.levelParams)
         twins := twins.insert key ((twins[key]?.getD #[]).push (name, m.toString))
     | none =>
@@ -214,6 +268,8 @@ unsafe def main (args : List String) : IO UInt32 := do
   for root in roots do
     require (matched.contains root) ("root absent: " ++ root)
   require (!d.index.contains .invalid) "invalid expression encountered"
+  if let some path := exportPath then
+    exportCandidates path d exportRoots
   let (per, unions) := counts d n
   require (unions[0]! == d.keys.size) "unmarked interned node"
   let mut groups : Array Json := #[]
