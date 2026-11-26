@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "round": 17,
+  "objective": "Fix the demonstrated Fock namespace compile failure and establish an auditable five-root Lean LOC baseline.",
+  "original_locked_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "readable_build_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "branch": "proofopt/round17-real-refactor",
+  "commits": [
+    "520a402c7530d1c0bc33f85c3bf4b1d18ceb3744",
+    "3c9030a9f6f07d55939275e2f996cbc6f18ced5d",
+    "c6d5b85fc2254982809f48c3f38c9d2db94f3cd4",
+    "d9ec030d1dd8ded879be7b8d1f20c83b57b0d543",
+    "bfc255a7c9927ab83ca579c72a2f1e7ea3b4bfb7",
+    "ddb4bc6ab9c483e3ac4b58177142e6e49eac42c9",
+    "94b2fec84f51d3d1ca61f2eb0e854e2894506575",
+    "8840f678d63acd8122d1bdc579d8309304b1066f",
+    "23a603f162800818f4b768886e89557cc53a5c28"
+  ],
+  "diagnosed_failure": {
+    "run_id": 45800302361,
+    "job_id": 139841489077,
+    "target": "src/New/Determinant/Exchange/NegativeIndices.lean:53",
+    "exact_error": "Unknown identifier `Fock.conjTranspose_signMatrix`",
+    "fix": "Use New.Fock.conjTranspose_signMatrix",
+    "source_blob_sha": "ed6fc1e5c11d77ad427de61e2136caacf825ab1f"
+  },
+  "ci_fixes": [
+    "Use exact stale-identifier grep which permits qualified New.Fock name.",
+    "Fix malformed shell quote in log assertion.",
+    "Protect root Challenge.lean as well as src/Challenge.lean, comparator.json, export-targets.txt.",
+    "Run a Python LOC counter self-test before installing Lean.",
+    "After targeted Lean build, export a fresh five-root reference graph and produce a source LOC upper-bound artifact."
+  ],
+  "loc_target": {
+    "target": 2000,
+    "unit": "nonblank, noncomment Lean source lines",
+    "scope": "project-owned source files containing declarations reachable from the five final theorem roots",
+    "measurement": "whole-module upper bound; exact declaration-span LOC not available from current exporter",
+    "external_dependencies": "Mathlib and TauCeti excluded from project-owned LOC but versions and proof burden reported separately",
+    "current_value": null,
+    "status": "Awaiting the new Actions workflow run"
+  },
+  "prior_verified_full_build_failure": {
+    "failed_module": "New.Determinant.Exchange.NegativeIndices",
+    "unrelated_build_count": "about 20,075 targets; failed at target 19,738",
+    "failure_class": "one stale namespace reference in the approved proof refactor"
+  },
+  "tests": {
+    "source_and_workflow_remote_readback": "passed",
+    "protected_comparator_blob_unchanged": "passed",
+    "regex_self_test": "passed in JS harness",
+    "python_loc_unit_tests": "committed, pending Actions",
+    "lean_targeted_build": "pending Actions"
+  },
+  "limitations": [
+    "The Actions connector available here cannot list push-triggered runs; fetch_commit_workflow_runs only returns pull-request runs.",
+    "The fixed source and workflow commits have been read back, but no post-fix run conclusion is available yet.",
+    "The 2,000-line target for the whole five-root Riemann formalization may be far more aggressive than a 20–30 page human proof correspondence; the measured LOC upper bound is needed before assessing feasibility."
+  ]
+}
