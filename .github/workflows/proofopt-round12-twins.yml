@@ -32,12 +32,10 @@ jobs:
         id: census
         run: |
           set -euo pipefail
-          cd "${RUNNER_TEMP}/round11-artifact"
-          unzip -q ./*.zip -d extracted 2>/dev/null || true
-          GRAPH="$(find . -name kernel-graph.jsonl.gz -print -quit)"
-          MODULES="$(find . -name modules.txt -print -quit)"
-          DIGEST="$(awk '{print $1}' "$(find . -name kernel-graph-sha256.txt -print -quit)")"
-          test -n "$GRAPH" && test -n "$MODULES" && test "$DIGEST" = "5a1f971e33e3c044ef4422436e0dc3557749325a"
+          GRAPH="$(find "${RUNNER_TEMP}/round11-artifact" -name kernel-graph.jsonl.gz -print -quit)"
+          MODULES="$(find "${RUNNER_TEMP}/round11-artifact" -name modules.txt -print -quit)"
+          DIGEST="$(awk '{print $1}' "$(find "${RUNNER_TEMP}/round11-artifact" -name kernel-graph-sha256.txt -print -quit)")"
+          test -n "$GRAPH" && test -n "$MODULES" && test "$DIGEST" = "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c"
           python3 "$GITHUB_WORKSPACE/scripts/proofopt/proof_twins.py" "$GRAPH" "$MODULES" "$DIGEST" "$RUNNER_TEMP/proof-twins.json"
           python3 - <<'PY'
           import json, os
