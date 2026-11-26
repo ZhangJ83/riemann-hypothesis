@@ -34,7 +34,14 @@
     "lean_status": "pending",
     "historical_integration": "pending",
     "log_parser_regression": "actual Lean rejection colon and info prefix",
-    "initial_commit": "00c6ff9400a6e85a2fde7de1a6ee5450c22dc438"
+    "initial_commit": "00c6ff9400a6e85a2fde7de1a6ee5450c22dc438",
+    "first_fixture_run": {
+      "run": 45828507766,
+      "job": 139938803226,
+      "conclusion": "failure",
+      "diagnostic": "AliasTest.lean:33:65 unexpected identifier; expected '}'",
+      "repair": "explicit multiline TheoremVal structure"
+    }
   },
   "flagship": {
     "dependency_reduction": null,

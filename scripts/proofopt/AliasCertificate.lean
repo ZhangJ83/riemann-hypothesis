@@ -30,8 +30,13 @@ private def certify (left right : Name) : MetaM Unit := do
   unless ← isDefEq (← inferType value) l.type do
     throwError "replacement type does not match original statement"
   let name ← mkFreshUserName (Name.mkSimple "ProofOptAliasCertificate")
-  addDecl (.thmDecl { name := name, levelParams := l.levelParams,
-    type := l.type, value := value })
+  let decl : TheoremVal := {
+    name := name
+    levelParams := l.levelParams
+    type := l.type
+    value := value
+  }
+  addDecl (.thmDecl decl)
   allowedAxioms name
 
 private def transaction (l r : Name) : MetaM (Except String Unit) := do

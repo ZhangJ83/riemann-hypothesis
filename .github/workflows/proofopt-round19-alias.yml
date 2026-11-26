@@ -6,6 +6,9 @@ on:
 permissions:
   contents: read
   actions: read
+concurrency:
+  group: proofopt-round19-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   census:
     if: github.repository == 'ZhangJ83/riemann-hypothesis'
