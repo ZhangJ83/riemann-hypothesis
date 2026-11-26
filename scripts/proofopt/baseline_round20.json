@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "round": 20,
+  "parent": "f8b6d857d800ff1ba7cc02dd9469e20851eec7b1",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "original_lean": "v4.37.0-rc1",
+  "original_mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "observed_upstream_main": "61d870d08d5f6f5cc12f31fe40f5689024ea15ab",
+  "historical_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "historical_graph_sha": "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c",
+  "previous": {
+    "run": 45828687994,
+    "job": 139939889963,
+    "attempted": 10,
+    "kernel_pass": 0,
+    "net": 0,
+    "before": 49503,
+    "after": 49503
+  },
+  "tests": {
+    "js_isolate_assertions": 3281,
+    "random_dags": 256,
+    "lean_fixtures_expected": 9,
+    "lean_status": "not yet run",
+    "historical_status": "not yet run"
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "other_projects_verified": 0,
+    "upstream_prs_merged": 0
+  }
+}
