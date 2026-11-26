@@ -1,0 +1,144 @@
+name: ProofOpt round 19 alias shortcut superoptimizer
+on:
+  push:
+    branches: [proofopt/round19-alias-superopt]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  census:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GRAPH_SHA: 5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Algorithm self tests
+        run: |
+          node scripts/proofopt/value_cut.cjs --self-test
+          node scripts/proofopt/alias_pass.cjs --self-test
+      - uses: actions/download-artifact@v4
+        with:
+          name: proofopt-readable-baseline
+          repository: ZhangJ83/riemann-hypothesis
+          run-id: 45755058155
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/historical
+      - name: Full scoped alias candidate mining
+        run: |
+          set -euo pipefail
+          P="$RUNNER_TEMP/alias"
+          mkdir -p "$P"
+          GRAPH="$(find "$RUNNER_TEMP/historical" -name kernel-graph.jsonl.gz -print -quit)"
+          test -n "$GRAPH"
+          node --max-old-space-size=6144 scripts/proofopt/dag_scope.cjs "$GRAPH" "$GRAPH_SHA" "$P/scope"
+          /usr/bin/time -v node --max-old-space-size=6144 scripts/proofopt/alias_pass.cjs "$GRAPH" "$GRAPH_SHA" "$P/scope" "$P/report.json" 2>&1 | tee "$P/time.log"
+          node -e 'const r=require(process.argv[1]); if(r.environment_declarations!==887134 || r.scoped_declarations!==220703 || r.baseline_project_excluding_roots!==49503) process.exit(1)' "$P/report.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round19-census
+          path: |
+            ${{ runner.temp }}/alias/report.json
+            ${{ runner.temp }}/alias/time.log
+            ${{ runner.temp }}/alias/scope/scope.json
+          retention-days: 14
+  fixtures:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Kernel certificate fixtures
+        run: |
+          set -euo pipefail
+          cat scripts/proofopt/AliasCertificate.lean scripts/proofopt/AliasFixtures.lean > "$RUNNER_TEMP/AliasTest.lean"
+          lean "$RUNNER_TEMP/AliasTest.lean" 2>&1 | tee "$RUNNER_TEMP/alias-fixtures.log"
+          for i in 0 1; do grep -E "PROOFOPT_ALIAS_PASS $i$" "$RUNNER_TEMP/alias-fixtures.log"; done
+          for i in 2 3 4 5; do grep -E "PROOFOPT_ALIAS_REJECT $i:" "$RUNNER_TEMP/alias-fixtures.log"; done
+          test "$(grep -c 'PROOFOPT_ALIAS_PASS ' "$RUNNER_TEMP/alias-fixtures.log")" = 2
+          test "$(grep -c 'PROOFOPT_ALIAS_REJECT ' "$RUNNER_TEMP/alias-fixtures.log")" = 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round19-fixtures
+          path: ${{ runner.temp }}/alias-fixtures.log
+  certify:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    needs: [census, fixtures]
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      BASE: 2746005d8130ee6d0c82d771ec11d69521a65093
+      GRAPH_SHA: 5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Isolate exact historical source snapshot
+        run: |
+          set -euo pipefail
+          git worktree add --detach "$RUNNER_TEMP/base" "$BASE"
+          test "$(git -C "$RUNNER_TEMP/base" rev-parse HEAD)" = "$BASE"
+          git -C "$RUNNER_TEMP/base" diff --exit-code HEAD -- src Challenge.lean comparator.json comparator export-targets.txt lakefile.toml lake-manifest.json lean-toolchain
+      - uses: actions/download-artifact@v4
+        with:
+          name: proofopt-round19-census
+          path: ${{ runner.temp }}/census
+      - uses: actions/download-artifact@v4
+        with:
+          name: proofopt-readable-baseline
+          repository: ZhangJ83/riemann-hypothesis
+          run-id: 45755058155
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/historical
+      - name: Install pinned Lean
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore historical cache and build
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/base"
+          lake exe mathlib/cache get
+          python3 scripts/tauceti-cache-get.py
+          status=0
+          python3 scripts/ci-cache-get.py --baseline "$BASE" || status=$?
+          case "$status" in 0|4) ;; *) exit 1 ;; esac
+          lake build
+      - name: Certify actual alias proof expressions and replay accepted set
+        run: |
+          set -euo pipefail
+          P="$RUNNER_TEMP/cert"
+          mkdir -p "$P"
+          node scripts/proofopt/alias_pass.cjs --render "$RUNNER_TEMP/census/report.json" scripts/proofopt/AliasCertificate.lean "$P/Real.lean"
+          (cd "$RUNNER_TEMP/base" && lake env lean "$P/Real.lean") 2>&1 | tee "$P/real.log"
+          node scripts/proofopt/alias_pass.cjs --parse "$RUNNER_TEMP/census/report.json" "$P/real.log" "$P/certificates.json"
+          GRAPH="$(find "$RUNNER_TEMP/historical" -name kernel-graph.jsonl.gz -print -quit)"
+          test -n "$GRAPH"
+          node --max-old-space-size=6144 scripts/proofopt/dag_scope.cjs "$GRAPH" "$GRAPH_SHA" "$P/scope"
+          node --max-old-space-size=6144 scripts/proofopt/alias_pass.cjs --replay "$GRAPH" "$GRAPH_SHA" "$P/scope" "$P/certified-joint.json" "$P/certificates.json"
+          git -C "$RUNNER_TEMP/base" diff --exit-code HEAD -- src Challenge.lean comparator.json comparator export-targets.txt lakefile.toml lake-manifest.json lean-toolchain
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round19-certified
+          path: |
+            ${{ runner.temp }}/cert/real.log
+            ${{ runner.temp }}/cert/Real.lean
+            ${{ runner.temp }}/cert/certificates.json
+            ${{ runner.temp }}/cert/certified-joint.json
+          retention-days: 14

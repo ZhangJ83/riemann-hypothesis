@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "round": 19,
+  "parent": "298d522618dd9278b24b5f05b7d490aa3b7da0f6",
+  "branch": "proofopt/round19-alias-superopt",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "original_lean": "v4.37.0-rc1",
+  "original_mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "observed_upstream_main": "5f593811a7ac880c5eb755aee7802eb82c29411c",
+  "observed_upstream_tauceti": "6d810e58e90dc1a8f89e5cb6056ee36c26da67d3",
+  "observed_fork_main": "91b273530883b723ef4422436e0dc3557749325a",
+  "historical_comparison_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "historical_lean": "v4.37.0-rc1",
+  "historical_mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "historical_graph": {
+    "run": 45755058155,
+    "sha256": "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c",
+    "environment": 887134,
+    "reachable": 220703,
+    "project_excluding_roots": 49503
+  },
+  "prior": {
+    "round18_commit": "298d522618dd9278b24b5f05b7d490aa3b7da0f6",
+    "round18_run": 45810837627,
+    "round18_editable_theorems": 41891,
+    "round17_run": 45818827335,
+    "round17_preflight": "success",
+    "round17_full": "in_progress when inspected"
+  },
+  "tests": {
+    "javascript_isolate_assertions": 19683,
+    "random_graphs": 384,
+    "lean_fixtures": 6,
+    "lean_status": "pending",
+    "historical_integration": "pending"
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "other_projects_verified": 0,
+    "upstream_prs_merged": 0
+  }
+}
