@@ -94,7 +94,7 @@ module.exports=engine();
 
 async function cli(){
  const fs=require("node:fs"),path=require("node:path"),zlib=require("node:zlib"),crypto=require("node:crypto"),readline=require("node:readline"),a=module.exports;
- const args=process.argv.slice(2),read=p=>JSON.parse(fs.readFileSync(p,"utf8")),write=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+"\n");
+ const args=process.argv.slice(2),joint=args[0]==="--joint";if(joint)args.shift();const read=p=>JSON.parse(fs.readFileSync(p,"utf8")),write=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2)+"\n");
  if(args[0]==="--self-test"){console.log("PASS "+a.selfTest()+" assertions");return}
  if(args[0]==="--render"){fs.writeFileSync(args[3],a.render(read(args[1]),fs.readFileSync(args[2],"utf8")));return}
  if(args[0]==="--parse"){write(args[3],a.parse(read(args[1]),fs.readFileSync(args[2],"utf8")));return}
@@ -106,6 +106,6 @@ async function cli(){
  for await(const line of readline.createInterface({input:stream,crlfDelay:Infinity})){const x=JSON.parse(line);if(!header){header=x;if(x.record!=="header"||x.schema!==1||x.measurement!=="kernel-reference-graph"||JSON.stringify(x.roots)!==JSON.stringify(s.root_names))throw Error("bad header")}else{b.add(x);rows++}}
  if(h.digest("hex")!==sha||rows!==s.declarations||scope.size!==s.union_all)throw Error("graph mismatch");
  const g=b.finish();for(let i=0;i<g.rootIds.length;i++){const v=a.reach(g,g.rootIds[i],new Map());for(let j=0;j<g.n;j++)if(Boolean(v.seen[j])!==Boolean(scope.get(g.names[j]).mask&(1<<i)))throw Error("scope mask mismatch")}
- const result=a.replay(g,report,cert);if(result.before!==s.union_project_excluding_roots)throw Error("baseline mismatch");write(out,result);console.log(JSON.stringify(result));
+ const result=(joint?require("./joint.cjs"):a).replay(g,report,cert);if(result.before!==s.union_project_excluding_roots)throw Error("baseline mismatch");write(out,result);console.log(JSON.stringify(result));
 }
 if(require.main===module)cli().catch(e=>{console.error(e);process.exitCode=1});
