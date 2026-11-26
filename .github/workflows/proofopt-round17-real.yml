@@ -53,7 +53,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Audit immutable inputs and exactly three approved source files
+      - name: Audit immutable inputs and exactly four approved source files
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/refactor/before" "$RUNNER_TEMP/refactor/after"
