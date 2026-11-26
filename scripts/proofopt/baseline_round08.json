@@ -1,0 +1,249 @@
+{
+  "schema": 1,
+  "round": 8,
+  "parent_commit": "1cbdc67107b0e111faa810e65f8c4d13264c1eba",
+  "experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "proof_only_commit": "fef5d8c31f796acf271b1754008b822b841818eb",
+  "upstream_main_observed": "e063a923620ee7787b4a1270421478645bf66bdb",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "source": {
+    "repo": "leanprover/lean4export",
+    "commit": "df81913eee5519d5a88ae5b0fd701b5298cc29ab",
+    "path": "examples/Nat.add_succ.ndjson",
+    "blob": "d3cd35f1313b4e78b5fded9886e450112aa75def"
+  },
+  "tests": {
+    "passed": 16,
+    "random_cases": 100,
+    "execution": "V8, same exported functions with ESM import/export wrappers replaced",
+    "node_cli_executed": false
+  },
+  "real": {
+    "schema": 1,
+    "mode": "simulated exact-type theorem alias",
+    "kernel_verified": false,
+    "ownership": "unavailable",
+    "candidate_count": 0,
+    "source_count": 0,
+    "state_count": 1,
+    "feasible": 1,
+    "rejected": 0,
+    "budget": 2,
+    "objective": [
+      "project_or_total",
+      "all_declarations",
+      "combined_dag",
+      "value_dag"
+    ],
+    "before": [
+      27,
+      27,
+      337,
+      234
+    ],
+    "after": [
+      27,
+      27,
+      337,
+      234
+    ],
+    "selected": [],
+    "per_root": [
+      {
+        "name": [
+          "Nat",
+          "add_succ"
+        ],
+        "project": null,
+        "all_declarations": {
+          "before": 27,
+          "after": 27,
+          "reduced": 0,
+          "fraction": 0
+        },
+        "dag": {
+          "before": 337,
+          "after": 337,
+          "reduced": 0,
+          "fraction": 0
+        },
+        "value_dag": {
+          "before": 234,
+          "after": 234,
+          "reduced": 0,
+          "fraction": 0
+        },
+        "project_dag": null,
+        "new_axioms": [],
+        "unexpected_axioms": [],
+        "unsafe": []
+      }
+    ],
+    "union": {
+      "project": null,
+      "all_declarations": {
+        "before": 27,
+        "after": 27,
+        "reduced": 0,
+        "fraction": 0
+      },
+      "dag": {
+        "before": 337,
+        "after": 337,
+        "reduced": 0,
+        "fraction": 0
+      },
+      "value_dag": {
+        "before": 234,
+        "after": 234,
+        "reduced": 0,
+        "fraction": 0
+      },
+      "project_dag": null,
+      "new_axioms": [],
+      "unexpected_axioms": [],
+      "unsafe": []
+    },
+    "caution": "Simulated proof values, not re-elaborated Lean source. Exact only within enumerated candidate class and budget."
+  },
+  "augmented": {
+    "schema": 1,
+    "mode": "simulated exact-type theorem alias",
+    "kernel_verified": false,
+    "ownership": "unavailable",
+    "candidate_count": 5,
+    "source_count": 2,
+    "state_count": 12,
+    "feasible": 5,
+    "rejected": 7,
+    "budget": 2,
+    "objective": [
+      "project_or_total",
+      "all_declarations",
+      "combined_dag",
+      "value_dag"
+    ],
+    "before": [
+      30,
+      30,
+      339,
+      236
+    ],
+    "after": [
+      29,
+      29,
+      339,
+      236
+    ],
+    "selected": [
+      {
+        "source": [
+          "alias_b"
+        ],
+        "target": [
+          "Nat",
+          "add_succ"
+        ]
+      }
+    ],
+    "per_root": [
+      {
+        "name": [
+          "Nat",
+          "add_succ"
+        ],
+        "project": null,
+        "all_declarations": {
+          "before": 27,
+          "after": 27,
+          "reduced": 0,
+          "fraction": 0
+        },
+        "dag": {
+          "before": 337,
+          "after": 337,
+          "reduced": 0,
+          "fraction": 0
+        },
+        "value_dag": {
+          "before": 234,
+          "after": 234,
+          "reduced": 0,
+          "fraction": 0
+        },
+        "project_dag": null,
+        "new_axioms": [],
+        "unexpected_axioms": [],
+        "unsafe": []
+      },
+      {
+        "name": [
+          "alias_root"
+        ],
+        "project": null,
+        "all_declarations": {
+          "before": 29,
+          "after": 29,
+          "reduced": 0,
+          "fraction": 0
+        },
+        "dag": {
+          "before": 339,
+          "after": 339,
+          "reduced": 0,
+          "fraction": 0
+        },
+        "value_dag": {
+          "before": 236,
+          "after": 236,
+          "reduced": 0,
+          "fraction": 0
+        },
+        "project_dag": null,
+        "new_axioms": [],
+        "unexpected_axioms": [],
+        "unsafe": []
+      }
+    ],
+    "union": {
+      "project": null,
+      "all_declarations": {
+        "before": 30,
+        "after": 29,
+        "reduced": 1,
+        "fraction": 0.03333333333333333
+      },
+      "dag": {
+        "before": 339,
+        "after": 339,
+        "reduced": 0,
+        "fraction": 0
+      },
+      "value_dag": {
+        "before": 236,
+        "after": 236,
+        "reduced": 0,
+        "fraction": 0
+      },
+      "project_dag": null,
+      "new_axioms": [],
+      "unexpected_axioms": [],
+      "unsafe": []
+    },
+    "caution": "Simulated proof values, not re-elaborated Lean source. Exact only within enumerated candidate class and budget."
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "lean_verified": false,
+    "upstream_prs_merged": 0
+  },
+  "blockers": [
+    "Lean/Lake/Elan not found, Git HTTPS DNS failed, 30 GiB available",
+    "upstream compare 404 no common ancestor and previous path absent",
+    "Fork proof-only branch actions/runs total_count 0",
+    "No full RH export; algorithm uses in-memory structural-v1 backend"
+  ]
+}
