@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "round": 9,
+  "parent_commit": "e5155c82003f6fd8d96df6b2571554c1fbc4e678",
+  "experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "proof_only_commit": "fef5d8c31f796acf271b1754008b822b841818eb",
+  "upstream_main_observed": "de330e73d828ea08f621cb28395d48480806d00f",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "fixture": {
+    "repo": "leanprover/lean4export",
+    "commit": "df81913eee5519d5a88ae5b0fd701b5298cc29ab",
+    "path": "examples/Nat.add_succ.ndjson",
+    "blob": "d3cd35f1313b4e78b5fded9886e450112aa75def"
+  },
+  "tests": {
+    "execution": "V8 executed exact engine/test function bodies with existing export_metrics module loaded through wrapper; Node CLI not executed",
+    "results": [
+      "real export baseline",
+      "closed wrapper discovered",
+      "closed body containing bound variables",
+      "loose variable detected",
+      "dependent proof rejected",
+      "dependent result rejected",
+      "domain mismatch rejected",
+      "two unused binders",
+      "caller rewrite",
+      "root protected",
+      "external callers protected",
+      "external wrapper rejected",
+      "unapplied wrapper unchanged",
+      "overapplication rebuilt",
+      "under binder no capture",
+      "duplicate rule rejected",
+      "real sample no metric regression",
+      "augmented closure compression",
+      "zero budget",
+      "bounded search refuses excess"
+    ],
+    "real": {
+      "wrappers": 0,
+      "active": 0,
+      "states": 1,
+      "before": [
+        27,
+        27,
+        337,
+        234
+      ],
+      "after": [
+        27,
+        27,
+        337,
+        234
+      ],
+      "selected": []
+    },
+    "aug": {
+      "wrappers": 1,
+      "active": 1,
+      "states": 2,
+      "before": [
+        30,
+        30,
+        343,
+        239
+      ],
+      "after": [
+        29,
+        29,
+        339,
+        236
+      ],
+      "selected": [
+        [
+          "wrap"
+        ]
+      ],
+      "changed": [
+        [
+          "caller"
+        ]
+      ],
+      "matched": 1
+    }
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "lean_verified": false,
+    "upstream_prs_merged": 0
+  },
+  "limitations": [
+    "synthetic extension not a verified Lean export",
+    "monomorphic theorem only, exact binder domain and closed residual type/value",
+    "root proofs protected",
+    "in-memory, no RH full export",
+    "Lean/Lake/Elan missing; Git HTTPS DNS failed; fork actions runs total 0"
+  ]
+}
