@@ -1,0 +1,258 @@
+{
+  "schema": 1,
+  "round": 11,
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "readable_integration_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "observed_upstream": "2db90859500407542617a5b86281b4f1e1ee69cb",
+  "fork_main": "91b273530883b723ef4422436e0dc3557749325a",
+  "artifact": {
+    "run_id": 45748541486,
+    "artifact_id": 15085425261,
+    "zip_bytes": 169561552,
+    "zip_sha256": "54df87dd4ecc9f1fcfb243f4bd4e5666b983e1516105082b9114553e6b5063ee",
+    "uncompressed_graph_bytes": 1014162513,
+    "graph_sha256": "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c",
+    "expires_at": "2026-12-03T03:34:53Z",
+    "head_sha": "ed7b2b5e0f8d93956f0f88803f3bb89ba27c670a"
+  },
+  "lean": "v4.37.0-rc1",
+  "dependencies": {
+    "Mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+    "TauCeti": "e0e414ce57522ba17560057ad0d7f2edab91bf0c"
+  },
+  "graph": {
+    "metric": "explicit reference graph; not certified complete kernel dependency closure",
+    "declarations": 887134,
+    "edges": 26914749,
+    "unresolved_environment_names": 0,
+    "project_declarations": 62492,
+    "union": {
+      "live": 220703,
+      "project": 49508,
+      "split_nodes": 260828,
+      "split_edges": 9794024,
+      "passes": 3,
+      "kinds": {
+        "ind": 2677,
+        "def": 36545,
+        "ctor": 2905,
+        "thm": 178029,
+        "axiom": 3,
+        "rec": 538,
+        "quot": 4,
+        "opaque": 2
+      },
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "individual": {
+      "riemannHypothesis": {
+        "all": 220695,
+        "project": 49500
+      },
+      "riemannZeta_eq_zero_re": {
+        "all": 220696,
+        "project": 49501
+      },
+      "LFunction_ne_zero_of_half_lt_re": {
+        "all": 220684,
+        "project": 49497
+      },
+      "LFunction_eq_zero_re": {
+        "all": 220690,
+        "project": 49500
+      },
+      "LFunction_eq_zero_re_of_isPrimitive": {
+        "all": 220692,
+        "project": 49502
+      }
+    },
+    "candidates": 40124,
+    "positive_project_candidates": 9385,
+    "top": [
+      {
+        "name": "New.grh",
+        "module": "New.Reduction.OneSidedBound",
+        "project_cut": 49474,
+        "all_cut": 155104,
+        "value_only_edges": 279
+      },
+      {
+        "name": "New.eventually_primeRemainder_le_mul_rpow",
+        "module": "New.Reduction.OneSidedBound",
+        "project_cut": 49259,
+        "all_cut": 140230,
+        "value_only_edges": 281
+      },
+      {
+        "name": "New.eventually_primeRemainder_natCast_le",
+        "module": "New.Reduction.OneSidedBound",
+        "project_cut": 49226,
+        "all_cut": 140031,
+        "value_only_edges": 298
+      },
+      {
+        "name": "New.Data.primeRemainder_le",
+        "module": "New.Reduction.OneSidedBound",
+        "project_cut": 44564,
+        "all_cut": 93194,
+        "value_only_edges": 269
+      },
+      {
+        "name": "New.star_inequality",
+        "module": "New.Reduction.MainInequality",
+        "project_cut": 44467,
+        "all_cut": 93053,
+        "value_only_edges": 483
+      },
+      {
+        "name": "New.Data.integral_forms_long",
+        "module": "New.Determinant.Twist.LongForms",
+        "project_cut": 23041,
+        "all_cut": 55123,
+        "value_only_edges": 204
+      },
+      {
+        "name": "New.Data.integral_forms_long_with_completion_cost",
+        "module": "New.Determinant.Twist.LongForms",
+        "project_cut": 23038,
+        "all_cut": 55120,
+        "value_only_edges": 356
+      },
+      {
+        "name": "New.Data.exists_hasSmallRatios_heightLe_liftDeterminant_div",
+        "module": "New.Determinant.Twist.LongForms",
+        "project_cut": 18869,
+        "all_cut": 49787,
+        "value_only_edges": 170
+      },
+      {
+        "name": "New.exists_isRegularFamily",
+        "module": "New.Congruences.FitTwistsExist",
+        "project_cut": 16076,
+        "all_cut": 46179,
+        "value_only_edges": 262
+      },
+      {
+        "name": "New.Selmer.exists_mFoldTwist_hasDenominatorsLe",
+        "module": "New.Congruences.FitTwistsExist",
+        "project_cut": 15504,
+        "all_cut": 45161,
+        "value_only_edges": 506
+      },
+      {
+        "name": "New.GaloisRep.sphericalCompat_of_odd",
+        "module": "Lib.GaloisRep.Main.OddRank",
+        "project_cut": 6912,
+        "all_cut": 33430,
+        "value_only_edges": 441
+      },
+      {
+        "name": "New.GaloisRep.sphericalCompat_of_split",
+        "module": "Lib.GaloisRep.Main.SplitCase",
+        "project_cut": 6895,
+        "all_cut": 33413,
+        "value_only_edges": 362
+      },
+      {
+        "name": "_private.Lib.GaloisRep.Main.SplitCase.0.New.GaloisRep.exists_rep_of_free_weight",
+        "module": "Lib.GaloisRep.Main.SplitCase",
+        "project_cut": 6730,
+        "all_cut": 32822,
+        "value_only_edges": 90
+      },
+      {
+        "name": "New.GaloisRep.exists_rep_of_cuspidal_type",
+        "module": "Lib.GaloisRep.Main.SeedRepresentation",
+        "project_cut": 6720,
+        "all_cut": 32812,
+        "value_only_edges": 88
+      },
+      {
+        "name": "_private.Lib.GaloisRep.Main.SeedRepresentation.0.New.GaloisRep.exists_padicRep_of_cuspidal_type_at_embedding",
+        "module": "Lib.GaloisRep.Main.SeedRepresentation",
+        "project_cut": 6658,
+        "all_cut": 32591,
+        "value_only_edges": 410
+      },
+      {
+        "name": "_private.Lib.GaloisRep.Main.SeedRepresentation.0.New.GaloisRep.exists_padicRep_of_pel",
+        "module": "Lib.GaloisRep.Main.SeedRepresentation",
+        "project_cut": 6083,
+        "all_cut": 31814,
+        "value_only_edges": 108
+      },
+      {
+        "name": "New.Variety.Model.exists_galois_rep",
+        "module": "Lib.Shimura.Eigenspace",
+        "project_cut": 3605,
+        "all_cut": 14042,
+        "value_only_edges": 523
+      },
+      {
+        "name": "New.Selmer.denominatorLe_clearingBound",
+        "module": "New.Congruences.FirstOrder.DenominatorBound",
+        "project_cut": 3210,
+        "all_cut": 3646,
+        "value_only_edges": 124
+      },
+      {
+        "name": "New.Selmer.exists_operator_det_clearingBound",
+        "module": "New.Congruences.FirstOrder.DenominatorBound",
+        "project_cut": 3209,
+        "all_cut": 3645,
+        "value_only_edges": 323
+      },
+      {
+        "name": "New.Selmer.exists_operator_ellVal_le_liftValuationBound",
+        "module": "New.Congruences.FirstOrder.DenominatorBound",
+        "project_cut": 3193,
+        "all_cut": 3625,
+        "value_only_edges": 293
+      }
+    ],
+    "top_verified_by_direct_reachability": 20
+  },
+  "execution": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "orjson": "3.11.9",
+    "unit_tests_passed": 4,
+    "random_graphs": 200,
+    "unit_seconds": 0.262,
+    "analysis_elapsed_seconds": 63.055,
+    "wall_seconds": 64.1,
+    "user_seconds": 63.16,
+    "system_seconds": 0.84,
+    "peak_rss_kib": 814900,
+    "exit_code": 0
+  },
+  "cached_baseline": {
+    "jobs": 20075,
+    "wall_seconds": 5.85,
+    "user_seconds": 7.81,
+    "system_seconds": 3.19,
+    "cache_status": 0,
+    "axiom_checks_passed": 5,
+    "extractor_compiled": true,
+    "independent_kernel_check": false
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "external_projects_verified": 0,
+    "upstream_prs_merged": 0
+  },
+  "notes": [
+    "Cut bounds assume deletion of all value-only outgoing edges of one theorem while retaining type and metadata edges. They are not realizable proof edits or additive gains.",
+    "Project ownership uses the exporter module manifest and includes compiler-generated declarations assigned to project modules. The graph may omit implicit kernel dependencies (e.g. literals); no proof DAG was captured.",
+    "High ranking central mathematical lemmas are not wrapper-removal candidates. Three DenominatorBound lemmas are nested: source inspection shows denominatorLe_clearingBound calls exists_operator_det_clearingBound, which calls exists_operator_ellVal_le_liftValuationBound. Their cuts cannot be summed.",
+    "No proof source changed; original baseline remains fixed; no comparison between old and readable versions is credited.",
+    "GitHub artifact retention expires 2026-12-03; download prior to expiry."
+  ]
+}
