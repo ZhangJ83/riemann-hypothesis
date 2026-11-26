@@ -24,7 +24,9 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/proofopt"
           node scripts/proofopt/test_snapshot.mjs
-          node scripts/proofopt/snapshot_cli.mjs "$BASE" "$RUNNER_TEMP/proofopt"
+          node scripts/proofopt/snapshot_cli.mjs "$BASE" "$RUNNER_TEMP/proofopt" scripts/proofopt/round12_plan.json
+          node --test scripts/proofopt/test_source_budget.mjs
+          node scripts/proofopt/source_budget.mjs "$BASE" HEAD "$RUNNER_TEMP/proofopt/source-budget.json"
       - name: Install toolchain
         run: |
           curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
@@ -58,7 +60,8 @@ jobs:
             printf "'%s' %s\n" "$root" "$axioms" >> "$RUNNER_TEMP/proofopt/expected-axioms.log"
           done
           diff -u "$RUNNER_TEMP/proofopt/expected-axioms.log" "$RUNNER_TEMP/proofopt/axioms.log"
-          git diff --exit-code "$BASE" HEAD -- src Challenge.lean comparator.json lakefile.toml lake-manifest.json lean-toolchain
+          node scripts/proofopt/snapshot_cli.mjs "$BASE" "$RUNNER_TEMP/proofopt" scripts/proofopt/round12_plan.json
+          git diff --exit-code HEAD -- src Challenge.lean comparator.json lakefile.toml lake-manifest.json lean-toolchain
       - name: Compile and run exploratory declaration extractor
         run: |
           set -euo pipefail

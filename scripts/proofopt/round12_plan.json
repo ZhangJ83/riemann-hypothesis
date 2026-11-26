@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "round": 12,
+  "original_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "readable_baseline": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "parent": "61730f76ac4dfbe7c7ae1ca0d96db546008ef099",
+  "observed_upstream": "4df6a854a694009f69eb5b7ab27d034ddcecae3b",
+  "baseline_artifact": 15087791705,
+  "graph_sha256": "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c",
+  "allowed_source_paths": [
+    "src/Lib/CM/Integrality/TorsionValues.lean",
+    "src/Lib/General/Groups/CongruenceSubgroups.lean",
+    "src/Lib/Weil/Fock/Basic.lean",
+    "src/New/Appendix/DiscreteSeries/Localization.lean",
+    "src/New/Congruences/Lifting/ExponentLattices.lean",
+    "src/New/Determinant/Exchange/NegativeIndices.lean"
+  ],
+  "changes": [
+    {
+      "path": "src/Lib/General/Groups/CongruenceSubgroups.lean",
+      "before": {
+        "physical": 481,
+        "nonblank": 369
+      },
+      "after": {
+        "physical": 484,
+        "nonblank": 371
+      }
+    },
+    {
+      "path": "src/Lib/Weil/Fock/Basic.lean",
+      "before": {
+        "physical": 932,
+        "nonblank": 818
+      },
+      "after": {
+        "physical": 928,
+        "nonblank": 815
+      }
+    },
+    {
+      "path": "src/New/Appendix/DiscreteSeries/Localization.lean",
+      "before": {
+        "physical": 721,
+        "nonblank": 662
+      },
+      "after": {
+        "physical": 718,
+        "nonblank": 660
+      }
+    },
+    {
+      "path": "src/New/Determinant/Exchange/NegativeIndices.lean",
+      "before": {
+        "physical": 514,
+        "nonblank": 483
+      },
+      "after": {
+        "physical": 514,
+        "nonblank": 483
+      }
+    },
+    {
+      "path": "src/Lib/CM/Integrality/TorsionValues.lean",
+      "before": {
+        "physical": 439,
+        "nonblank": 375
+      },
+      "after": {
+        "physical": 437,
+        "nonblank": 374
+      }
+    },
+    {
+      "path": "src/New/Congruences/Lifting/ExponentLattices.lean",
+      "before": {
+        "physical": 1184,
+        "nonblank": 1070
+      },
+      "after": {
+        "physical": 1176,
+        "nonblank": 1063
+      }
+    }
+  ],
+  "removed_declarations": [
+    "New.Fock.conjTranspose_signMatrix",
+    "New.DiscreteSeries.conjTranspose_signMatrix",
+    "New.CMLattice.mem_valRingCp_iff_norm_le_one",
+    "New.Lift.KummerChart.JumpLattice.tau_pow_smul_mem_kisinAinf"
+  ],
+  "added_declarations": [
+    "New.conjTranspose_signMatrix"
+  ],
+  "status": "candidate only; Lean build and independent validation pending",
+  "target_lines": 2000,
+  "source_scope": "all tracked src/**/*.lean, including project-owned supporting code, nonblank physical lines and 100-column wrapped nonblank lines; fixed external dependency pins"
+}

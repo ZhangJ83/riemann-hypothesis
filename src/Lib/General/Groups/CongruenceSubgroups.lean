@@ -158,6 +158,9 @@ def inclMatrix (R : Type*) [Zero R] [One R] (u : m → n) : Matrix n m R :=
 /-- The diagonal complex matrix whose entries are the signs s_i = ±1. -/
 def signMatrix (s : n → ℤˣ) : Matrix n n ℂ := Matrix.diagonal fun i : n ↦ (s i : ℂ)
 
+lemma conjTranspose_signMatrix {ε : n → ℤˣ} : (signMatrix ε)ᴴ = signMatrix ε := by
+  simp [signMatrix]
+
 @[simp]
 lemma signMatrix_one : signMatrix (n := n) 1 = 1 := by simp [signMatrix]
 

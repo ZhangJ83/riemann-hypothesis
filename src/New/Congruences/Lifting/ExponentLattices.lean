@@ -735,14 +735,6 @@ lemma sum_map_smul_eq_zero_of_mem_kisinLoc (f : Ainf →ₗ[k.S] k.S) {ι : Type
   refine sum_map_smul_eq_zero_of_mem_valueFieldPoints f (fun i ↦ ?_) h_zero
   exact ⟨kisinLocAinf_le_fracSpan (hv i).1, (hv i).2⟩
 
-/-- The element τ^h multiplies the A_inf-span `L.ainfLattice` of 1 ⊗ L into `L.kisinAinf`, the
-A_inf-span of the Kisin module. Here τ = `tau` is [ε^{1/p}] − 1, and h = `L.jumpBound` is the least
-natural number with all Hodge–Tate jumps of L over Γ' in [−h, h]. This is a part of
-`frame_theorem`. -/
-lemma tau_pow_smul_mem_kisinAinf {x : L.Ambient} (hx : x ∈ L.ainfLattice) :
-    tau ^ L.jumpBound • x ∈ L.kisinAinf :=
-  L.frame_theorem.tau_pow_smul_mem_kisinAinf x hx
-
 /-- Let L be a Galois lattice over the Kummer chart and a ≥ 0. Let μ be a form, that is, an
 A_inf-linear map `L.Ambient` = W(C^♭) ⊗ L → B_dR that is Γ'-equivariant on 1 ⊗ L, and let x lie in
 the Kisin module `L.kisinLoc` with all φ^b E inverted. Then the value `valueAt a μ x` = μ(φ^{−a}x)
@@ -757,7 +749,7 @@ lemma valueAt_mem_valueField {a : ℕ} {μ : L.Functional} {x : L.Ambient} (hμ 
     smul_mem_fracSpan (φ ^ a)⁻¹ (kisinLocAinf_le_fracSpan (mem_kisinLocAinf_of_mem_kisinLoc hx))
   obtain ⟨n, t, v, hv⟩ : ∃ (n : ℕ) (t : Fin n → Ainf) (v : Fin n → L.kisinLoc),
       ∑ l : Fin n, t l • (v l).val = tau ^ L.jumpBound • r • (φ ^ a)⁻¹ • x :=
-    mem_span_set'.1 (span_kisinLoc.ge (mem_saturateBy_of_mem (tau_pow_smul_mem_kisinAinf hrx)))
+    mem_span_set'.1 (span_kisinLoc.ge (mem_saturateBy_of_mem (tau_pow_jumpBound_smul_mem_kisinAinf_of_mem_ainfLattice hrx)))
   let ρ : Ainf := φ ^ a • (tau ^ L.jumpBound * r)
   have hρx : ρ • x = ∑ l : Fin n, (φ ^ a • t l) • φ ^ a • (v l).val := by
     simpa [ρ, smul_sum, frobGroup_smul_smul, smul_smul] using

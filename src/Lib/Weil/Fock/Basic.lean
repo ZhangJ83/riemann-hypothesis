@@ -158,18 +158,14 @@ omit [Fintype ι] in
 lemma conjTranspose_posProj : (posProj ε)ᴴ = posProj ε := by
   simp [posProj]
 
-omit [Fintype ι] in
-lemma conjTranspose_signMatrix : (signMatrix ε)ᴴ = signMatrix ε := by
-  simp [signMatrix]
-
 /-- The projection P₊ is idempotent and Hermitian, and the matrix of signs is Hermitian: the three
-facts `posProj_mul_posProj`, `conjTranspose_posProj` and `conjTranspose_signMatrix` together. -/
+facts `posProj_mul_posProj`, `conjTranspose_posProj` and `New.conjTranspose_signMatrix` together. -/
 @[simp]
 lemma posProj_mul_self :
     posProj ε * posProj ε = posProj ε ∧
     (posProj ε)ᴴ = posProj ε ∧
     (signMatrix ε)ᴴ = signMatrix ε :=
-  ⟨posProj_mul_posProj, conjTranspose_posProj, conjTranspose_signMatrix⟩
+  ⟨posProj_mul_posProj, conjTranspose_posProj, New.conjTranspose_signMatrix⟩
 
 omit [Fintype ι] in
 theorem signMatrix_eq_posProj_sub : signMatrix ε = posProj ε - (1 - posProj ε) := by

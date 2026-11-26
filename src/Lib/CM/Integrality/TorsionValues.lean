@@ -46,8 +46,6 @@ namespace New.CMLattice
 
 variable {d : ℕ} [PrimeSevenModEight d] (C : CMLattice d) {p : ℕ} [Fact p.Prime]
 
-lemma mem_valRingCp_iff_norm_le_one {x : ℂ_[p]} : x ∈ valRingCp p ↔ ‖x‖ ≤ 1 := Iff.rfl
-
 /-- If `g ^ 2 + u g = v` in `ℂ_p` and `‖u‖, ‖v‖ ≤ 1`, then `‖g‖ ≤ 1`: a root of a monic quadratic
 with integral coefficients is integral. -/
 lemma norm_le_one_of_sq_add_mul_eq {g u v : ℂ_[p]} (hu : ‖u‖ ≤ 1) (hv : ‖v‖ ≤ 1)
@@ -65,8 +63,8 @@ lemma norm_le_one_of_sq_add_mul_eq {g u v : ℂ_[p]} (hu : ‖u‖ ≤ 1) (hv : 
 lemma norm_a₁_le_one [PadicPlace p] : ‖ιₚ C.a₁‖ ≤ 1 := by
   -- `a₁ ^ 4 = (a₁ ^ 4 - 64) + 64` is a sum of two integral elements.
   have h_pow : ιₚ C.a₁ ^ 4 - 64 + 64 ∈ valRingCp p :=
-    add_mem (mem_valRingCp_iff_norm_le_one.2 (C.norm_disc_eq_one ιₚ).le) (ofNat_mem _ 64)
-  rwa [sub_add_cancel, mem_valRingCp_iff_norm_le_one, norm_pow,
+    add_mem (New.mem_valRingCp.2 (C.norm_disc_eq_one ιₚ).le) (ofNat_mem _ 64)
+  rwa [sub_add_cancel, New.mem_valRingCp, norm_pow,
     pow_le_one_iff_of_nonneg (norm_nonneg _) four_ne_zero] at h_pow
 
 end New.CMLattice

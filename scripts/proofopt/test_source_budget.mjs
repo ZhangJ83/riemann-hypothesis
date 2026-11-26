@@ -1,0 +1,13 @@
+import {test} from "node:test";
+import assert from "node:assert/strict";
+import {countSource,summarize} from "./source_budget.mjs";
+test("physical lines and comments",()=>assert.deepEqual(countSource("-- note\n\nby rfl\n"),{physical:3,nonblank:2,wrapped:2,bytes:16}));
+test("no trailing newline",()=>assert.equal(countSource("x").physical,1));
+test("empty input",()=>assert.equal(countSource("").physical,0));
+test("CRLF",()=>assert.equal(countSource("x\r\n\r\ny\r\n").nonblank,2));
+test("line packing cannot bypass wrapped budget",()=>assert.equal(summarize([["src/A.lean","x".repeat(200001)]]).withinBudget,false));
+test("unicode width and tab stops",()=>assert.equal(countSource("α".repeat(97)+"\tx").wrapped,2));
+test("count helper modules",()=>assert.equal(summarize([["src/A.lean","x\n"],["src/B.lean","y\n"]]).files,2));
+test("reject duplicate files",()=>assert.throws(()=>summarize([["src/A.lean","x"],["src/A.lean","y"]])));
+test("reject outside scope",()=>assert.throws(()=>summarize([["vendor/A.lean","x"]])));
+test("reject empty scope",()=>assert.throws(()=>summarize([])));
