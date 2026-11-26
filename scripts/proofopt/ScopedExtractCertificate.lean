@@ -36,7 +36,7 @@ private def boundedSize (e : Expr) (cap : Nat) : Nat := Id.run do
 -- At the opened owner telescope, free variables are allowed but loose de
 -- Bruijn variables and metavariables are not. Nested binders are opaque to
 -- anti-unification; they may be retained unchanged or abstracted as a whole.
-private def scoped (e : Expr) : Bool :=
+private def scopeSafe (e : Expr) : Bool :=
   !e.hasLooseBVars && !e.hasMVar
 
 abbrev Holes := Array (Expr × Expr)
@@ -53,7 +53,7 @@ private def anti (fuel : Nat) (a b : Expr)
       let (x', hs) ← anti k x y hs
       return (.app f' x', hs)
     | _, _ => do
-      if !scoped a || !scoped b then none else
+      if !scopeSafe a || !scopeSafe b then none else
       match holes.findIdx? (fun (x, y) => x == a && y == b) with
       | some i => some (.bvar i, holes)
       | none =>
@@ -77,7 +77,7 @@ private def fragments (e : Expr) : Array Expr := Id.run do
     if todo.isEmpty || result.size >= 64 then break
     let x := todo.back!
     todo := todo.pop
-    if scoped x && x.isApp && (headConst x).isSome && boundedSize x 8 >= 5 &&
+    if scopeSafe x && x.isApp && (headConst x).isSome && boundedSize x 8 >= 5 &&
         !result.contains x then
       result := result.push x
     todo := todo ++ children x
@@ -111,7 +111,7 @@ private partial def withHoles (left right : Array Expr) (i : Nat)
   if i >= left.size then return ← k vars
   let lt := generalizeType (← inferType left[i]!) left vars
   let rt := generalizeType (← inferType right[i]!) right vars
-  unless scoped lt && scoped rt do throwError "open hole type"
+  unless scopeSafe lt && scopeSafe rt do throwError "open hole type"
   unless ← isDefEq lt rt do throwError "dependent hole type mismatch"
   withLocalDeclD (Name.mkSimple ("hole" ++ toString i)) lt fun v =>
     withHoles left right (i+1) (vars.push v) k
