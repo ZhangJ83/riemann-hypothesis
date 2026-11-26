@@ -65,5 +65,8 @@ jobs:
         if: always()
         with:
           name: proofopt-round17-fock-fix
-          path: |\n            ${{ runner.temp }}/round17-build.log\n            ${{ runner.temp }}/reachable-loc.json\n            ${{ runner.temp }}/kernel-graph.jsonl.gz
+          path: |
+            ${{ runner.temp }}/round17-build.log
+            ${{ runner.temp }}/reachable-loc.json
+            ${{ runner.temp }}/kernel-graph.jsonl.gz
           retention-days: 14
