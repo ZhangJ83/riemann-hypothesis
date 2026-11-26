@@ -1,0 +1,53 @@
+name: ProofOpt round 12 proof-twin census
+on:
+  push:
+    branches: [proofopt/round12-proof-twin-census]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: proofopt-round12-proof-twins
+  cancel-in-progress: false
+jobs:
+  census:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Run self-contained unit tests
+        run: python3 scripts/proofopt/proof_twins.py --self-test
+      - name: Download pinned full readable kernel graph
+        uses: actions/download-artifact@v4
+        with:
+          name: proofopt-readable-baseline
+          repository: ZhangJ83/riemann-hypothesis
+          run-id: 45755058155
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/round11-artifact
+      - name: Run full-graph twin census
+        id: census
+        run: |
+          set -euo pipefail
+          cd "${RUNNER_TEMP}/round11-artifact"
+          unzip -q ./*.zip -d extracted 2>/dev/null || true
+          GRAPH="$(find . -name kernel-graph.jsonl.gz -print -quit)"
+          MODULES="$(find . -name modules.txt -print -quit)"
+          DIGEST="$(awk '{print $1}' "$(find . -name kernel-graph-sha256.txt -print -quit)")"
+          test -n "$GRAPH" && test -n "$MODULES" && test "$DIGEST" = "5a1f971e33e3c044ef4422436e0dc3557749325a"
+          python3 "$GITHUB_WORKSPACE/scripts/proofopt/proof_twins.py" "$GRAPH" "$MODULES" "$DIGEST" "$RUNNER_TEMP/proof-twins.json"
+          python3 - <<'PY'
+          import json, os
+          r=json.load(open(os.environ["RUNNER_TEMP"]+"/proof-twins.json"))
+          for k in ("declarations","project_theorems","exact_twin_groups_all","exact_twin_members_all","exact_twin_groups_excluding_generated","cross_module_groups_excluding_generated","cross_module_members_excluding_generated"):
+              print(f"{k}={r[k]}")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round12-twin-census
+          path: ${{ runner.temp }}/proof-twins.json
+          retention-days: 14
