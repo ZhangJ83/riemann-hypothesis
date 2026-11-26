@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "round": 7,
+  "parent_commit": "66a6bb5ea7d47195d721ae13f0d704d5dbed94d4",
+  "experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "proof_only_commit": "fef5d8c31f796acf271b1754008b822b841818eb",
+  "fork_main": "91b273530883b723ef4422436e0dc3557749325a",
+  "upstream_main_observed": "843cb9db91a39362b8d3b9f0de7a98bb651660e2",
+  "upstream_comparison": "connector returned 404 no common ancestor; old module path absent; no rebase attempted",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "proof_file": {
+    "path": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/VwinOfRow.lean",
+    "before_blob": "39416381a6f0e699c3c25b7e421590742e615a83",
+    "after_blob": "a4f38a10e14fe79a029b9d71e08eda20a518dbbf",
+    "additions": 25,
+    "deletions": 25,
+    "theorem_first_lines": 65,
+    "first_lines_unchanged": true,
+    "import_lines": 202,
+    "imports_unchanged": true
+  },
+  "protected_blobs": {
+    "src/Challenge.lean": "9677ace64b3a5e8b1a571d82d52ee13c53b08026",
+    "comparator.json": "e989bcf90ff0c487a7146319a026e661a5bad47c",
+    "export-targets.txt": "e2d4c02bac8a1411eae85af0376c1aad3b6b5294",
+    "comparator/FormalConjecturesChallenge.lean": "290a2c6270f8da3852c7051d7da0f30032a70421",
+    "comparator/formal-conjectures.json": "e3afddc98129d1d1183ff217d434165fd893a0fe",
+    "comparator/formal-conjectures-export-targets.txt": "80bbbf91461783bb8e7f0bb8061b792668d4140a",
+    "src/Main.lean": "eb95ca808793dd61984cc853ab5630f54a74490c",
+    "lean-toolchain": "0e037f58f9a1aa2d5139277bcc4be0061ebeeb05",
+    "lakefile.toml": "43b9f74431077a10cc1edecbc15239fe38d92591",
+    "lake-manifest.json": "8a747b58a34565cc6cb5341b86544aa5d3a20a2d"
+  },
+  "tests": {
+    "command": "python -m unittest -v test_verify_pair",
+    "passed": 10,
+    "total": 10,
+    "wall_seconds": 0.688,
+    "scope": "real local Git fixture and mock lake/bwrap subprocesses; no Lean execution",
+    "script_blob": "22e5816033e6fb5d6a67ff18996fcd88d742fc39",
+    "test_blob": "16108b4cb41855f6e78e434a1652d58dad7835aa"
+  },
+  "ci": {
+    "combined_status_entries": 0,
+    "pr_triggered_runs_first_page": 0,
+    "full_ci_verified": false
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "clean_build_cpu_reduction": null,
+    "lean_compiled": false,
+    "comparator_verified": false,
+    "nanoda_verified": false,
+    "upstream_prs_merged": 0
+  },
+  "blockers": [
+    "lean/lake/elan unavailable; git HTTPS DNS failure",
+    "Actions permissions/workflow list endpoint rejected by connector; no dispatch capability discovered",
+    "no common ancestor in returned upstream comparison; old path absent from returned latest tree",
+    "30 GiB free disk insufficient for historical full export",
+    "runner validated only against mock lake; actual cache setup, effective threading, repeatability and independent checks remain to be validated"
+  ]
+}
