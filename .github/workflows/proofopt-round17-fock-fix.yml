@@ -46,7 +46,7 @@ jobs:
         run: |
           set -euo pipefail
           /usr/bin/time -v lake build New.Determinant.Exchange.NegativeIndices 2>&1 | tee "$RUNNER_TEMP/round17-build.log"
-          ! grep -F 'Unknown identifier `Fock.conjTranspose_signMatrix`' "$RUNNER_TEMP/round17-build.log""
+          ! grep -F 'Unknown identifier `Fock.conjTranspose_signMatrix`' "$RUNNER_TEMP/round17-build.log"
           ! grep -E 'declaration uses .sorry.' "$RUNNER_TEMP/round17-build.log"
       - uses: actions/upload-artifact@v4
         if: always()
