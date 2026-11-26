@@ -54,9 +54,9 @@ jobs:
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import json
+          import json, os
           s=json.load(open("scripts/proofopt/readable_snapshot.json"))
-          open("$RUNNER_TEMP/modules.txt","w").write("\\n".join(x["module"] for x in s["modules"])+"\\n")
+          open(os.path.join(os.environ["RUNNER_TEMP"],"modules.txt"),"w").write("\\n".join(x["module"] for x in s["modules"])+"\\n")
           PY
           timeout 40m lake env lean --run scripts/proofopt/KernelGraph.lean "$RUNNER_TEMP/kernel-graph.jsonl" "$RUNNER_TEMP/modules.txt" riemannHypothesis riemannZeta_eq_zero_re LFunction_ne_zero_of_half_lt_re LFunction_eq_zero_re LFunction_eq_zero_re_of_isPrimitive
           gzip -1 "$RUNNER_TEMP/kernel-graph.jsonl"
