@@ -27,7 +27,7 @@ jobs:
           git diff --exit-code "$BASE"...HEAD -- src/Challenge.lean comparator.json export-targets.txt
           test "$(git diff --name-only "$BASE"...HEAD | grep -c '^src/.*\.lean$')" -eq 3
           grep -F 'New.Fock.conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
-          ! grep -nE '(^|[^.[:alnum:]_])Fock\\.conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
+          ! grep -nE '(^|[[:space:]])Fock[.]conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
       - name: Install pinned Lean
         run: |
           curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
@@ -46,7 +46,7 @@ jobs:
         run: |
           set -euo pipefail
           /usr/bin/time -v lake build New.Determinant.Exchange.NegativeIndices 2>&1 | tee "$RUNNER_TEMP/round17-build.log"
-          ! grep -E 'Unknown identifier .Fock\.conjTranspose_signMatrix.' "$RUNNER_TEMP/round17-build.log"
+          ! grep -F 'Unknown identifier `Fock.conjTranspose_signMatrix`' "$RUNNER_TEMP/round17-build.log""
           ! grep -E 'declaration uses .sorry.' "$RUNNER_TEMP/round17-build.log"
       - uses: actions/upload-artifact@v4
         if: always()
