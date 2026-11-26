@@ -1,0 +1,47 @@
+name: ProofOpt round 18 value cut dominators
+on:
+  push:
+    branches: [proofopt/round18-value-cut-dominators]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  full-census:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GRAPH_SHA: 5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Algorithm self tests
+        run: node scripts/proofopt/value_cut.cjs --self-test
+      - uses: actions/download-artifact@v4
+        with:
+          name: proofopt-readable-baseline
+          repository: ZhangJ83/riemann-hypothesis
+          run-id: 45755058155
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/historical
+      - name: Recompute scope and full value cut census
+        run: |
+          set -euo pipefail
+          P="$RUNNER_TEMP/cuts"
+          mkdir -p "$P"
+          GRAPH="$(find "$RUNNER_TEMP/historical" -name kernel-graph.jsonl.gz -print -quit)"
+          test -n "$GRAPH"
+          node --max-old-space-size=6144 scripts/proofopt/dag_scope.cjs "$GRAPH" "$GRAPH_SHA" "$P/scope"
+          /usr/bin/time -v node --max-old-space-size=6144 scripts/proofopt/value_cut.cjs "$GRAPH" "$GRAPH_SHA" "$P/scope" "$P/report.json" 2>&1 | tee "$P/time.log"
+          node -e 'const r=require(process.argv[1]); if(r.environment_declarations!==887134 || r.scoped_declarations!==220703 || r.baseline_union_project_excluding_all_roots!==49503 || !r.editable_theorems) process.exit(1)' "$P/report.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round18-census
+          path: |
+            ${{ runner.temp }}/cuts/report.json
+            ${{ runner.temp }}/cuts/time.log
+            ${{ runner.temp }}/cuts/scope/scope.json
+          retention-days: 14

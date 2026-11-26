@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "round": 18,
+  "parent": "551b6e9be28fa1f4e5f240b9de3f132249727125",
+  "branch": "proofopt/round18-value-cut-dominators",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "observed_fork_main": "91b273530883b723ef4422436e0dc3557749325a",
+  "observed_upstream_main": "bd15838ed6219289a212b94a70dde9e7281893a8",
+  "historical_comparison_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "historical_graph": {
+    "run": 45755058155,
+    "sha256": "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c",
+    "environment": 887134,
+    "reachable": 220703,
+    "project_excluding_roots": 49503
+  },
+  "prior": {
+    "round17_run": 45800302361,
+    "preflight": "success",
+    "full_rebuild": "in_progress when inspected",
+    "upstream_signmatrix_duplicate": "independently removed; no originality claim"
+  },
+  "tests": {
+    "isolate_assertions": 14976,
+    "random_graphs": 512,
+    "deep_chain_vertices": 50000,
+    "node_cli": "pending",
+    "real_graph": "pending"
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "other_projects_verified": 0,
+    "upstream_prs_merged": 0
+  }
+}
