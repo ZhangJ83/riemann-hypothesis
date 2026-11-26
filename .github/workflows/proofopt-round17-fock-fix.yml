@@ -24,7 +24,7 @@ jobs:
         run: |
           set -euo pipefail
           git diff --check "$BASE"...HEAD
-          git diff --exit-code "$BASE"...HEAD -- src/Challenge.lean comparator.json export-targets.txt
+          git diff --exit-code "$BASE"...HEAD -- Challenge.lean src/Challenge.lean comparator.json export-targets.txt
           test "$(git diff --name-only "$BASE"...HEAD | grep -c '^src/.*\.lean$')" -eq 3
           grep -F 'New.Fock.conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
           ! grep -nE '(^|[[:space:]])Fock[.]conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
