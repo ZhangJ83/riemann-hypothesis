@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "parent": "443ddb64b66cf17a09045824c239346ee9afe9ba",
+  "round": "17-recovery-ci-consolidation",
+  "prior_round18": {
+    "commit": "298d522618dd9278b24b5f05b7d490aa3b7da0f6",
+    "run": 45810837627,
+    "job": 139877981204,
+    "artifact": 15112841773,
+    "conclusion": "success",
+    "assertions": 14976,
+    "environment_declarations": 887134,
+    "scope": 220703,
+    "editable_theorems": 41891,
+    "expanded_vertices": 262595,
+    "expanded_edges": 11408268,
+    "project_union_excluding_roots": 49503,
+    "per_root_excluding_all_roots": [
+      49499,
+      49499,
+      49496,
+      49499,
+      49500
+    ],
+    "histogram": {
+      "zero": 32506,
+      "one": 3593,
+      "two_to_nine": 4330,
+      "ten_to_99": 1218,
+      "at_least_100": 244
+    },
+    "independently_verified": 5,
+    "top_joint_cut": 49474,
+    "naive_sum": 236990,
+    "wall_seconds": 19.87,
+    "user_seconds": 22.82,
+    "system_seconds": 1.39,
+    "max_rss_kib": 901500,
+    "measurement": "counterfactual upper bound only; historical graph not flagship baseline"
+  },
+  "recovery": {
+    "legacy_workflow": ".github/workflows/proofopt-round17-fock-fix.yml",
+    "reason": "obsolete duplicate fork-only job requires a nonexistent theorem and exports after only a partial build; consolidate useful source LOC audit into authoritative full rebuild workflow",
+    "source_loc_self_tests": 14,
+    "remote_integration": "pending",
+    "flagship_compression": null
+  }
+}
