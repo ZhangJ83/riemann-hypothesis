@@ -252,7 +252,7 @@ theorem UpperTheory.LiteratureTheorems.global_artin_reciprocity_of_open (O : _ro
 theorem UpperTheory.LiteratureTheorems.hecke_ladic_character_de_rham_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.HeckeLAdicCharacterDeRham :=
   _root_.HodgeLocalDeRhamField.HLdR.field_outright
 theorem UpperTheory.LiteratureTheorems.algebraic_character_wd_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.AlgebraicCharacterWD :=
-  UpperTheory.Lit.CharWD.algebraicCharacterWD (_root_.UpperTheory.LiteratureTheorems.global_artin_reciprocity_of_open O) (_root_.UpperTheory.LiteratureTheorems.hecke_ladic_character_de_rham_of_open O) (_root_.UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_open O)
+  UpperTheory.Lit.CharWD.algebraicCharacterWD ((show _root_.GlobalTheory.Published.GlobalArtinReciprocity from _root_.CompanionTheory.FamInh.globalArtin)) ((show _root_.GlobalTheory.Published.HeckeLAdicCharacterDeRham from _root_.HodgeLocalDeRhamField.HLdR.field_outright)) ((show _root_.GlobalTheory.Published.DeRhamPotSemistable from _root_.GlobalTheory.deRham_potentiallySemistable))
 theorem UpperTheory.LiteratureTheorems.automorphic_forms_finite_gl_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.AutomorphicFormsFiniteGL :=
   PositivityTheory.Rg.HF.GL.automorphicFormsFiniteGL
 theorem UpperTheory.LiteratureTheorems.bernstein_unitary_product_irreducible_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.BernsteinUnitaryProductIrreducible :=
@@ -266,7 +266,7 @@ theorem UpperTheory.LiteratureTheorems.cusp_forms_bounded_gl_of_open (O : _root_
 theorem UpperTheory.LiteratureTheorems.jacquet_shalika_rigidity_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.JacquetShalikaRigidity :=
   PositivityTheory.AdelicQuotientData.jacquetShalikaRigidity
 theorem UpperTheory.LiteratureTheorems.gelfand_kazhdan_dual_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.GelfandKazhdanDual :=
-  PositivityTheory.JMult1.gelfandKazhdanDual_of_rigidity (_root_.UpperTheory.LiteratureTheorems.jacquet_shalika_rigidity_of_open O) (_root_.UpperTheory.LiteratureTheorems.cusp_forms_bounded_gl_of_open O)
+  PositivityTheory.JMult1.gelfandKazhdanDual_of_rigidity ((show _root_.GlobalTheory.Published.JacquetShalikaRigidity from _root_.PositivityTheory.AdelicQuotientData.jacquetShalikaRigidity)) (_root_.UpperTheory.LiteratureTheorems.cusp_forms_bounded_gl_of_open O)
 theorem UpperTheory.LiteratureTheorems.generic_unlinked_gl_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.GenericUnlinkedGL :=
   GlobalTheory.RgGu.genericUnlinkedGL_of_segRep2 (PositivityTheory.RgGu.segmentRepresentation)
 theorem UpperTheory.LiteratureTheorems.chevalley_units_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.ChevalleyUnits :=
@@ -278,7 +278,7 @@ theorem UpperTheory.LiteratureTheorems.grothendieck_ring_polynomial_of_open (O :
 theorem UpperTheory.LiteratureTheorems.segment_representation_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.SegmentRepresentation :=
   PositivityTheory.RgGu.segmentRepresentation
 theorem UpperTheory.LiteratureTheorems.zelevinsky_polynomial_ring_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.ZelevinskyPolynomialRing :=
-  _root_.GlobalTheory.zelevinskyPolynomialRing_of_parts PositivityTheory.Prw.bernsteinZelevinskyFiniteness_holds (_root_.UpperTheory.LiteratureTheorems.segment_representation_of_open O) (_root_.UpperTheory.LiteratureTheorems.grothendieck_ring_polynomial_of_open O)
+  _root_.GlobalTheory.zelevinskyPolynomialRing_of_parts PositivityTheory.Prw.bernsteinZelevinskyFiniteness_holds ((show _root_.GlobalTheory.Published.SegmentRepresentation from _root_.PositivityTheory.RgGu.segmentRepresentation)) (_root_.UpperTheory.LiteratureTheorems.grothendieck_ring_polynomial_of_open O)
 theorem UpperTheory.LiteratureTheorems.langlands_exhaustion_gl_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.LanglandsExhaustionGL :=
   PositivityTheory.Exh.langlandsExhaustionGL_of_seg (PositivityTheory.RgGu.segmentRepresentation)
 theorem UpperTheory.LiteratureTheorems.standard_cosocle_gl_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.StandardCosocleGL :=
@@ -292,9 +292,9 @@ theorem UpperTheory.LiteratureTheorems.green_regular_characters_of_open (O : _ro
 theorem UpperTheory.LiteratureTheorems.harish_chandra_finite_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.HarishChandraFinite :=
   PositivityTheory.RgHf.harishChandraFinite
 theorem UpperTheory.LiteratureTheorems.hecke_ladic_character_crystalline_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.HeckeLAdicCharacterCrystalline :=
-  _root_.GlobalTheory.Published.CharCrysModel.of_three (_root_.UpperTheory.LiteratureTheorems.hecke_ladic_character_de_rham_of_open O) (_root_.UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_open O) (_root_.UpperTheory.LiteratureTheorems.algebraic_character_wd_of_open O)
+  _root_.GlobalTheory.Published.CharCrysModel.of_three ((show _root_.GlobalTheory.Published.HeckeLAdicCharacterDeRham from _root_.HodgeLocalDeRhamField.HLdR.field_outright)) ((show _root_.GlobalTheory.Published.DeRhamPotSemistable from _root_.GlobalTheory.deRham_potentiallySemistable)) (_root_.UpperTheory.LiteratureTheorems.algebraic_character_wd_of_open O)
 theorem UpperTheory.LiteratureTheorems.hecke_ladic_character_above_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.HeckeLAdicCharacterAbove :=
-  GlobalTheory.HeckeAboveBridge.heckeLAdicCharacterAbove_of_potSemistable (_root_.UpperTheory.LiteratureTheorems.hecke_ladic_character_de_rham_of_open O) (_root_.UpperTheory.LiteratureTheorems.hecke_ladic_character_crystalline_of_open O) (_root_.UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_open O)
+  GlobalTheory.HeckeAboveBridge.heckeLAdicCharacterAbove_of_potSemistable ((show _root_.GlobalTheory.Published.HeckeLAdicCharacterDeRham from _root_.HodgeLocalDeRhamField.HLdR.field_outright)) (_root_.UpperTheory.LiteratureTheorems.hecke_ladic_character_crystalline_of_open O) ((show _root_.GlobalTheory.Published.DeRhamPotSemistable from _root_.GlobalTheory.deRham_potentiallySemistable))
 theorem UpperTheory.LiteratureTheorems.jacquet_shalika_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.JacquetShalika :=
   PositivityTheory.AdelicQuotientData.jacquetShalika
 theorem UpperTheory.LiteratureTheorems.poitou_tate_normalised_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Published.PoitouTateNormalised :=
@@ -312,7 +312,7 @@ theorem UpperTheory.LiteratureTheorems.local_finiteness_of_open (O : _root_.Uppe
 theorem UpperTheory.LiteratureTheorems.local_tate_duality_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : ReciprocityTheory.Gal.LocalTateDuality :=
   GlobalTheory.LocalDualityAll.localTateDuality
 theorem UpperTheory.LiteratureTheorems.greenberg_wiles_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : ReciprocityTheory.Gal.GreenbergWiles :=
-  _root_.GlobalTheory.CompanionTheory.GreenbergWiles.Assembly.greenbergWiles_of_poitouTate (_root_.UpperTheory.LiteratureTheorems.poitou_tate_normalised_of_open O) (_root_.UpperTheory.LiteratureTheorems.global_euler_char_of_open O) (_root_.UpperTheory.LiteratureTheorems.local_tate_duality_of_open O) (_root_.UpperTheory.LiteratureTheorems.localEulerChar_alt O) (_root_.UpperTheory.LiteratureTheorems.local_finiteness_of_open O)
+  _root_.GlobalTheory.CompanionTheory.GreenbergWiles.Assembly.greenbergWiles_of_poitouTate ((show _root_.GlobalTheory.Published.PoitouTateNormalised from _root_.PositivityTheory.Lit1.PTN.poitouTateNormalised_holds)) ((show _root_.ReciprocityTheory.Gal.GlobalEulerChar from _root_.PositivityTheory.Lit1.GEN.globalEulerChar_full)) ((show _root_.ReciprocityTheory.Gal.LocalTateDuality from _root_.GlobalTheory.LocalDualityAll.localTateDuality)) ((show _root_.ReciprocityTheory.Gal.LocalEulerChar from _root_.GlobalTheory.CompanionTheory.Hypotheses₂.LocalEuler.localEulerChar_holds)) ((show _root_.ReciprocityTheory.Gal.LocalFiniteness from _root_.GlobalTheory.CompanionTheory.Hypotheses₂.localFiniteness))
 theorem UpperTheory.LiteratureTheorems.unramified_orthogonality_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : ReciprocityTheory.Gal.UnramifiedOrthogonality :=
   _root_.GlobalTheory.CompanionTheory.Hypotheses₂.unramifiedOrthogonality
 theorem UpperTheory.LiteratureTheorems.local_euler_char_k_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : Formalism.GaloisCohomology.LocalEulerCharK :=
@@ -322,18 +322,18 @@ theorem UpperTheory.LiteratureTheorems.local_finiteness_k_of_open (O : _root_.Up
 theorem UpperTheory.LiteratureTheorems.local_tate_duality_k_of_open (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : Formalism.GaloisCohomology.LocalTateDualityK :=
   CompanionTheory.LocalTateOrthogonality.Gcoh.top_tate
 theorem UpperTheory.LiteratureTheorems.galois_cohomology_from_literature (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) : GlobalTheory.Mem.LiteralAutomorphy.LitCoh :=
-  { pt := _root_.UpperTheory.LiteratureTheorems.poitou_tate_normalised_of_open O
-    lf := _root_.UpperTheory.LiteratureTheorems.local_finiteness_of_open O
-    lt := _root_.UpperTheory.LiteratureTheorems.local_tate_duality_of_open O
-    le := _root_.UpperTheory.LiteratureTheorems.localEulerChar_alt O
-    gf := _root_.UpperTheory.LiteratureTheorems.global_finiteness_of_open O
-    ge := _root_.UpperTheory.LiteratureTheorems.global_euler_char_of_open O
-    uo := _root_.UpperTheory.LiteratureTheorems.unramified_orthogonality_of_open O
+  { pt := (show _root_.GlobalTheory.Published.PoitouTateNormalised from _root_.PositivityTheory.Lit1.PTN.poitouTateNormalised_holds)
+    lf := (show _root_.ReciprocityTheory.Gal.LocalFiniteness from _root_.GlobalTheory.CompanionTheory.Hypotheses₂.localFiniteness)
+    lt := (show _root_.ReciprocityTheory.Gal.LocalTateDuality from _root_.GlobalTheory.LocalDualityAll.localTateDuality)
+    le := (show _root_.ReciprocityTheory.Gal.LocalEulerChar from _root_.GlobalTheory.CompanionTheory.Hypotheses₂.LocalEuler.localEulerChar_holds)
+    gf := (show _root_.ReciprocityTheory.Gal.GlobalFiniteness from _root_.PositivityTheory.Lit1.GF.globalFiniteness)
+    ge := (show _root_.ReciprocityTheory.Gal.GlobalEulerChar from _root_.PositivityTheory.Lit1.GEN.globalEulerChar_full)
+    uo := (show _root_.ReciprocityTheory.Gal.UnramifiedOrthogonality from _root_.GlobalTheory.CompanionTheory.Hypotheses₂.unramifiedOrthogonality)
     gw := _root_.UpperTheory.LiteratureTheorems.greenberg_wiles_of_open O
-    lfK := _root_.UpperTheory.LiteratureTheorems.local_finiteness_k_of_open O
-    ltK := _root_.UpperTheory.LiteratureTheorems.local_tate_duality_k_of_open O
-    leK := _root_.UpperTheory.LiteratureTheorems.local_euler_char_k_of_open O
-    bk := _root_.UpperTheory.LiteratureTheorems.bloch_kato_local_of_open O }
+    lfK := (show _root_.Formalism.GaloisCohomology.LocalFinitenessK from _root_.CompanionTheory.LocalTateOrthogonality.Gcoh.top_locfin)
+    ltK := (show _root_.Formalism.GaloisCohomology.LocalTateDualityK from _root_.CompanionTheory.LocalTateOrthogonality.Gcoh.top_tate)
+    leK := (show _root_.Formalism.GaloisCohomology.LocalEulerCharK from _root_.CompanionTheory.LocalTateOrthogonality.Gcoh.top_euler)
+    bk := (show _root_.GlobalTheory.Published.BlochKatoLocal from _root_.GlobalTheory.CompanionTheory.Hypotheses₂.BK.blochKatoLocal) }
 end
 end -- clump:auto
 end -- clump:auto
@@ -1251,9 +1251,9 @@ section -- clump:auto
 section
 theorem UpperTheory.One.Join.local_inputs_from_literature (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) :
     _root_.GlobalTheory.Mem.LiteralAutomorphy.LitLocAlt :=
-  { bz := (_root_.UpperTheory.LiteratureTheorems.bernstein_zelevinsky_finiteness_of_open O)
-    bern := (_root_.UpperTheory.LiteratureTheorems.bernstein_unitary_product_irreducible_of_open O)
-    geo := (_root_.UpperTheory.LiteratureTheorems.bernstein_zelevinsky_geometric_of_open O)
+  { bz := ((show _root_.GlobalTheory.Published.BernsteinZelevinskyFiniteness from _root_.PositivityTheory.Prw.bernsteinZelevinskyFiniteness_holds))
+    bern := ((show _root_.GlobalTheory.Published.BernsteinUnitaryProductIrreducible from _root_.PositivityTheory.RgUd.All.bernsteinUnitaryProductIrreducible))
+    geo := ((show _root_.GlobalTheory.Published.GeometricLemma from _root_.GlobalTheory.CompanionTheory.GeoLink.geometricLemma))
     zel := (_root_.UpperTheory.LiteratureTheorems.zelevinsky_polynomial_ring_of_open O)
     disj := (_root_.UpperTheory.LiteratureTheorems.totally_disjoint_product_irreducible_of_open O)
     gen := (_root_.UpperTheory.LiteratureTheorems.generic_unlinked_gl_of_open O)
@@ -1262,16 +1262,16 @@ theorem UpperTheory.One.Join.local_inputs_from_literature (O : _root_.UpperTheor
     chev := (_root_.UpperTheory.LiteratureTheorems.chevalley_units_of_open O) }
 theorem UpperTheory.One.Join.automorphic_inputs_from_literature (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition) (bc : _root_.PositivityTheory.Rg.BcN.BaseChangeIsobaricN)
     (gal : _root_.UpperTheory.V.Z.Win.RowT) : _root_.GlobalTheory.Mem.LiteralAutomorphy.LiteratureAutomorphyHypothesis :=
-  { fin := (_root_.UpperTheory.LiteratureTheorems.automorphic_forms_finite_gl_of_open O)
-    js := (_root_.UpperTheory.LiteratureTheorems.jacquet_shalika_of_open O)
+  { fin := ((show _root_.GlobalTheory.Published.AutomorphicFormsFiniteGL from _root_.PositivityTheory.Rg.HF.GL.automorphicFormsFiniteGL))
+    js := ((show _root_.GlobalTheory.Published.JacquetShalika from _root_.PositivityTheory.AdelicQuotientData.jacquetShalika))
     bc := bc
     gk := (_root_.UpperTheory.LiteratureTheorems.gelfand_kazhdan_dual_of_open O)
     gal := gal
-    coh := (_root_.UpperTheory.LiteratureTheorems.clozel_cohomological_of_open O)
-    art := (_root_.UpperTheory.LiteratureTheorems.global_artin_reciprocity_of_open O)
+    coh := ((show _root_.GlobalTheory.Published.ClozelCohomological from _root_.PositivityTheory.Rg.Cz.clozelCohomological))
+    art := ((show _root_.GlobalTheory.Published.GlobalArtinReciprocity from _root_.CompanionTheory.FamInh.globalArtin))
     chA := (_root_.UpperTheory.LiteratureTheorems.hecke_ladic_character_above_of_open O)
     chW := (_root_.UpperTheory.LiteratureTheorems.algebraic_character_wd_of_open O)
-    berger := (_root_.UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_open O) }
+    berger := ((show _root_.GlobalTheory.Published.DeRhamPotSemistable from _root_.GlobalTheory.deRham_potentiallySemistable)) }
 theorem UpperTheory.One.Join.v_window_of_depth_zero_residual_bc_cm (O : _root_.UpperTheory.LiteratureTheorems.OpenImageCondition)
  (bc : _root_.PositivityTheory.Rg.BcN.BaseChangeIsobaricN) (gal : _root_.UpperTheory.V.Z.Win.RowT) :
     UpperTheory.Top.VWin :=
