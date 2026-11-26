@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "round": 10,
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "original_research_head": "945ca27655f7de8127123dc5c4ec6db63cf095a3",
+  "old_candidate": "fef5d8c31f796acf271b1754008b822b841818eb",
+  "old_upstream_branch": "alpoge",
+  "old_upstream_head": "756a70250dcba9162b99d4ea35c186558434c17e",
+  "readable_integration_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "upstream_readme": "8c8093d82372f33b96a36d4fc211520030d745ff",
+  "source_tree_entries": 1000,
+  "source_modules": 802,
+  "protected_blobs": [
+    [
+      "Challenge.lean",
+      "4230ff8fe8b0265a44db348c22cd5f03a7c3f3fe"
+    ],
+    [
+      "comparator.json",
+      "41af22dfbc5566ecd62268b4fed5548c30a8f529"
+    ],
+    [
+      "lake-manifest.json",
+      "582b13c25b2d012ff9f1b5d967a8bca5ffc3e182"
+    ],
+    [
+      "lakefile.toml",
+      "9d1e4f2f6a3bada865b76026d0360d38e06ab251"
+    ],
+    [
+      "lean-toolchain",
+      "0e037f58f9a1aa2d5139277bcc4be0061ebeeb05"
+    ],
+    [
+      "src/Main.lean",
+      "1adf4187a938510363cdb0dde0a6d628ff39c600"
+    ],
+    [
+      "src/Statements.lean",
+      "1cd1bce93344065936b2b392b23306254e0785ef"
+    ]
+  ],
+  "dependencies": {
+    "TauCeti": "e0e414ce57522ba17560057ad0d7f2edab91bf0c",
+    "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8"
+  },
+  "tests": {
+    "execution": "V8 exact core functions on real complete Git tree and actual comparator/manifest",
+    "passed": [
+      "real current-main tree inventory",
+      "same snapshot passes",
+      "changed protected blob rejected",
+      "external dependency pin changed rejected",
+      "unapproved source edit rejected",
+      "approved source edit accepted",
+      "missing intended change rejected",
+      "root drift rejected",
+      "missing challenge rejected",
+      "cache fails closed",
+      "git NUL parser preserves filenames",
+      "no mutation"
+    ]
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "lean_verified": false,
+    "upstream_prs_merged": 0
+  },
+  "notes": [
+    "Original baseline remains unchanged; new main has unrelated history and TauCeti dependency; never count migration as ProofOpt gain.",
+    "Cached incremental build and exploratory graph are not independent kernel validation or clean CPU metrics.",
+    "Workflow execution not yet established."
+  ]
+}

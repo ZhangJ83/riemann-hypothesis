@@ -1,0 +1,80 @@
+name: ProofOpt readable baseline validation
+on:
+  push:
+    branches: [proofopt/readable-main-validation]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: proofopt-readable-baseline
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis' && github.ref == 'refs/heads/proofopt/readable-main-validation'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      BASE: 2746005d8130ee6d0c82d771ec11d69521a65093
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Audit baseline and protected proof files
+        run: |
+          mkdir -p "$RUNNER_TEMP/proofopt"
+          node scripts/proofopt/test_snapshot.mjs
+          node scripts/proofopt/snapshot_cli.mjs "$BASE" "$RUNNER_TEMP/proofopt"
+      - name: Install toolchain
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore pinned external dependencies and project cache
+        env:
+          MATHLIB_CACHE_GET_URL: https://cache.mathlib.org/mathlib4
+        run: |
+          set -euo pipefail
+          lake --version
+          lake exe mathlib/cache get
+          python3 scripts/tauceti-cache-get.py
+          status=0
+          python3 scripts/ci-cache-get.py --baseline "$BASE" || status=$?
+          case "$status" in
+            0) echo exact ;;
+            4) echo baseline ;;
+            *) echo "Cache missing or invalid; refusing an unbudgeted clean build" >&2; exit 1 ;;
+          esac
+          echo "$status" > "$RUNNER_TEMP/proofopt/cache-status.txt"
+      - name: Incremental build and axiom checks (not a fresh kernel check)
+        run: |
+          set -euo pipefail
+          /usr/bin/time -v lake build 2>&1 | tee "$RUNNER_TEMP/proofopt/build.log"
+          if grep -E "declaration uses .sorry." "$RUNNER_TEMP/proofopt/build.log"; then exit 1; fi
+          lake env lean scripts/PrintAxioms.lean 2>&1 | tee "$RUNNER_TEMP/proofopt/axioms.log"
+          axioms='depends on axioms: [propext, Classical.choice, Quot.sound]'
+          printf "'%s' %s\n" riemannHypothesis "$axioms" > "$RUNNER_TEMP/proofopt/expected-axioms.log"
+          for root in riemannZeta_eq_zero_re LFunction_ne_zero_of_half_lt_re LFunction_eq_zero_re LFunction_eq_zero_re_of_isPrimitive; do
+            printf "'%s' %s\n" "$root" "$axioms" >> "$RUNNER_TEMP/proofopt/expected-axioms.log"
+          done
+          diff -u "$RUNNER_TEMP/proofopt/expected-axioms.log" "$RUNNER_TEMP/proofopt/axioms.log"
+          git diff --exit-code "$BASE" HEAD -- src Challenge.lean comparator.json lakefile.toml lake-manifest.json lean-toolchain
+      - name: Compile and run exploratory declaration extractor
+        run: |
+          set -euo pipefail
+          lake env lean scripts/proofopt/KernelGraph.lean
+          timeout 40m lake env lean --run scripts/proofopt/KernelGraph.lean "$RUNNER_TEMP/kernel-graph.jsonl" "$RUNNER_TEMP/proofopt/modules.txt" riemannHypothesis riemannZeta_eq_zero_re LFunction_ne_zero_of_half_lt_re LFunction_eq_zero_re LFunction_eq_zero_re_of_isPrimitive
+          wc -l -c "$RUNNER_TEMP/kernel-graph.jsonl" | tee "$RUNNER_TEMP/proofopt/kernel-graph-size.txt"
+          sha256sum "$RUNNER_TEMP/kernel-graph.jsonl" > "$RUNNER_TEMP/proofopt/kernel-graph-sha256.txt"
+          gzip -1 "$RUNNER_TEMP/kernel-graph.jsonl"
+          if [ "$(stat -c %s "$RUNNER_TEMP/kernel-graph.jsonl.gz")" -le 268435456 ]; then
+            mv "$RUNNER_TEMP/kernel-graph.jsonl.gz" "$RUNNER_TEMP/proofopt/"
+          else
+            echo 'Graph exceeds 256 MiB artifact cap' > "$RUNNER_TEMP/proofopt/kernel-graph-omitted.txt"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-readable-baseline
+          path: ${{ runner.temp }}/proofopt
+          retention-days: 7

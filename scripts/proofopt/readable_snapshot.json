@@ -1,0 +1,4058 @@
+{
+  "schema": 1,
+  "roots": [
+    "riemannHypothesis",
+    "riemannZeta_eq_zero_re",
+    "LFunction_ne_zero_of_half_lt_re",
+    "LFunction_eq_zero_re",
+    "LFunction_eq_zero_re_of_isPrimitive"
+  ],
+  "lean": "leanprover/lean4:v4.37.0-rc1",
+  "dependencies": {
+    "TauCeti": "e0e414ce57522ba17560057ad0d7f2edab91bf0c",
+    "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8"
+  },
+  "protectedFiles": [
+    [
+      "Challenge.lean",
+      "4230ff8fe8b0265a44db348c22cd5f03a7c3f3fe"
+    ],
+    [
+      "comparator.json",
+      "41af22dfbc5566ecd62268b4fed5548c30a8f529"
+    ],
+    [
+      "lake-manifest.json",
+      "582b13c25b2d012ff9f1b5d967a8bca5ffc3e182"
+    ],
+    [
+      "lakefile.toml",
+      "9d1e4f2f6a3bada865b76026d0360d38e06ab251"
+    ],
+    [
+      "lean-toolchain",
+      "0e037f58f9a1aa2d5139277bcc4be0061ebeeb05"
+    ],
+    [
+      "src/Main.lean",
+      "1adf4187a938510363cdb0dde0a6d628ff39c600"
+    ],
+    [
+      "src/Statements.lean",
+      "1cd1bce93344065936b2b392b23306254e0785ef"
+    ]
+  ],
+  "modules": [
+    {
+      "module": "Lib.Adelic.Adeles.AdditiveCharacter",
+      "path": "src/Lib/Adelic/Adeles/AdditiveCharacter.lean",
+      "sha": "1093e0c6c21ba856c9d6db9e53f7b691c29485fb"
+    },
+    {
+      "module": "Lib.Adelic.Adeles.Basic",
+      "path": "src/Lib/Adelic/Adeles/Basic.lean",
+      "sha": "0dec6ffd057acb046c7be48246e0365201197720"
+    },
+    {
+      "module": "Lib.Adelic.Adeles.IdeleModulus",
+      "path": "src/Lib/Adelic/Adeles/IdeleModulus.lean",
+      "sha": "b5487268684e337ebfdf1a6559c082e9a4138abb"
+    },
+    {
+      "module": "Lib.Adelic.Adeles.LocalFactors",
+      "path": "src/Lib/Adelic/Adeles/LocalFactors.lean",
+      "sha": "b86d5e49188b9404e9227b2a5d883ab247c14f6e"
+    },
+    {
+      "module": "Lib.Adelic.Adeles.SemilocalProducts",
+      "path": "src/Lib/Adelic/Adeles/SemilocalProducts.lean",
+      "sha": "7783472e72f0d6c340e0d5e05f210cff48f168b9"
+    },
+    {
+      "module": "Lib.Adelic.Adeles.StrongApproximation",
+      "path": "src/Lib/Adelic/Adeles/StrongApproximation.lean",
+      "sha": "fad2fe802f7f4b4af929962ab12919254425661c"
+    },
+    {
+      "module": "Lib.Adelic.AutomorphicForms.AutomorphicAsAlgebraic",
+      "path": "src/Lib/Adelic/AutomorphicForms/AutomorphicAsAlgebraic.lean",
+      "sha": "f00f096d3fda49bddcd19550b5afc59e3dad6095"
+    },
+    {
+      "module": "Lib.Adelic.AutomorphicForms.Basic",
+      "path": "src/Lib/Adelic/AutomorphicForms/Basic.lean",
+      "sha": "b6bfcb938993dad68bf6f3421bcb53bdb68c5623"
+    },
+    {
+      "module": "Lib.Adelic.AutomorphicForms.BlockPeriods",
+      "path": "src/Lib/Adelic/AutomorphicForms/BlockPeriods.lean",
+      "sha": "6f3a29be9e12c8cf2f8042781e36d1041620e1f2"
+    },
+    {
+      "module": "Lib.Adelic.AutomorphicForms.Cuspidality",
+      "path": "src/Lib/Adelic/AutomorphicForms/Cuspidality.lean",
+      "sha": "21dd38b2fd63309554928a10f080b71c268ec9b3"
+    },
+    {
+      "module": "Lib.Adelic.AutomorphicForms.HeckeEigenforms",
+      "path": "src/Lib/Adelic/AutomorphicForms/HeckeEigenforms.lean",
+      "sha": "4d070acafef2fb2ba5a9df336f3094d0a24b531f"
+    },
+    {
+      "module": "Lib.Adelic.AutomorphicForms.PAdicGauge",
+      "path": "src/Lib/Adelic/AutomorphicForms/PAdicGauge.lean",
+      "sha": "5a03f4b027115f220da2e680579a8254eb4d2cdb"
+    },
+    {
+      "module": "Lib.Adelic.AutomorphicForms.RealConvolution",
+      "path": "src/Lib/Adelic/AutomorphicForms/RealConvolution.lean",
+      "sha": "7dfb1997168591bf35fc72a6674b0c4aa2bb909a"
+    },
+    {
+      "module": "Lib.Adelic.AutomorphicForms.SmoothAlgebraicForms",
+      "path": "src/Lib/Adelic/AutomorphicForms/SmoothAlgebraicForms.lean",
+      "sha": "eae8aeee0f2ce44e750145943d80ef40c559530c"
+    },
+    {
+      "module": "Lib.Adelic.AutomorphicForms.UnipotentRadical",
+      "path": "src/Lib/Adelic/AutomorphicForms/UnipotentRadical.lean",
+      "sha": "4f4648df7e062e78a90e172c5c6d53a7b27308be"
+    },
+    {
+      "module": "Lib.Adelic.Hecke.Basic",
+      "path": "src/Lib/Adelic/Hecke/Basic.lean",
+      "sha": "9b5986af75627dc49100dcd51dd4eaa3b69fd210"
+    },
+    {
+      "module": "Lib.Adelic.Hecke.ClassSums",
+      "path": "src/Lib/Adelic/Hecke/ClassSums.lean",
+      "sha": "ce099bfc4f9dcbda92e31668238a9300dffe58c1"
+    },
+    {
+      "module": "Lib.Adelic.Landherr",
+      "path": "src/Lib/Adelic/Landherr.lean",
+      "sha": "7f902ea43a4a1fde8b79e1a7db2f58c1aa25493b"
+    },
+    {
+      "module": "Lib.Adelic.QuotientMeasure.Basic",
+      "path": "src/Lib/Adelic/QuotientMeasure/Basic.lean",
+      "sha": "cb3f91aecfd2689ff2c80a6c5e3f90039ee93e41"
+    },
+    {
+      "module": "Lib.Adelic.QuotientMeasure.IwasawaUnfolding",
+      "path": "src/Lib/Adelic/QuotientMeasure/IwasawaUnfolding.lean",
+      "sha": "2c73e8d150cd384d58efd032346b85077df5e0d1"
+    },
+    {
+      "module": "Lib.Adelic.QuotientMeasure.MovingTheQuotient",
+      "path": "src/Lib/Adelic/QuotientMeasure/MovingTheQuotient.lean",
+      "sha": "279feae087454a92935df792419f6004d30e6bab"
+    },
+    {
+      "module": "Lib.Adelic.QuotientMeasure.UnfoldingInStages",
+      "path": "src/Lib/Adelic/QuotientMeasure/UnfoldingInStages.lean",
+      "sha": "dfa436edab6caccdb3996f9db96059078b8a3aa8"
+    },
+    {
+      "module": "Lib.Adelic.Reduction.DefiniteClassSums",
+      "path": "src/Lib/Adelic/Reduction/DefiniteClassSums.lean",
+      "sha": "39867f77e7c5c807180a74a811a1641bff823b70"
+    },
+    {
+      "module": "Lib.Adelic.Reduction.FiniteVolume",
+      "path": "src/Lib/Adelic/Reduction/FiniteVolume.lean",
+      "sha": "0c05b7c4d41b5da67c35fab99bb52b4c909f44f1"
+    },
+    {
+      "module": "Lib.Adelic.Reduction.FirstMinimumShortBases",
+      "path": "src/Lib/Adelic/Reduction/FirstMinimumShortBases.lean",
+      "sha": "3ba3db511908f335676aaee7ace9fe578faff7cb"
+    },
+    {
+      "module": "Lib.Adelic.Reduction.MinkowskiTheorems",
+      "path": "src/Lib/Adelic/Reduction/MinkowskiTheorems.lean",
+      "sha": "0a5acfe9332540d14d91f7c5216fedf9627c04d1"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.ChangingSigns",
+      "path": "src/Lib/Adelic/TraceFormula/ChangingSigns.lean",
+      "sha": "342bd2265813c98780ff6f2283f7ed9315897038"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.Convergence",
+      "path": "src/Lib/Adelic/TraceFormula/Convergence.lean",
+      "sha": "f29edf5bca9695c5a5cff2ba9df9f289c4a88222"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.CoprimeFactors",
+      "path": "src/Lib/Adelic/TraceFormula/CoprimeFactors.lean",
+      "sha": "ed02768d6480abd83bd570f6e0549bfb7ada149b"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.CuspidalComparison",
+      "path": "src/Lib/Adelic/TraceFormula/CuspidalComparison.lean",
+      "sha": "29b3e90cac22c6809bd430d812590ba2bc44c2c8"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.CuspidalType",
+      "path": "src/Lib/Adelic/TraceFormula/CuspidalType.lean",
+      "sha": "06994456843e9f390009aafbb1bb5450016c2993"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.FibreIntegral",
+      "path": "src/Lib/Adelic/TraceFormula/FibreIntegral.lean",
+      "sha": "473dd471f616987ac555c0d9b56a6024000a04cf"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.IsotropicStabiliser",
+      "path": "src/Lib/Adelic/TraceFormula/IsotropicStabiliser.lean",
+      "sha": "f047415ebdff6f0860834ba83b100cf6ec3764a9"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.KernelBound",
+      "path": "src/Lib/Adelic/TraceFormula/KernelBound.lean",
+      "sha": "149afec21cb2f49a14317d160e7268f1d73687d4"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.LevelAlgebra",
+      "path": "src/Lib/Adelic/TraceFormula/LevelAlgebra.lean",
+      "sha": "fb7c870e32f1242c903eb79982312a7345ecf005"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.LevelCut",
+      "path": "src/Lib/Adelic/TraceFormula/LevelCut.lean",
+      "sha": "7e6a7937df358626f20cd0453086646c6a177219"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.LineCount",
+      "path": "src/Lib/Adelic/TraceFormula/LineCount.lean",
+      "sha": "f1cafbdb3b2addb3f33c0a3d14868874c1b202d1"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.LineDeterminant",
+      "path": "src/Lib/Adelic/TraceFormula/LineDeterminant.lean",
+      "sha": "aa71d259f7917685a5460782ed8dd258f81a63fa"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.LineStabiliser",
+      "path": "src/Lib/Adelic/TraceFormula/LineStabiliser.lean",
+      "sha": "d69ac8514de3a6daf5f918583c3ff244bdd2cada"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.OffPlace",
+      "path": "src/Lib/Adelic/TraceFormula/OffPlace.lean",
+      "sha": "46a81638613e15cf20d5b43d28a5e37cc7e58a0a"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.OrbitalUnfolding",
+      "path": "src/Lib/Adelic/TraceFormula/OrbitalUnfolding.lean",
+      "sha": "54b0c0589ee65134917beb5ebe87bdb9e05b8287"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.ReduciblePolynomials",
+      "path": "src/Lib/Adelic/TraceFormula/ReduciblePolynomials.lean",
+      "sha": "f5b82378ce1ab3cbadf16c049c762c4cc6af12ed"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.Stretch",
+      "path": "src/Lib/Adelic/TraceFormula/Stretch.lean",
+      "sha": "f22c190e499ca83468924519425983468a1f5080"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.TestFunction",
+      "path": "src/Lib/Adelic/TraceFormula/TestFunction.lean",
+      "sha": "d2547c4e48145f2a490444e9a8a220cc68662da2"
+    },
+    {
+      "module": "Lib.Adelic.TraceFormula.TraceComparison",
+      "path": "src/Lib/Adelic/TraceFormula/TraceComparison.lean",
+      "sha": "b805369abc5850b1390620d9881a108003711b53"
+    },
+    {
+      "module": "Lib.Adelic.Unitary.ComponentsAndBlockSums",
+      "path": "src/Lib/Adelic/Unitary/ComponentsAndBlockSums.lean",
+      "sha": "64134ca52a221478fbbbb4e64b7e6793eb468ea5"
+    },
+    {
+      "module": "Lib.Adelic.Unitary.CongruenceLevels",
+      "path": "src/Lib/Adelic/Unitary/CongruenceLevels.lean",
+      "sha": "0ca233c1b6ec3e6c822cf4298cbcb0cc996d685d"
+    },
+    {
+      "module": "Lib.Adelic.Unitary.Defs",
+      "path": "src/Lib/Adelic/Unitary/Defs.lean",
+      "sha": "a1ae2030f34ca0dc697a4c7f21259a7710c06682"
+    },
+    {
+      "module": "Lib.Adelic.Unitary.GramMatrix",
+      "path": "src/Lib/Adelic/Unitary/GramMatrix.lean",
+      "sha": "992224f113789b34e8e7fa7a99c067c5469a284d"
+    },
+    {
+      "module": "Lib.Adelic.Unitary.RationalPoints",
+      "path": "src/Lib/Adelic/Unitary/RationalPoints.lean",
+      "sha": "f9879a927dd7582c1cf6025557033ebe63201cfd"
+    },
+    {
+      "module": "Lib.Adelic.Unitary.WeakApproximation",
+      "path": "src/Lib/Adelic/Unitary/WeakApproximation.lean",
+      "sha": "64eae39812013a2beac30aa013fb844803532496"
+    },
+    {
+      "module": "Lib.Adelic.Witt.IwasawaDecomposition",
+      "path": "src/Lib/Adelic/Witt/IwasawaDecomposition.lean",
+      "sha": "5d19000318957195c1d4176e2bc9d351f25639e8"
+    },
+    {
+      "module": "Lib.Adelic.Witt.SmoothWitt",
+      "path": "src/Lib/Adelic/Witt/SmoothWitt.lean",
+      "sha": "b649fb818f6d92a7d27cad6609c41bfc54e8df9b"
+    },
+    {
+      "module": "Lib.Adelic.Witt.WittTheorem",
+      "path": "src/Lib/Adelic/Witt/WittTheorem.lean",
+      "sha": "0fd807ba4681909bf72eafa29a5946d127787e11"
+    },
+    {
+      "module": "Lib.Analytic.DirichletTheta",
+      "path": "src/Lib/Analytic/DirichletTheta.lean",
+      "sha": "e165c3a1192af4fa15d015d6c619fb870eeb6256"
+    },
+    {
+      "module": "Lib.Analytic.EntireLFunction",
+      "path": "src/Lib/Analytic/EntireLFunction.lean",
+      "sha": "85cc707fc41fe6c70a34dca9eb600f04792fa537"
+    },
+    {
+      "module": "Lib.Analytic.Landau",
+      "path": "src/Lib/Analytic/Landau.lean",
+      "sha": "1f942da892e6497f6b278a4bcbf89a096d819b5f"
+    },
+    {
+      "module": "Lib.Analytic.PolyaVinogradov",
+      "path": "src/Lib/Analytic/PolyaVinogradov.lean",
+      "sha": "09f10e2aa446b49895b0dc67f3a3717509192149"
+    },
+    {
+      "module": "Lib.Analytic.PrimeNumberTheorem.LFunctionGrowth",
+      "path": "src/Lib/Analytic/PrimeNumberTheorem/LFunctionGrowth.lean",
+      "sha": "627944b53f747358a438fe6a403c4e05d2923ea0"
+    },
+    {
+      "module": "Lib.Analytic.PrimeNumberTheorem.Tauberian",
+      "path": "src/Lib/Analytic/PrimeNumberTheorem/Tauberian.lean",
+      "sha": "6548e074589ed4026af9465861d53ce2f28d6e82"
+    },
+    {
+      "module": "Lib.Analytic.PrimeNumberTheorem.ZeroFreeRegion",
+      "path": "src/Lib/Analytic/PrimeNumberTheorem/ZeroFreeRegion.lean",
+      "sha": "df5c18a5ea002ee3f4b66f312e82db452b5dd3aa"
+    },
+    {
+      "module": "Lib.Analytic.Primes",
+      "path": "src/Lib/Analytic/Primes.lean",
+      "sha": "22b47c45b5dcddab840f8b5166cdcb4560246c48"
+    },
+    {
+      "module": "Lib.Analytic.QuadraticTwist",
+      "path": "src/Lib/Analytic/QuadraticTwist.lean",
+      "sha": "9a701269b2c539e0df4dd57d844aa2005d5d792a"
+    },
+    {
+      "module": "Lib.Analytic.ZeroSymmetry",
+      "path": "src/Lib/Analytic/ZeroSymmetry.lean",
+      "sha": "30cedd0a5db4a7b68b3bab22981457f7bea944d2"
+    },
+    {
+      "module": "Lib.Base",
+      "path": "src/Lib/Base.lean",
+      "sha": "748625ad79ea75427d52be90f0d1ab92b9092e89"
+    },
+    {
+      "module": "Lib.ClassField.Avatar.HeckeBaseChange",
+      "path": "src/Lib/ClassField/Avatar/HeckeBaseChange.lean",
+      "sha": "d660f6ff32407f4c5499586c69672f9b7646b482"
+    },
+    {
+      "module": "Lib.ClassField.Avatar.LocalGlobalCompatibility",
+      "path": "src/Lib/ClassField/Avatar/LocalGlobalCompatibility.lean",
+      "sha": "9117cdac850b32f1a9657ad23186e9cd52c7a3cb"
+    },
+    {
+      "module": "Lib.ClassField.GaloisCohomology.ContinuousCocycles",
+      "path": "src/Lib/ClassField/GaloisCohomology/ContinuousCocycles.lean",
+      "sha": "535a24ac8bee2f708ac2a2657b6d7d1c9a62d92c"
+    },
+    {
+      "module": "Lib.ClassField.GaloisCohomology.KummerCyclicClasses",
+      "path": "src/Lib/ClassField/GaloisCohomology/KummerCyclicClasses.lean",
+      "sha": "debc5e9c0509699cf0bdfe1e1fd83230d197094d"
+    },
+    {
+      "module": "Lib.ClassField.GaloisCohomology.ShapiroCorestriction",
+      "path": "src/Lib/ClassField/GaloisCohomology/ShapiroCorestriction.lean",
+      "sha": "0efe8e97469234eec036be83b2742654e55ea16f"
+    },
+    {
+      "module": "Lib.ClassField.GaloisCohomology.TameSelmerCocycles",
+      "path": "src/Lib/ClassField/GaloisCohomology/TameSelmerCocycles.lean",
+      "sha": "8ae40ed62856a8148d357af84f63cfbef8a7b1e8"
+    },
+    {
+      "module": "Lib.ClassField.GaloisCohomology.TateIndexFormula",
+      "path": "src/Lib/ClassField/GaloisCohomology/TateIndexFormula.lean",
+      "sha": "75c666dddce51a6c1d4db69923188e93a7165106"
+    },
+    {
+      "module": "Lib.ClassField.Global.AlbertBrauerHasseNoether",
+      "path": "src/Lib/ClassField/Global/AlbertBrauerHasseNoether.lean",
+      "sha": "b52dd21ec64fcbf10c20c0ebb0ee791cb129b027"
+    },
+    {
+      "module": "Lib.ClassField.Global.ArtinMap",
+      "path": "src/Lib/ClassField/Global/ArtinMap.lean",
+      "sha": "3f698633b3fdb587b35e08cd327c3d29c689c8ab"
+    },
+    {
+      "module": "Lib.ClassField.Global.ArtinReciprocity",
+      "path": "src/Lib/ClassField/Global/ArtinReciprocity.lean",
+      "sha": "7ab3f76ff944e4abd089eedbd5f0e12d2eb5312a"
+    },
+    {
+      "module": "Lib.ClassField.Global.Chebotarev",
+      "path": "src/Lib/ClassField/Global/Chebotarev.lean",
+      "sha": "7df4b23326abd8ad149e51defa691b0039b85b62"
+    },
+    {
+      "module": "Lib.ClassField.Global.CMSplittingCharacters",
+      "path": "src/Lib/ClassField/Global/CMSplittingCharacters.lean",
+      "sha": "1ba8e5c4630012939b6e4e6fb393c0520467620a"
+    },
+    {
+      "module": "Lib.ClassField.Global.ExistenceTheorem",
+      "path": "src/Lib/ClassField/Global/ExistenceTheorem.lean",
+      "sha": "9194d15047b44496c4e8d93c168b050df75eefc6"
+    },
+    {
+      "module": "Lib.ClassField.Global.NormTheorems",
+      "path": "src/Lib/ClassField/Global/NormTheorems.lean",
+      "sha": "55ee62158376cf3c0b5dafa404dd6a9023744166"
+    },
+    {
+      "module": "Lib.ClassField.GreenbergWiles.CocycleCounts",
+      "path": "src/Lib/ClassField/GreenbergWiles/CocycleCounts.lean",
+      "sha": "151216528b041cfcae1e1cabd3b84ce3b84cf95e"
+    },
+    {
+      "module": "Lib.ClassField.GreenbergWiles.Relations",
+      "path": "src/Lib/ClassField/GreenbergWiles/Relations.lean",
+      "sha": "f6519730159d1fadf12b7d6a652cdc071772a9a1"
+    },
+    {
+      "module": "Lib.ClassField.GreenbergWiles.RelationsModL",
+      "path": "src/Lib/ClassField/GreenbergWiles/RelationsModL.lean",
+      "sha": "69d55fdb8750f3ce992b21911684cf92ecaf26ae"
+    },
+    {
+      "module": "Lib.ClassField.GreenbergWiles.SelmerLevels",
+      "path": "src/Lib/ClassField/GreenbergWiles/SelmerLevels.lean",
+      "sha": "2d1c5666bbc2746c395c11306fa13a6cf82b6843"
+    },
+    {
+      "module": "Lib.ClassField.GreenbergWiles.SelmerRelations",
+      "path": "src/Lib/ClassField/GreenbergWiles/SelmerRelations.lean",
+      "sha": "2965de3a9b4e999fe2cffc6123ddad04d1c662e8"
+    },
+    {
+      "module": "Lib.ClassField.GreenbergWiles.SplitPrimeReciprocity",
+      "path": "src/Lib/ClassField/GreenbergWiles/SplitPrimeReciprocity.lean",
+      "sha": "68daa42d27e39aa481a3e17bf0c0e1ade7822d13"
+    },
+    {
+      "module": "Lib.ClassField.Grunwald",
+      "path": "src/Lib/ClassField/Grunwald.lean",
+      "sha": "ae5f3447ecba28c550acbe61a9c53ab6e2162b4c"
+    },
+    {
+      "module": "Lib.ClassField.HeckeCharacter.AlgebraicValues",
+      "path": "src/Lib/ClassField/HeckeCharacter/AlgebraicValues.lean",
+      "sha": "6141c68e008e302d2053f94cb1ef859212d3413f"
+    },
+    {
+      "module": "Lib.ClassField.HeckeCharacter.Basic",
+      "path": "src/Lib/ClassField/HeckeCharacter/Basic.lean",
+      "sha": "1c10368882e5e570115fc9ab4136f888622ba2ec"
+    },
+    {
+      "module": "Lib.ClassField.HeckeCharacter.SplitTameCharacters",
+      "path": "src/Lib/ClassField/HeckeCharacter/SplitTameCharacters.lean",
+      "sha": "b19a090d67951405d331b58cafb9d150e8db8622"
+    },
+    {
+      "module": "Lib.ClassField.HeckeCharacter.SplittingCharacters",
+      "path": "src/Lib/ClassField/HeckeCharacter/SplittingCharacters.lean",
+      "sha": "f10718d0235f8637576eb2010532a5f1d8f88fef"
+    },
+    {
+      "module": "Lib.ClassField.HeckeCharacter.TameModulus",
+      "path": "src/Lib/ClassField/HeckeCharacter/TameModulus.lean",
+      "sha": "b85075f7ac42e2599d08df34063a997daa64b6d7"
+    },
+    {
+      "module": "Lib.ClassField.HeckeL.ContinuationAtOne",
+      "path": "src/Lib/ClassField/HeckeL/ContinuationAtOne.lean",
+      "sha": "7b43a86080da9bd72b56ba6977bc3137e9b95c1e"
+    },
+    {
+      "module": "Lib.ClassField.HeckeL.EulerProduct",
+      "path": "src/Lib/ClassField/HeckeL/EulerProduct.lean",
+      "sha": "575f7eb4d0322c9ccb799224b30dddb9640e66fe"
+    },
+    {
+      "module": "Lib.ClassField.HeckeL.IdelicThetaSum",
+      "path": "src/Lib/ClassField/HeckeL/IdelicThetaSum.lean",
+      "sha": "e57668a2693571552268fad33471f760e3b1516c"
+    },
+    {
+      "module": "Lib.ClassField.Local.ArtinMap",
+      "path": "src/Lib/ClassField/Local/ArtinMap.lean",
+      "sha": "c3b7c032a151fbcb0da860ccf1bd12a72b7ecc09"
+    },
+    {
+      "module": "Lib.ClassField.Local.InvariantMap",
+      "path": "src/Lib/ClassField/Local/InvariantMap.lean",
+      "sha": "16644e51d48de6947fef689a5c7165e327649d8f"
+    },
+    {
+      "module": "Lib.ClassField.LocalDuality.CrystallineDuality",
+      "path": "src/Lib/ClassField/LocalDuality/CrystallineDuality.lean",
+      "sha": "ef4116053f3f421b0bfdddec747dc840e1aa3e0e"
+    },
+    {
+      "module": "Lib.ClassField.LocalDuality.DualityInequality",
+      "path": "src/Lib/ClassField/LocalDuality/DualityInequality.lean",
+      "sha": "45ca4315c297c967efba8473980d634e64c135b8"
+    },
+    {
+      "module": "Lib.ClassField.LocalDuality.KummerFiniteness",
+      "path": "src/Lib/ClassField/LocalDuality/KummerFiniteness.lean",
+      "sha": "72c8c0a843edffc394de07848f9e91ebf500ba2b"
+    },
+    {
+      "module": "Lib.ClassField.Places.DecompositionCompletion",
+      "path": "src/Lib/ClassField/Places/DecompositionCompletion.lean",
+      "sha": "16757d9eedfd409040570ab5f55ed0243e41de51"
+    },
+    {
+      "module": "Lib.ClassField.Places.DecompositionCyclotomic",
+      "path": "src/Lib/ClassField/Places/DecompositionCyclotomic.lean",
+      "sha": "751d35b5dc607322c82d360c8a0243939ae1abc2"
+    },
+    {
+      "module": "Lib.ClassField.Places.GaloisDefs",
+      "path": "src/Lib/ClassField/Places/GaloisDefs.lean",
+      "sha": "28ae62be776b2c196abba617fb73a95f1ffc4384"
+    },
+    {
+      "module": "Lib.ClassField.Places.Ideles",
+      "path": "src/Lib/ClassField/Places/Ideles.lean",
+      "sha": "123140b4584e1cccdffdad973fdccab8fab6729d"
+    },
+    {
+      "module": "Lib.ClassField.Places.LocalFields",
+      "path": "src/Lib/ClassField/Places/LocalFields.lean",
+      "sha": "f266cf47df2aef8d629c523225a717af19e8d0b8"
+    },
+    {
+      "module": "Lib.ClassField.Places.ProfiniteGalois",
+      "path": "src/Lib/ClassField/Places/ProfiniteGalois.lean",
+      "sha": "269337d43d98b06dbeb2fd3d3908727b4bb93506"
+    },
+    {
+      "module": "Lib.ClassField.Places.TameInertia",
+      "path": "src/Lib/ClassField/Places/TameInertia.lean",
+      "sha": "35810eaa1022a1cdc7b8abd6f43103d61fc5c28e"
+    },
+    {
+      "module": "Lib.ClassField.Places.ValuationSubrings",
+      "path": "src/Lib/ClassField/Places/ValuationSubrings.lean",
+      "sha": "2c8b3e1d86b6796616982e60bfccc0cb9ff4ef25"
+    },
+    {
+      "module": "Lib.CM.ChowlaSelberg",
+      "path": "src/Lib/CM/ChowlaSelberg.lean",
+      "sha": "43e85e95a45b8761b5d3fa6948f57e5952e3eca2"
+    },
+    {
+      "module": "Lib.CM.ConjugateCurve",
+      "path": "src/Lib/CM/ConjugateCurve.lean",
+      "sha": "57cdc875440bfb5cb46ab67915289432d9e1621b"
+    },
+    {
+      "module": "Lib.CM.FiniteLattices",
+      "path": "src/Lib/CM/FiniteLattices.lean",
+      "sha": "c612327f8e3543e355ffb52d13f31cab9e1d909d"
+    },
+    {
+      "module": "Lib.CM.FormalGroup.FormalParameter",
+      "path": "src/Lib/CM/FormalGroup/FormalParameter.lean",
+      "sha": "24eb9778818f2e2c21722fb92110aa7029b86dfc"
+    },
+    {
+      "module": "Lib.CM.FormalGroup.InseparableDegree",
+      "path": "src/Lib/CM/FormalGroup/InseparableDegree.lean",
+      "sha": "4616cdc882e977f55f757e8d1e2471a3226d3838"
+    },
+    {
+      "module": "Lib.CM.FormalGroup.IntegralParameter",
+      "path": "src/Lib/CM/FormalGroup/IntegralParameter.lean",
+      "sha": "0bb8060ce5e17bb00a49a8c36cfef80e54996624"
+    },
+    {
+      "module": "Lib.CM.FormalGroup.PrimeNotation",
+      "path": "src/Lib/CM/FormalGroup/PrimeNotation.lean",
+      "sha": "5d77d8b881b056e2930c5aef19e2a085a8c1969b"
+    },
+    {
+      "module": "Lib.CM.GoodReduction",
+      "path": "src/Lib/CM/GoodReduction.lean",
+      "sha": "cb91733ffe90fb38194e32829f89f11d315617e7"
+    },
+    {
+      "module": "Lib.CM.Integrality.Doubling",
+      "path": "src/Lib/CM/Integrality/Doubling.lean",
+      "sha": "af727523fca0c1c9b6ebd32c908a85a583a15dd7"
+    },
+    {
+      "module": "Lib.CM.Integrality.IntegralSections",
+      "path": "src/Lib/CM/Integrality/IntegralSections.lean",
+      "sha": "55203639ba942ebe367a7145a167a4104251640c"
+    },
+    {
+      "module": "Lib.CM.Integrality.IsogenyIntegrality",
+      "path": "src/Lib/CM/Integrality/IsogenyIntegrality.lean",
+      "sha": "9b7b40016435f5dd1df643b80b64f0f274d24c58"
+    },
+    {
+      "module": "Lib.CM.Integrality.LogTheta",
+      "path": "src/Lib/CM/Integrality/LogTheta.lean",
+      "sha": "45b658e09320189f3b2df1b85e1a09e3326ab005"
+    },
+    {
+      "module": "Lib.CM.Integrality.TorsionValues",
+      "path": "src/Lib/CM/Integrality/TorsionValues.lean",
+      "sha": "62966a05e63f9e39db890ea0a7ba0d58d6ef06de"
+    },
+    {
+      "module": "Lib.CM.KroneckerLimit",
+      "path": "src/Lib/CM/KroneckerLimit.lean",
+      "sha": "6dd7895fe978d577e95fca1a29569306680cd1e5"
+    },
+    {
+      "module": "Lib.CM.Sigma.Basic",
+      "path": "src/Lib/CM/Sigma/Basic.lean",
+      "sha": "b8ebaa532b8c0165ab7bbc46bf5d561504880f6a"
+    },
+    {
+      "module": "Lib.CM.Sigma.ThetaSections",
+      "path": "src/Lib/CM/Sigma/ThetaSections.lean",
+      "sha": "a89ae0922dd874ddb7bdd85a2c964841f2e36cbb"
+    },
+    {
+      "module": "Lib.Cohomology.Etale.Basic",
+      "path": "src/Lib/Cohomology/Etale/Basic.lean",
+      "sha": "7e081cfaeff6bb3d8919deb5f05a7729739a553a"
+    },
+    {
+      "module": "Lib.Cohomology.Etale.BijectiveComparisons",
+      "path": "src/Lib/Cohomology/Etale/BijectiveComparisons.lean",
+      "sha": "cbf04627562a8220a650a8baec9c72947386f4ea"
+    },
+    {
+      "module": "Lib.Cohomology.Etale.DenseSubfunctors",
+      "path": "src/Lib/Cohomology/Etale/DenseSubfunctors.lean",
+      "sha": "611fd4939c0b5cc3a0f93d479765d01c4b120909"
+    },
+    {
+      "module": "Lib.Cohomology.Etale.EllAdicCohomology",
+      "path": "src/Lib/Cohomology/Etale/EllAdicCohomology.lean",
+      "sha": "1c3c81bcaae58397fe9f1979791e70b0554dc18c"
+    },
+    {
+      "module": "Lib.Cohomology.Etale.FilteredLimits",
+      "path": "src/Lib/Cohomology/Etale/FilteredLimits.lean",
+      "sha": "709e368d07802b077994605a014ba2205f0b6a9a"
+    },
+    {
+      "module": "Lib.Cohomology.Etale.ProperFunctors",
+      "path": "src/Lib/Cohomology/Etale/ProperFunctors.lean",
+      "sha": "0b79209056abe019d213d719d32f3ad389ad7a7a"
+    },
+    {
+      "module": "Lib.Cohomology.Etale.RelativeChains",
+      "path": "src/Lib/Cohomology/Etale/RelativeChains.lean",
+      "sha": "4d75e0a7772f98111f9f02f8345979cd0a4a339d"
+    },
+    {
+      "module": "Lib.Cohomology.Hodge.CupProduct",
+      "path": "src/Lib/Cohomology/Hodge/CupProduct.lean",
+      "sha": "bec0d99c77656cc3fd08cf836e3f7b2f253c9312"
+    },
+    {
+      "module": "Lib.Cohomology.Hodge.DepthVanishing",
+      "path": "src/Lib/Cohomology/Hodge/DepthVanishing.lean",
+      "sha": "6c70917fe724adb177e9dce223a1c2826b1e83af"
+    },
+    {
+      "module": "Lib.Cohomology.Hodge.DiagonalClass",
+      "path": "src/Lib/Cohomology/Hodge/DiagonalClass.lean",
+      "sha": "1bae8513506d40f7208fd0db7cb47975aab12bf9"
+    },
+    {
+      "module": "Lib.Cohomology.Hodge.FixedPointFormula",
+      "path": "src/Lib/Cohomology/Hodge/FixedPointFormula.lean",
+      "sha": "a3182fc0430471f1e44cc7c7b500090f45b03155"
+    },
+    {
+      "module": "Lib.Cohomology.Hodge.GrothendieckSymbol",
+      "path": "src/Lib/Cohomology/Hodge/GrothendieckSymbol.lean",
+      "sha": "8700377dd284caff70d5dfed0da5c9d74046c062"
+    },
+    {
+      "module": "Lib.Cohomology.Hodge.Kunneth",
+      "path": "src/Lib/Cohomology/Hodge/Kunneth.lean",
+      "sha": "5a87ca87b9107d08a80359e8ccfc6c7906b17f0d"
+    },
+    {
+      "module": "Lib.Cohomology.Hodge.Site",
+      "path": "src/Lib/Cohomology/Hodge/Site.lean",
+      "sha": "3e0c81fb253dc6f0154657670f2a447a9d3059c0"
+    },
+    {
+      "module": "Lib.Cohomology.LerayHirsch",
+      "path": "src/Lib/Cohomology/LerayHirsch.lean",
+      "sha": "d8aa3432277db5f27463d75c96832bc49033efb6"
+    },
+    {
+      "module": "Lib.Cohomology.PointClass.LinearIndependence",
+      "path": "src/Lib/Cohomology/PointClass/LinearIndependence.lean",
+      "sha": "5174cc51461fabb72911c05104387dda7c0c4a68"
+    },
+    {
+      "module": "Lib.Cohomology.PointClass.NoetherNormalization",
+      "path": "src/Lib/Cohomology/PointClass/NoetherNormalization.lean",
+      "sha": "4d26e24d8b51229bc8c61d269af208f1e3133fa9"
+    },
+    {
+      "module": "Lib.Cohomology.PointClass.ProjectiveNonvanishing",
+      "path": "src/Lib/Cohomology/PointClass/ProjectiveNonvanishing.lean",
+      "sha": "0afeb8c64eb91a9799e66692d23b4bdf7e44d86b"
+    },
+    {
+      "module": "Lib.Cohomology.PointClass.ProjectiveSpace",
+      "path": "src/Lib/Cohomology/PointClass/ProjectiveSpace.lean",
+      "sha": "4332e88e8a0a2dde3f59871e34b6a71c838e4b5e"
+    },
+    {
+      "module": "Lib.Cohomology.ProjectiveLine.ChernClass",
+      "path": "src/Lib/Cohomology/ProjectiveLine/ChernClass.lean",
+      "sha": "2a1b971828ad3804633d69a5be9da8f213dae6db"
+    },
+    {
+      "module": "Lib.Cohomology.ProjectiveLine.ConstantLineFormula",
+      "path": "src/Lib/Cohomology/ProjectiveLine/ConstantLineFormula.lean",
+      "sha": "eb6449d4bb813027323b53485a61690bd8802f72"
+    },
+    {
+      "module": "Lib.Cohomology.ProjectiveLine.PerfectLine",
+      "path": "src/Lib/Cohomology/ProjectiveLine/PerfectLine.lean",
+      "sha": "1dda17847105a3fd9c997a94073a030a37bd50be"
+    },
+    {
+      "module": "Lib.Cohomology.ProjectiveLine.TiltedLineFormula",
+      "path": "src/Lib/Cohomology/ProjectiveLine/TiltedLineFormula.lean",
+      "sha": "e4028f637bce4fd34ee69a84cda374d23e0bc21b"
+    },
+    {
+      "module": "Lib.Cohomology.ProperBaseChange.LineCharts",
+      "path": "src/Lib/Cohomology/ProperBaseChange/LineCharts.lean",
+      "sha": "86d08bbb1c8fd05a9c1f46f9a23d1fa988ba715c"
+    },
+    {
+      "module": "Lib.Cohomology.ProperBaseChange.PlaceSpace",
+      "path": "src/Lib/Cohomology/ProperBaseChange/PlaceSpace.lean",
+      "sha": "1e7d612f3484be71b27e8e40e86c85ccc9ea0f25"
+    },
+    {
+      "module": "Lib.Cohomology.ProperBaseChange.SubringSplitting",
+      "path": "src/Lib/Cohomology/ProperBaseChange/SubringSplitting.lean",
+      "sha": "a60d70917914313ab31cfeb6e3f5924b23a5cf2a"
+    },
+    {
+      "module": "Lib.Cohomology.ProperBaseChange.Theorem",
+      "path": "src/Lib/Cohomology/ProperBaseChange/Theorem.lean",
+      "sha": "47a2a8c068f2aa1ec26f988df5a6dee1c504d502"
+    },
+    {
+      "module": "Lib.Cohomology.SmoothBaseChange",
+      "path": "src/Lib/Cohomology/SmoothBaseChange.lean",
+      "sha": "b3fc05f1c981f01006ebe74d3059622ae95442e4"
+    },
+    {
+      "module": "Lib.Cohomology.TorsionTheories",
+      "path": "src/Lib/Cohomology/TorsionTheories.lean",
+      "sha": "3e1bfac343f6ec40dc529ee19e27462f38a9de83"
+    },
+    {
+      "module": "Lib.Cohomology.WoodsHole",
+      "path": "src/Lib/Cohomology/WoodsHole.lean",
+      "sha": "18390b199ffe4fdef3d2a9ece643f63c0cf6f82d"
+    },
+    {
+      "module": "Lib.Cyclotomic.Kolyvagin.DerivativeCocycles",
+      "path": "src/Lib/Cyclotomic/Kolyvagin/DerivativeCocycles.lean",
+      "sha": "816b8a79b29676cd19a74116b486127d34de1f47"
+    },
+    {
+      "module": "Lib.Cyclotomic.Kolyvagin.ReciprocityComponentBounds",
+      "path": "src/Lib/Cyclotomic/Kolyvagin/ReciprocityComponentBounds.lean",
+      "sha": "da6b70b23861a08c7652059793b63e871d6f7f2c"
+    },
+    {
+      "module": "Lib.Cyclotomic.OddSha",
+      "path": "src/Lib/Cyclotomic/OddSha.lean",
+      "sha": "4f00115d45a76fb9f3ccb96e9e6261b946e1fa36"
+    },
+    {
+      "module": "Lib.Cyclotomic.Stickelberger",
+      "path": "src/Lib/Cyclotomic/Stickelberger.lean",
+      "sha": "376c03e5991cc2d7a283d2dd40decf65d3f481ce"
+    },
+    {
+      "module": "Lib.Cyclotomic.Voronoi",
+      "path": "src/Lib/Cyclotomic/Voronoi.lean",
+      "sha": "14e47629ca83dd3f8c52eb559a7fb82424a97885"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bessel.Basic",
+      "path": "src/Lib/DiscreteSeries/Bessel/Basic.lean",
+      "sha": "64a3e3922d3e27a0248c90ae69e4a0ea0a54bfd5"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bessel.FrameFibre",
+      "path": "src/Lib/DiscreteSeries/Bessel/FrameFibre.lean",
+      "sha": "f98563d2f957c13382c2d8a0807e91b2b9e5bb69"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bessel.SchurBound",
+      "path": "src/Lib/DiscreteSeries/Bessel/SchurBound.lean",
+      "sha": "8235f3a696db55ac25db0c64e09057a8171ef5f8"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bessel.UnipotentHaarMeasure",
+      "path": "src/Lib/DiscreteSeries/Bessel/UnipotentHaarMeasure.lean",
+      "sha": "044e48a42c07aa760e4b9904c3d56d9277cf7e9f"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bruhat.BigCell",
+      "path": "src/Lib/DiscreteSeries/Bruhat/BigCell.lean",
+      "sha": "fb8c6b6f3336c8dccf22307718fa4d17a1429d3e"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bruhat.ComplexPlace",
+      "path": "src/Lib/DiscreteSeries/Bruhat/ComplexPlace.lean",
+      "sha": "f12bc225d81f84222f1d4a799ea945a5ae58f8e4"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bruhat.FloorFibre",
+      "path": "src/Lib/DiscreteSeries/Bruhat/FloorFibre.lean",
+      "sha": "109ef39a23ec98c431d1fb35e66b48b774b622b5"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bruhat.FloorGroups",
+      "path": "src/Lib/DiscreteSeries/Bruhat/FloorGroups.lean",
+      "sha": "6434e4fb7ac4d4ee61464bf59316954d4fe164d0"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bruhat.FloorMeasures",
+      "path": "src/Lib/DiscreteSeries/Bruhat/FloorMeasures.lean",
+      "sha": "18782075e01c32b3bc7748fe40ba173071edc2f0"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bruhat.FourierKernels",
+      "path": "src/Lib/DiscreteSeries/Bruhat/FourierKernels.lean",
+      "sha": "533f102edb2fec97ed314eb55a9b2bf1d109df17"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bruhat.QuadricBlocks",
+      "path": "src/Lib/DiscreteSeries/Bruhat/QuadricBlocks.lean",
+      "sha": "f94e1225c38162223bfcbb955c008421867aa8b1"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Bruhat.SphereFibres",
+      "path": "src/Lib/DiscreteSeries/Bruhat/SphereFibres.lean",
+      "sha": "b3b8ea48527625d9ef8ff1750822089e007884fe"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Character.FormalDegree",
+      "path": "src/Lib/DiscreteSeries/Character/FormalDegree.lean",
+      "sha": "adf783a42e6c85259d7be3092459426f8e365752"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Character.MultiplicityOrbitalIntegral",
+      "path": "src/Lib/DiscreteSeries/Character/MultiplicityOrbitalIntegral.lean",
+      "sha": "2b51e094a61a615ffb16fd250d9f74cd8db78e8c"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Character.OpenOrbitIntegral",
+      "path": "src/Lib/DiscreteSeries/Character/OpenOrbitIntegral.lean",
+      "sha": "62d02b9d62077fc24144a15b7837ec93f9c06bf8"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Character.WeylCharacterFormula",
+      "path": "src/Lib/DiscreteSeries/Character/WeylCharacterFormula.lean",
+      "sha": "e1d5df4c29529e007dfcda227ba060bd26941687"
+    },
+    {
+      "module": "Lib.DiscreteSeries.CuspKernel",
+      "path": "src/Lib/DiscreteSeries/CuspKernel.lean",
+      "sha": "7276071a703dc73d2f9116a4a37e04295c39baea"
+    },
+    {
+      "module": "Lib.DiscreteSeries.FlenstedJensen.CasimirEigenfunction",
+      "path": "src/Lib/DiscreteSeries/FlenstedJensen/CasimirEigenfunction.lean",
+      "sha": "a4212a5115e5740a66eac382532725d095488ff1"
+    },
+    {
+      "module": "Lib.DiscreteSeries.FlenstedJensen.Defs",
+      "path": "src/Lib/DiscreteSeries/FlenstedJensen/Defs.lean",
+      "sha": "b37d311cd741d5dc8487101d7b16762a101c079f"
+    },
+    {
+      "module": "Lib.DiscreteSeries.FlenstedJensen.FlagDensities",
+      "path": "src/Lib/DiscreteSeries/FlenstedJensen/FlagDensities.lean",
+      "sha": "b57b75a1f7fe1c6ace375fec352fd381bc66c0bb"
+    },
+    {
+      "module": "Lib.DiscreteSeries.FlenstedJensen.PsiKTypes",
+      "path": "src/Lib/DiscreteSeries/FlenstedJensen/PsiKTypes.lean",
+      "sha": "410c54e38d20e4c29f56b4a2aab4f9d750f95975"
+    },
+    {
+      "module": "Lib.DiscreteSeries.FlenstedJensen.RightDerivatives",
+      "path": "src/Lib/DiscreteSeries/FlenstedJensen/RightDerivatives.lean",
+      "sha": "39a5874f326515ad9767ed95151205ff0c3803e4"
+    },
+    {
+      "module": "Lib.DiscreteSeries.FlenstedJensen.SquareIntegrability",
+      "path": "src/Lib/DiscreteSeries/FlenstedJensen/SquareIntegrability.lean",
+      "sha": "d6cc5f4a9f2831f12a22e272581732bb436688b9"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Haar.CayleyChart",
+      "path": "src/Lib/DiscreteSeries/Haar/CayleyChart.lean",
+      "sha": "8a85b2f5a58b9186849d4e9890af88b490467281"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Haar.GramCoordinates",
+      "path": "src/Lib/DiscreteSeries/Haar/GramCoordinates.lean",
+      "sha": "8e87061c7fcf67b937e765d0680cd61f1e566f50"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Haar.GramFibre",
+      "path": "src/Lib/DiscreteSeries/Haar/GramFibre.lean",
+      "sha": "f372d2e988c0094c4dcf34d7a96ec71e110e933f"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Haar.GramPolar",
+      "path": "src/Lib/DiscreteSeries/Haar/GramPolar.lean",
+      "sha": "bc00b082dac2e2ed2eadd0bc668b00380bfff209"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Haar.TotalMass",
+      "path": "src/Lib/DiscreteSeries/Haar/TotalMass.lean",
+      "sha": "cf74832271d39df857398bcf8213070e47543336"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Holomorphic.HighestVectorExtension",
+      "path": "src/Lib/DiscreteSeries/Holomorphic/HighestVectorExtension.lean",
+      "sha": "5c8eda761edfaea85e2905de4000afe791021694"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Holomorphic.MaximalCompactMinors",
+      "path": "src/Lib/DiscreteSeries/Holomorphic/MaximalCompactMinors.lean",
+      "sha": "544191711aee1f3f5fc656d422bd5ecae28279ab"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Holomorphic.ModelFunction",
+      "path": "src/Lib/DiscreteSeries/Holomorphic/ModelFunction.lean",
+      "sha": "f32eda003963ce51d7219d400a1fa83fd227f9e1"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Holomorphic.PeaksAwayFromCusp",
+      "path": "src/Lib/DiscreteSeries/Holomorphic/PeaksAwayFromCusp.lean",
+      "sha": "30b59e86b8522605b67b7fc60a12e0315d8326b4"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Rigidity.HighestVectorsAndFiltration",
+      "path": "src/Lib/DiscreteSeries/Rigidity/HighestVectorsAndFiltration.lean",
+      "sha": "e0c2225a6bb41937a581ab0dd15249d1783906af"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Rigidity.KernelFixes",
+      "path": "src/Lib/DiscreteSeries/Rigidity/KernelFixes.lean",
+      "sha": "e12523c66f7d0e316a376f63fb8320823333dcc6"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Rigidity.RepresentationsAndCasimirs",
+      "path": "src/Lib/DiscreteSeries/Rigidity/RepresentationsAndCasimirs.lean",
+      "sha": "91a3d5a15b37c23657483cdb21955a5498d8393b"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Theta.BlockRule",
+      "path": "src/Lib/DiscreteSeries/Theta/BlockRule.lean",
+      "sha": "7d489021994f023bfb0e81e3ff19f4b42a5d37db"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Theta.CasimirComparison",
+      "path": "src/Lib/DiscreteSeries/Theta/CasimirComparison.lean",
+      "sha": "0fc14857f6fc71c98197388c25aa05ce64851942"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Theta.FockDualPair",
+      "path": "src/Lib/DiscreteSeries/Theta/FockDualPair.lean",
+      "sha": "9d13e574b545a0614257057061dab455c74f5f90"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Theta.FockJointHarmonics",
+      "path": "src/Lib/DiscreteSeries/Theta/FockJointHarmonics.lean",
+      "sha": "b225523589667eeaafed35895eea1a121b14ad49"
+    },
+    {
+      "module": "Lib.DiscreteSeries.Theta.LocalCorrespondence",
+      "path": "src/Lib/DiscreteSeries/Theta/LocalCorrespondence.lean",
+      "sha": "768df29f7cc12b6c814dacea70ca8d4afcef6d36"
+    },
+    {
+      "module": "Lib.GaloisRep.BaseChange.CommutingHeckeFamilies",
+      "path": "src/Lib/GaloisRep/BaseChange/CommutingHeckeFamilies.lean",
+      "sha": "70cc74fc37a186cd5973ab433ad9a3ac5b934a2e"
+    },
+    {
+      "module": "Lib.GaloisRep.BaseChange.CongruenceLevelMatching",
+      "path": "src/Lib/GaloisRep/BaseChange/CongruenceLevelMatching.lean",
+      "sha": "87ca7cca2543696dc9e4e512b91b39e1b2d0c4ff"
+    },
+    {
+      "module": "Lib.GaloisRep.BaseChange.Defs",
+      "path": "src/Lib/GaloisRep/BaseChange/Defs.lean",
+      "sha": "80e4a1c48eed6f51a62ac1a90f4b76d66b064405"
+    },
+    {
+      "module": "Lib.GaloisRep.BaseChange.GlobalRoot",
+      "path": "src/Lib/GaloisRep/BaseChange/GlobalRoot.lean",
+      "sha": "7ae824c6d24819e8f00d747db7eeb33c8022ddab"
+    },
+    {
+      "module": "Lib.GaloisRep.BaseChange.IwahoriEigenforms",
+      "path": "src/Lib/GaloisRep/BaseChange/IwahoriEigenforms.lean",
+      "sha": "63be7acd09541c80cf00b11e6bfe33ade5dcae8d"
+    },
+    {
+      "module": "Lib.GaloisRep.BaseChange.PrimeDegreeTransfer",
+      "path": "src/Lib/GaloisRep/BaseChange/PrimeDegreeTransfer.lean",
+      "sha": "5966bc7408d73c15d651bd6f442f4237de349bdc"
+    },
+    {
+      "module": "Lib.GaloisRep.BaseChange.ShintaniLift",
+      "path": "src/Lib/GaloisRep/BaseChange/ShintaniLift.lean",
+      "sha": "40fcacfebeca8e766758f3481435694ee3525c14"
+    },
+    {
+      "module": "Lib.GaloisRep.BaseChange.StepMatchingPairs",
+      "path": "src/Lib/GaloisRep/BaseChange/StepMatchingPairs.lean",
+      "sha": "9e12118bc587500e849b7df828bdad700fde4b71"
+    },
+    {
+      "module": "Lib.GaloisRep.BaseChange.TwistedTraceIdentity",
+      "path": "src/Lib/GaloisRep/BaseChange/TwistedTraceIdentity.lean",
+      "sha": "6f68e11a8ac04aecb453bf51f753640591b8594c"
+    },
+    {
+      "module": "Lib.GaloisRep.Hilbert90.TameActions",
+      "path": "src/Lib/GaloisRep/Hilbert90/TameActions.lean",
+      "sha": "da8d71fe35aa2185fae070c994772c9c153cbb35"
+    },
+    {
+      "module": "Lib.GaloisRep.Hilbert90.UnitaryGroups",
+      "path": "src/Lib/GaloisRep/Hilbert90/UnitaryGroups.lean",
+      "sha": "f86e31791a1297c0637fc398906ab037c33f6864"
+    },
+    {
+      "module": "Lib.GaloisRep.KillingPolynomials",
+      "path": "src/Lib/GaloisRep/KillingPolynomials.lean",
+      "sha": "1c99c8f8b869ef24aaca5dd16391c643501d0fe4"
+    },
+    {
+      "module": "Lib.GaloisRep.LocalGlobal.IwahoriCompatibility",
+      "path": "src/Lib/GaloisRep/LocalGlobal/IwahoriCompatibility.lean",
+      "sha": "0b38a8395a7055d0ae3cb49495eae1fa6c3ed31e"
+    },
+    {
+      "module": "Lib.GaloisRep.LocalGlobal.LabelCompatibility",
+      "path": "src/Lib/GaloisRep/LocalGlobal/LabelCompatibility.lean",
+      "sha": "be919d16202e2fff4636f546a2e932069b1c6b89"
+    },
+    {
+      "module": "Lib.GaloisRep.LocalGlobal.LocalFormTypes",
+      "path": "src/Lib/GaloisRep/LocalGlobal/LocalFormTypes.lean",
+      "sha": "9233cf4f18120190ab8a1023b77391041b62fdbe"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.AllRanks",
+      "path": "src/Lib/GaloisRep/Main/AllRanks.lean",
+      "sha": "c3fa9bb7b5287b56b5352b339f62ce8f1820040b"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.AttachedRepresentations",
+      "path": "src/Lib/GaloisRep/Main/AttachedRepresentations.lean",
+      "sha": "798011571b921c070a4c28aa627c14fbddcfd56c"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.CuspidalTypes",
+      "path": "src/Lib/GaloisRep/Main/CuspidalTypes.lean",
+      "sha": "b97d36ae7890dcd214e15d024d2dc30759362d4a"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.Defs",
+      "path": "src/Lib/GaloisRep/Main/Defs.lean",
+      "sha": "0b9ee440c7abdc4d935bfdea373ae5ed41874abc"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.DivisibleSelmerModules",
+      "path": "src/Lib/GaloisRep/Main/DivisibleSelmerModules.lean",
+      "sha": "4d0860e29dd1881dec2622919cbb768d53febb33"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.LocalConditions",
+      "path": "src/Lib/GaloisRep/Main/LocalConditions.lean",
+      "sha": "135c09a73b8e8f7205d3e18c129cac99b25d4d3f"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.OddRank",
+      "path": "src/Lib/GaloisRep/Main/OddRank.lean",
+      "sha": "354b1d4486b95d3105e4d9f0c39199ed752c9c68"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.QuadraticStep",
+      "path": "src/Lib/GaloisRep/Main/QuadraticStep.lean",
+      "sha": "d2f94793c5ad63727b9dab1464c492e17bb786b4"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.SeedRepresentation",
+      "path": "src/Lib/GaloisRep/Main/SeedRepresentation.lean",
+      "sha": "0ba92d6f643401618bed84b44c304060b8031728"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.SelmerModules",
+      "path": "src/Lib/GaloisRep/Main/SelmerModules.lean",
+      "sha": "45d2b3555f2da7dea706e60885bedd9c941b7aef"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.SplitCase",
+      "path": "src/Lib/GaloisRep/Main/SplitCase.lean",
+      "sha": "a0eae92b4c452aa4668f5dc012f9cfe1b964964b"
+    },
+    {
+      "module": "Lib.GaloisRep.Main.ThetaLift",
+      "path": "src/Lib/GaloisRep/Main/ThetaLift.lean",
+      "sha": "b5830576440dc07a0041121b129668bb7bfe093b"
+    },
+    {
+      "module": "Lib.GaloisRep.Pseudocharacter.Pseudorepresentations",
+      "path": "src/Lib/GaloisRep/Pseudocharacter/Pseudorepresentations.lean",
+      "sha": "bbff10b64eec433f130a2cf225e9b6c60fc988f8"
+    },
+    {
+      "module": "Lib.GaloisRep.Pseudocharacter.SemisimpleRepresentations",
+      "path": "src/Lib/GaloisRep/Pseudocharacter/SemisimpleRepresentations.lean",
+      "sha": "407851dfb10215756cd9ab92b3efbd69d1ec6fa9"
+    },
+    {
+      "module": "Lib.GaloisRep.TaylorWiles",
+      "path": "src/Lib/GaloisRep/TaylorWiles.lean",
+      "sha": "3fe911267ca44d977a761e6305cbbd011ac5b9c0"
+    },
+    {
+      "module": "Lib.GaloisRep.WeightCongruence",
+      "path": "src/Lib/GaloisRep/WeightCongruence.lean",
+      "sha": "848dd040217c5af1356ca9041510e54873a11642"
+    },
+    {
+      "module": "Lib.General.Algebra.AbsIntegrallyClosed",
+      "path": "src/Lib/General/Algebra/AbsIntegrallyClosed.lean",
+      "sha": "107166e3634af43e70bbae1c5ae11670254cb9be"
+    },
+    {
+      "module": "Lib.General.Algebra.AdicCompletion",
+      "path": "src/Lib/General/Algebra/AdicCompletion.lean",
+      "sha": "6e4f2377ceab92d13bfc829a509b3ce9c51c7459"
+    },
+    {
+      "module": "Lib.General.Algebra.BlockFittingBound",
+      "path": "src/Lib/General/Algebra/BlockFittingBound.lean",
+      "sha": "54280b40f4445612bb16517d35d32edf74b2bfd0"
+    },
+    {
+      "module": "Lib.General.Algebra.CartanMap",
+      "path": "src/Lib/General/Algebra/CartanMap.lean",
+      "sha": "1c51beeea8ce649f8119ca50933ff9a8f411c810"
+    },
+    {
+      "module": "Lib.General.Algebra.CohomologyBaseChange",
+      "path": "src/Lib/General/Algebra/CohomologyBaseChange.lean",
+      "sha": "1e790537bbf050c64f5572311bff7dd9688b6352"
+    },
+    {
+      "module": "Lib.General.Algebra.FittingIdealsAndLengths",
+      "path": "src/Lib/General/Algebra/FittingIdealsAndLengths.lean",
+      "sha": "ba48fcca3e32d28e599b80b3ecd154c71589a634"
+    },
+    {
+      "module": "Lib.General.Algebra.IntegralPowerSeries",
+      "path": "src/Lib/General/Algebra/IntegralPowerSeries.lean",
+      "sha": "3b83d417cdd4c00baaef6879352f7d3ada1f803b"
+    },
+    {
+      "module": "Lib.General.Algebra.LevelModulus",
+      "path": "src/Lib/General/Algebra/LevelModulus.lean",
+      "sha": "6a62477b0c87a7f5ae024649ba732952d9dede0a"
+    },
+    {
+      "module": "Lib.General.Algebra.LongExactSequences",
+      "path": "src/Lib/General/Algebra/LongExactSequences.lean",
+      "sha": "e6b88e056fac2f227f7f07c16b5b486fc71b76e9"
+    },
+    {
+      "module": "Lib.General.Algebra.MultivariatePolynomials",
+      "path": "src/Lib/General/Algebra/MultivariatePolynomials.lean",
+      "sha": "fe9b3020185e477e675cb34a76df699b0ff287c2"
+    },
+    {
+      "module": "Lib.General.Algebra.PerfectAlgebras",
+      "path": "src/Lib/General/Algebra/PerfectAlgebras.lean",
+      "sha": "8e22c18d0dd95a2b42d6698142fd9ee9dc8db958"
+    },
+    {
+      "module": "Lib.General.Algebra.ResidueSums",
+      "path": "src/Lib/General/Algebra/ResidueSums.lean",
+      "sha": "f9659dbeb2faeedc1902b57146963931680a0f40"
+    },
+    {
+      "module": "Lib.General.Algebra.SeriesBounds",
+      "path": "src/Lib/General/Algebra/SeriesBounds.lean",
+      "sha": "22c84bc605b6e430d16b1caa6ce0e805daba9ab5"
+    },
+    {
+      "module": "Lib.General.Algebra.SeriesCongruences",
+      "path": "src/Lib/General/Algebra/SeriesCongruences.lean",
+      "sha": "0938c69c944e4c1c91298c3d8c7ab4dbb9f3c50a"
+    },
+    {
+      "module": "Lib.General.Algebra.SharpMinors",
+      "path": "src/Lib/General/Algebra/SharpMinors.lean",
+      "sha": "6b90f51465a49aaf1652397f686d8ee1a7377a43"
+    },
+    {
+      "module": "Lib.General.Analysis.FiniteFourier",
+      "path": "src/Lib/General/Analysis/FiniteFourier.lean",
+      "sha": "9eda034e2fe98d2578b832f50209aa39a2c1da9c"
+    },
+    {
+      "module": "Lib.General.Analysis.FourierTransforms",
+      "path": "src/Lib/General/Analysis/FourierTransforms.lean",
+      "sha": "f5198a8edcc011b1af36fe2ca9ea13de41be2f19"
+    },
+    {
+      "module": "Lib.General.Analysis.GaussianIntegral",
+      "path": "src/Lib/General/Analysis/GaussianIntegral.lean",
+      "sha": "b1ef68e17f165ba15ff4e752090019128a6ba441"
+    },
+    {
+      "module": "Lib.General.Analysis.HolomorphicIntegrals",
+      "path": "src/Lib/General/Analysis/HolomorphicIntegrals.lean",
+      "sha": "2ceda609531f44688b76e12cca0127e098e7e3fd"
+    },
+    {
+      "module": "Lib.General.Analysis.MeanValueAndTaylor",
+      "path": "src/Lib/General/Analysis/MeanValueAndTaylor.lean",
+      "sha": "d3629191cce9949388df81112b0d49f439749a08"
+    },
+    {
+      "module": "Lib.General.Analysis.PackingAndSobolev",
+      "path": "src/Lib/General/Analysis/PackingAndSobolev.lean",
+      "sha": "e1190c8584d5ac25aa3c525b4b13dfa9a66fd82d"
+    },
+    {
+      "module": "Lib.General.Combinatorics",
+      "path": "src/Lib/General/Combinatorics.lean",
+      "sha": "95593cc9c6f91240772181b6e127e9988227fd31"
+    },
+    {
+      "module": "Lib.General.Geometry.DenseComplexPoints",
+      "path": "src/Lib/General/Geometry/DenseComplexPoints.lean",
+      "sha": "d05d6f2ae1b68d28808866fffee87d9b93d98386"
+    },
+    {
+      "module": "Lib.General.Geometry.EtaleCharts",
+      "path": "src/Lib/General/Geometry/EtaleCharts.lean",
+      "sha": "e89091c2930d4cd88b1ec2665cda8d2589a86d04"
+    },
+    {
+      "module": "Lib.General.Geometry.GaloisCovers",
+      "path": "src/Lib/General/Geometry/GaloisCovers.lean",
+      "sha": "f04b6c04f7ddb143d87e1ab2075f90f6113ae0b2"
+    },
+    {
+      "module": "Lib.General.Geometry.GeometricPoints",
+      "path": "src/Lib/General/Geometry/GeometricPoints.lean",
+      "sha": "5569a585d0052fda1756108100da57e485f1d860"
+    },
+    {
+      "module": "Lib.General.Geometry.LineBundles",
+      "path": "src/Lib/General/Geometry/LineBundles.lean",
+      "sha": "11bca2d3f5aade546b917e68d193922adb57af59"
+    },
+    {
+      "module": "Lib.General.Geometry.PointsOfProperSchemes",
+      "path": "src/Lib/General/Geometry/PointsOfProperSchemes.lean",
+      "sha": "b551569a218bc787a31e5dd68cbafe34fdfe1b15"
+    },
+    {
+      "module": "Lib.General.Geometry.ProjectiveSpace",
+      "path": "src/Lib/General/Geometry/ProjectiveSpace.lean",
+      "sha": "e39baeea6fe42a579abccb28de302c61c1a0417f"
+    },
+    {
+      "module": "Lib.General.Geometry.SerreTheorem",
+      "path": "src/Lib/General/Geometry/SerreTheorem.lean",
+      "sha": "56884498a8f65c9405a9cbeb4bac47a34037cb39"
+    },
+    {
+      "module": "Lib.General.Geometry.SmoothnessCriterion",
+      "path": "src/Lib/General/Geometry/SmoothnessCriterion.lean",
+      "sha": "fdf08fcd53c867131b82bfb437248d35b0489ea8"
+    },
+    {
+      "module": "Lib.General.Groups.BesselGroups",
+      "path": "src/Lib/General/Groups/BesselGroups.lean",
+      "sha": "9e0044942c603a45ee053f41ca07d4c5e439ce6a"
+    },
+    {
+      "module": "Lib.General.Groups.CharacterTheory",
+      "path": "src/Lib/General/Groups/CharacterTheory.lean",
+      "sha": "fba7ddac21414c97c2bb03e6c8b4116c9901e282"
+    },
+    {
+      "module": "Lib.General.Groups.CongruenceSubgroups",
+      "path": "src/Lib/General/Groups/CongruenceSubgroups.lean",
+      "sha": "d17620e3bc6465aa91a232cf171babbeaf919fa0"
+    },
+    {
+      "module": "Lib.General.Groups.IndexOfProduct",
+      "path": "src/Lib/General/Groups/IndexOfProduct.lean",
+      "sha": "c189d97fef171fa35989b89278e608b5e737c633"
+    },
+    {
+      "module": "Lib.General.Groups.ProfiniteCharacters",
+      "path": "src/Lib/General/Groups/ProfiniteCharacters.lean",
+      "sha": "8af1407dfd447ff69624e6be163d1742070c959e"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.BlockEmbeddings",
+      "path": "src/Lib/General/LinearAlgebra/BlockEmbeddings.lean",
+      "sha": "6edc89746c0f489dcced492a5d6f01448e229644"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.Eigenvalues",
+      "path": "src/Lib/General/LinearAlgebra/Eigenvalues.lean",
+      "sha": "82635726b13a1ab99be5a96e16d6f52b8adcbe92"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.GramDeterminant",
+      "path": "src/Lib/General/LinearAlgebra/GramDeterminant.lean",
+      "sha": "b4076bc9e62a3dd7b7a87653510989edb61278d8"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.HermiteForm",
+      "path": "src/Lib/General/LinearAlgebra/HermiteForm.lean",
+      "sha": "9c04944e1170235f19e7fabbbf6ce49f50ce7044"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.HermitianMatrices",
+      "path": "src/Lib/General/LinearAlgebra/HermitianMatrices.lean",
+      "sha": "cba1211a34fc0e541110e056f8a1169209648cd4"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.IdempotentRadical",
+      "path": "src/Lib/General/LinearAlgebra/IdempotentRadical.lean",
+      "sha": "494146c7fc66bd84c339f1bab1c5cb6990ec461b"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.IntegralLattices",
+      "path": "src/Lib/General/LinearAlgebra/IntegralLattices.lean",
+      "sha": "e9259c1f21c0e8ca76d2a1197f9a2e5437aa25da"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.MatricesNearIdentity",
+      "path": "src/Lib/General/LinearAlgebra/MatricesNearIdentity.lean",
+      "sha": "0ea3249b1897bb71486b99c3e7de257923ec21a8"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.MatrixNormBounds",
+      "path": "src/Lib/General/LinearAlgebra/MatrixNormBounds.lean",
+      "sha": "3103a8a3965b4169dd1f304bb959d4babe00e0fb"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.MatrixPolynomials",
+      "path": "src/Lib/General/LinearAlgebra/MatrixPolynomials.lean",
+      "sha": "2f0e209c8b98c04e29747646ab690aea146d99ca"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.MinorProducts",
+      "path": "src/Lib/General/LinearAlgebra/MinorProducts.lean",
+      "sha": "ace4e4165dfeb36f334773d37a39689cbcd6d7a8"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.PartnerAlgebra",
+      "path": "src/Lib/General/LinearAlgebra/PartnerAlgebra.lean",
+      "sha": "5c9b7d00f5fb85c0dd70bbc1cd5106b58c54052d"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.PolarDecomposition",
+      "path": "src/Lib/General/LinearAlgebra/PolarDecomposition.lean",
+      "sha": "2d95a386630d067806cc092ee9b04c21640da03a"
+    },
+    {
+      "module": "Lib.General.LinearAlgebra.TensorChains",
+      "path": "src/Lib/General/LinearAlgebra/TensorChains.lean",
+      "sha": "dc25395d60ce0e359e2c393d7ebd0044dca1052d"
+    },
+    {
+      "module": "Lib.General.Measure.FibreMeasure",
+      "path": "src/Lib/General/Measure/FibreMeasure.lean",
+      "sha": "6ffb713d20c65dda6a2bb00d1763337f8745aaf9"
+    },
+    {
+      "module": "Lib.General.Measure.HaarModulus",
+      "path": "src/Lib/General/Measure/HaarModulus.lean",
+      "sha": "75a8da322e87b3db9e3dcd39b2c71c39382d41d8"
+    },
+    {
+      "module": "Lib.General.Measure.HaarNormalisation",
+      "path": "src/Lib/General/Measure/HaarNormalisation.lean",
+      "sha": "e19d100e116f3c0213d3d76ca9479f4f2201c915"
+    },
+    {
+      "module": "Lib.General.Measure.IdempotentKernel",
+      "path": "src/Lib/General/Measure/IdempotentKernel.lean",
+      "sha": "83a88d0c7bc58c546c3c52716faa6ee357a3114e"
+    },
+    {
+      "module": "Lib.General.Measure.IntegralOperators",
+      "path": "src/Lib/General/Measure/IntegralOperators.lean",
+      "sha": "c938aeca7b88d4a66987a6dff4c17ab978192daf"
+    },
+    {
+      "module": "Lib.General.Measure.QuadricDisintegration",
+      "path": "src/Lib/General/Measure/QuadricDisintegration.lean",
+      "sha": "945cdda973e3e1550af23f752e4077ff33b70a6b"
+    },
+    {
+      "module": "Lib.General.NumberTheory.CMFields",
+      "path": "src/Lib/General/NumberTheory/CMFields.lean",
+      "sha": "7307d2fc84ad6b75c0eb4ead871d262a40ae3591"
+    },
+    {
+      "module": "Lib.General.NumberTheory.CoefficientInclusion",
+      "path": "src/Lib/General/NumberTheory/CoefficientInclusion.lean",
+      "sha": "6122b0af21f3519b42547c3d1a64b5dd76d293fa"
+    },
+    {
+      "module": "Lib.General.NumberTheory.CoefficientRings",
+      "path": "src/Lib/General/NumberTheory/CoefficientRings.lean",
+      "sha": "1d4390605bbf0673d8a0e2e3223e6192770f028d"
+    },
+    {
+      "module": "Lib.General.NumberTheory.EmbeddingsAndDifferent",
+      "path": "src/Lib/General/NumberTheory/EmbeddingsAndDifferent.lean",
+      "sha": "1284200241f38d91ca84cee8a9d0ead5d01bab1d"
+    },
+    {
+      "module": "Lib.General.NumberTheory.FrobeniusOrbits",
+      "path": "src/Lib/General/NumberTheory/FrobeniusOrbits.lean",
+      "sha": "9d90fe5657aa59b07ae9632911d69f5a7d6fc423"
+    },
+    {
+      "module": "Lib.General.NumberTheory.GaussValuation",
+      "path": "src/Lib/General/NumberTheory/GaussValuation.lean",
+      "sha": "21cdac5662ee3147cc0cd944c515f43a59685d45"
+    },
+    {
+      "module": "Lib.General.NumberTheory.ImaginaryQuadraticField",
+      "path": "src/Lib/General/NumberTheory/ImaginaryQuadraticField.lean",
+      "sha": "6751eada5820ae1c50b718bc3d832ad94e65aca8"
+    },
+    {
+      "module": "Lib.General.NumberTheory.LargeResidueField",
+      "path": "src/Lib/General/NumberTheory/LargeResidueField.lean",
+      "sha": "b5ca7add4d60466d9cc9391877b7f2d33d10a1c8"
+    },
+    {
+      "module": "Lib.General.NumberTheory.LatticeCovolumes",
+      "path": "src/Lib/General/NumberTheory/LatticeCovolumes.lean",
+      "sha": "e89c045d30380fcd0770e0de6737d8357f95f15c"
+    },
+    {
+      "module": "Lib.General.NumberTheory.PadicLimitsValuation",
+      "path": "src/Lib/General/NumberTheory/PadicLimitsValuation.lean",
+      "sha": "900e25ae4105959e7f68c3bd56c4a28756e9d6a7"
+    },
+    {
+      "module": "Lib.General.NumberTheory.SUnitsAndClassNumber",
+      "path": "src/Lib/General/NumberTheory/SUnitsAndClassNumber.lean",
+      "sha": "d443a2d8a58bcc812b6c28ce99a2484ff9479138"
+    },
+    {
+      "module": "Lib.General.Topology",
+      "path": "src/Lib/General/Topology.lean",
+      "sha": "a2def398631d6f376e80b68a111ceeafb02f156c"
+    },
+    {
+      "module": "Lib.GLn.Branching.IntegralMap",
+      "path": "src/Lib/GLn/Branching/IntegralMap.lean",
+      "sha": "3b2668b0c91d6aa94b7f3c0c0ed9864d0425d39e"
+    },
+    {
+      "module": "Lib.GLn.Branching.NormBound",
+      "path": "src/Lib/GLn/Branching/NormBound.lean",
+      "sha": "db28a967d6ffbf7ce82a856336ff65922409d489"
+    },
+    {
+      "module": "Lib.GLn.Dual",
+      "path": "src/Lib/GLn/Dual.lean",
+      "sha": "2687e1a51ac172211ad64a9f1ae0a4f2863235d7"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.Basic",
+      "path": "src/Lib/GLn/SchurModule/Basic.lean",
+      "sha": "72b8f77947ab6df547afc3cbb7117632d2b0a02b"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.GramMatrix",
+      "path": "src/Lib/GLn/SchurModule/GramMatrix.lean",
+      "sha": "6d0e15488d93ce1b87d4a3dd00b0cecb4157076b"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.LeadingRows",
+      "path": "src/Lib/GLn/SchurModule/LeadingRows.lean",
+      "sha": "5650e8065edfdfc671a25bd2145e27a02c1efbc0"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.MinorBasis",
+      "path": "src/Lib/GLn/SchurModule/MinorBasis.lean",
+      "sha": "d0060af1d1edd741c33e021b8e2e9ce192437436"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.Polarisation",
+      "path": "src/Lib/GLn/SchurModule/Polarisation.lean",
+      "sha": "65ca7469fa7dd8a1338968941f843e6d195ad34b"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.SchurMatrix",
+      "path": "src/Lib/GLn/SchurModule/SchurMatrix.lean",
+      "sha": "b7deca036942e4a2a8f68c538f63917d9ff4e4ca"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.SchurNorm",
+      "path": "src/Lib/GLn/SchurModule/SchurNorm.lean",
+      "sha": "0c6622827c82acd0f511f4fc80bf34f392b759b5"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.SchurOrthogonality",
+      "path": "src/Lib/GLn/SchurModule/SchurOrthogonality.lean",
+      "sha": "189d6ec0745b4a5394d7129b4443baa8b9de2676"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.TensorModel",
+      "path": "src/Lib/GLn/SchurModule/TensorModel.lean",
+      "sha": "ed52e62b39b1fd9aa471226c461d70852400dc76"
+    },
+    {
+      "module": "Lib.GLn.SchurModule.WeylKernel",
+      "path": "src/Lib/GLn/SchurModule/WeylKernel.lean",
+      "sha": "fe90bdfda39afa672de54f34d96e900b827eb22e"
+    },
+    {
+      "module": "Lib.LocalGL.Green.CuspidalFunctions",
+      "path": "src/Lib/LocalGL/Green/CuspidalFunctions.lean",
+      "sha": "2204f1f562ffc4cfafd9e781ba4e95c9c2aac95b"
+    },
+    {
+      "module": "Lib.LocalGL.Green.HallAlgebra",
+      "path": "src/Lib/LocalGL/Green/HallAlgebra.lean",
+      "sha": "2dc7ef511692b0144e6b2e0da0bab888ec492397"
+    },
+    {
+      "module": "Lib.LocalGL.Green.LabelCharacters",
+      "path": "src/Lib/LocalGL/Green/LabelCharacters.lean",
+      "sha": "17ed279dc4112ab3bebfe93bb575e7af7d9af565"
+    },
+    {
+      "module": "Lib.LocalGL.Green.TauFunctions",
+      "path": "src/Lib/LocalGL/Green/TauFunctions.lean",
+      "sha": "bbe7d5f4c0408bf4d4f570f92d28d80d02b3ea51"
+    },
+    {
+      "module": "Lib.LocalGL.Iwahori.HeckeDegrees",
+      "path": "src/Lib/LocalGL/Iwahori/HeckeDegrees.lean",
+      "sha": "4bfc4da3628c746b24e28d1f452358305cb303ad"
+    },
+    {
+      "module": "Lib.LocalGL.Iwahori.ParahoricStructure",
+      "path": "src/Lib/LocalGL/Iwahori/ParahoricStructure.lean",
+      "sha": "c7a777f5e24116fa4b0584a1e091ff29a6eadf9b"
+    },
+    {
+      "module": "Lib.LocalGL.Iwahori.QuadraticRelation",
+      "path": "src/Lib/LocalGL/Iwahori/QuadraticRelation.lean",
+      "sha": "19e1c6044b376a960aacd58ae7c47e1d53bd8500"
+    },
+    {
+      "module": "Lib.LocalGL.Iwahori.SortedExponents",
+      "path": "src/Lib/LocalGL/Iwahori/SortedExponents.lean",
+      "sha": "767136922606100f350a3d8d85e6cb48917c0e5d"
+    },
+    {
+      "module": "Lib.LocalGL.Iwahori.SphericalExponents",
+      "path": "src/Lib/LocalGL/Iwahori/SphericalExponents.lean",
+      "sha": "f40eb06fdc319234b7e85322c4fde76f9dfa18df"
+    },
+    {
+      "module": "Lib.LocalGL.Shintani.CosetDescent",
+      "path": "src/Lib/LocalGL/Shintani/CosetDescent.lean",
+      "sha": "af8bb57548d31582ddb98bf7b77a287454ff5964"
+    },
+    {
+      "module": "Lib.LocalGL.Shintani.CosetRootChoice",
+      "path": "src/Lib/LocalGL/Shintani/CosetRootChoice.lean",
+      "sha": "fae8e643457c3414e99ad365b1227add12d5ffaf"
+    },
+    {
+      "module": "Lib.LocalGL.Shintani.LiftingGreenCharacters",
+      "path": "src/Lib/LocalGL/Shintani/LiftingGreenCharacters.lean",
+      "sha": "0f11f6eb8131dc081a3342c658d670df4cdf28d6"
+    },
+    {
+      "module": "Lib.LocalGL.SphericalChainLemma",
+      "path": "src/Lib/LocalGL/SphericalChainLemma.lean",
+      "sha": "83966bfc18d51a09306347e9e3aaf2236c8e6f48"
+    },
+    {
+      "module": "Lib.PadicComparison.Completion",
+      "path": "src/Lib/PadicComparison/Completion.lean",
+      "sha": "39d3bed9bb65b2ee6ca08a9338991e7e9a774af8"
+    },
+    {
+      "module": "Lib.PadicComparison.Crystalline.ComparisonMap",
+      "path": "src/Lib/PadicComparison/Crystalline/ComparisonMap.lean",
+      "sha": "a49d2b7fef2bee270dd204c5f60917859dbbaa38"
+    },
+    {
+      "module": "Lib.PadicComparison.Crystalline.DividedPowerEnvelope",
+      "path": "src/Lib/PadicComparison/Crystalline/DividedPowerEnvelope.lean",
+      "sha": "58208ef42331acc1213ea21be4e300d69e2abab1"
+    },
+    {
+      "module": "Lib.PadicComparison.CrystallineFrobenius",
+      "path": "src/Lib/PadicComparison/CrystallineFrobenius.lean",
+      "sha": "1e29f105bbd826643e26aca435f26c7b638de632"
+    },
+    {
+      "module": "Lib.PadicComparison.Descent.AlmostDescent",
+      "path": "src/Lib/PadicComparison/Descent/AlmostDescent.lean",
+      "sha": "2a6b197c8d043ee3b4e0ea46078918ccdc6fa2c3"
+    },
+    {
+      "module": "Lib.PadicComparison.Descent.TestCategory",
+      "path": "src/Lib/PadicComparison/Descent/TestCategory.lean",
+      "sha": "dc7579514b393a492316ae5bfdc00d679a70dded"
+    },
+    {
+      "module": "Lib.PadicComparison.Descent.TestCovers",
+      "path": "src/Lib/PadicComparison/Descent/TestCovers.lean",
+      "sha": "56b51f07f47a141a7b3deda7c1643618021f7fda"
+    },
+    {
+      "module": "Lib.PadicComparison.Duality.GoodPairs",
+      "path": "src/Lib/PadicComparison/Duality/GoodPairs.lean",
+      "sha": "6a70bf36e78a5315d099bdacc0ee77ef440b5815"
+    },
+    {
+      "module": "Lib.PadicComparison.Duality.LineIntegration",
+      "path": "src/Lib/PadicComparison/Duality/LineIntegration.lean",
+      "sha": "57e919d19434a8e47b4c143fcbb345ecbba57d75"
+    },
+    {
+      "module": "Lib.PadicComparison.HodgeTate.ExtCocycles",
+      "path": "src/Lib/PadicComparison/HodgeTate/ExtCocycles.lean",
+      "sha": "69f40b613669328cb757e1c883db0658e32330b2"
+    },
+    {
+      "module": "Lib.PadicComparison.HodgeTate.GaloisWeight",
+      "path": "src/Lib/PadicComparison/HodgeTate/GaloisWeight.lean",
+      "sha": "f9db326b60e3192529c87693c88ffec38df7307b"
+    },
+    {
+      "module": "Lib.PadicComparison.HodgeTate.GenericFibre",
+      "path": "src/Lib/PadicComparison/HodgeTate/GenericFibre.lean",
+      "sha": "92bda81162169eda88d488a389836a730a905956"
+    },
+    {
+      "module": "Lib.PadicComparison.HodgeTate.Map",
+      "path": "src/Lib/PadicComparison/HodgeTate/Map.lean",
+      "sha": "91afaf9c25a351d4e02cb04918eec9270e26ca42"
+    },
+    {
+      "module": "Lib.PadicComparison.HodgeTate.PeriodMap",
+      "path": "src/Lib/PadicComparison/HodgeTate/PeriodMap.lean",
+      "sha": "4adb80965a7fdbf41727f5472fb10d88397578f0"
+    },
+    {
+      "module": "Lib.PadicComparison.Primitive.ComparisonTheorem",
+      "path": "src/Lib/PadicComparison/Primitive/ComparisonTheorem.lean",
+      "sha": "ae9638f4c1ba3e701f55caed7e92143b9b91fcf5"
+    },
+    {
+      "module": "Lib.PadicComparison.Primitive.PeriodCoefficients",
+      "path": "src/Lib/PadicComparison/Primitive/PeriodCoefficients.lean",
+      "sha": "4010fc9e29db4dfa7ff164318d7ca737aa577de8"
+    },
+    {
+      "module": "Lib.PadicComparison.Primitive.Periods",
+      "path": "src/Lib/PadicComparison/Primitive/Periods.lean",
+      "sha": "95598115d6813477053b17373d1d4e30a5733b11"
+    },
+    {
+      "module": "Lib.PadicComparison.ToricTower",
+      "path": "src/Lib/PadicComparison/ToricTower.lean",
+      "sha": "dbdb362ab59dc41bcd930a7c1e5c22feb8db11ca"
+    },
+    {
+      "module": "Lib.PadicHodge.ArtinSchreierSequence",
+      "path": "src/Lib/PadicHodge/ArtinSchreierSequence.lean",
+      "sha": "c3c0789f40f18bb08f7464fc70757180a9197f5d"
+    },
+    {
+      "module": "Lib.PadicHodge.BlochKato",
+      "path": "src/Lib/PadicHodge/BlochKato.lean",
+      "sha": "eb1273af819c22f0e3673aca0eb0c02ad849e6f5"
+    },
+    {
+      "module": "Lib.PadicHodge.Characters",
+      "path": "src/Lib/PadicHodge/Characters.lean",
+      "sha": "0d4cdd68558a2c249538afc97af87947ebf700fa"
+    },
+    {
+      "module": "Lib.PadicHodge.Crystalline.Basic",
+      "path": "src/Lib/PadicHodge/Crystalline/Basic.lean",
+      "sha": "6cfb275fa2f6a73ec50b79f28a6319ea0b5082c9"
+    },
+    {
+      "module": "Lib.PadicHodge.Crystalline.FixedRatios",
+      "path": "src/Lib/PadicHodge/Crystalline/FixedRatios.lean",
+      "sha": "cb955b591c2c7de4b85120f0ebe3e4267277f464"
+    },
+    {
+      "module": "Lib.PadicHodge.Crystalline.HodgeTateForms",
+      "path": "src/Lib/PadicHodge/Crystalline/HodgeTateForms.lean",
+      "sha": "cf4e85d2e0619442c6fd2442270823c1d79430b5"
+    },
+    {
+      "module": "Lib.PadicHodge.Crystalline.HodgeTateJumps",
+      "path": "src/Lib/PadicHodge/Crystalline/HodgeTateJumps.lean",
+      "sha": "ed0b6fb003a7a08efb19a29c4ca692ecb9f11566"
+    },
+    {
+      "module": "Lib.PadicHodge.Crystalline.Regularity",
+      "path": "src/Lib/PadicHodge/Crystalline/Regularity.lean",
+      "sha": "b9b1fd23d3b1f91fef0623005c0667a2a588e560"
+    },
+    {
+      "module": "Lib.PadicHodge.Kisin.Bicommutant",
+      "path": "src/Lib/PadicHodge/Kisin/Bicommutant.lean",
+      "sha": "a1935050d4c10b2f1e9340cecda5fc89f04fb28f"
+    },
+    {
+      "module": "Lib.PadicHodge.Kisin.Charts",
+      "path": "src/Lib/PadicHodge/Kisin/Charts.lean",
+      "sha": "8438a123b9f28ba3cc59339714a207877e622e41"
+    },
+    {
+      "module": "Lib.PadicHodge.Kisin.FrameTheorem",
+      "path": "src/Lib/PadicHodge/Kisin/FrameTheorem.lean",
+      "sha": "00aad85dbbc8db90ed4940472b850ec1ec554350"
+    },
+    {
+      "module": "Lib.PadicHodge.Kisin.KummerChartDeRham",
+      "path": "src/Lib/PadicHodge/Kisin/KummerChartDeRham.lean",
+      "sha": "613cedc38983cdd726f02a299cbf8e01d4da65fb"
+    },
+    {
+      "module": "Lib.PadicHodge.Kisin.KummerChartExistence",
+      "path": "src/Lib/PadicHodge/Kisin/KummerChartExistence.lean",
+      "sha": "359fdaedea34e887b8a1bf7767df6e3e2626aae6"
+    },
+    {
+      "module": "Lib.PadicHodge.Kisin.Modules",
+      "path": "src/Lib/PadicHodge/Kisin/Modules.lean",
+      "sha": "f59793395f0f8f2f2bcaf222aaeb434745703f4c"
+    },
+    {
+      "module": "Lib.PadicHodge.Kisin.PeriodMatrixBasis",
+      "path": "src/Lib/PadicHodge/Kisin/PeriodMatrixBasis.lean",
+      "sha": "8eef53f937994711def892c7546ef9b3b033cea3"
+    },
+    {
+      "module": "Lib.PadicHodge.Kisin.PeriodMatrixFrame",
+      "path": "src/Lib/PadicHodge/Kisin/PeriodMatrixFrame.lean",
+      "sha": "3f3e2a91fabde448c6d3e368ec06fe1b1a755526"
+    },
+    {
+      "module": "Lib.PadicHodge.Limit.CrystallineLimit",
+      "path": "src/Lib/PadicHodge/Limit/CrystallineLimit.lean",
+      "sha": "b326e2c71a31621efdbe031705db53b8d5ae9034"
+    },
+    {
+      "module": "Lib.PadicHodge.Limit.TraceLimit",
+      "path": "src/Lib/PadicHodge/Limit/TraceLimit.lean",
+      "sha": "e46e9b0fbc73db80edc05bda4ca7a3cd7ebfa9bd"
+    },
+    {
+      "module": "Lib.PadicHodge.PeriodRings.Ainf",
+      "path": "src/Lib/PadicHodge/PeriodRings/Ainf.lean",
+      "sha": "2eaad2c2f566c0b291b904c14f250b066da49fb0"
+    },
+    {
+      "module": "Lib.PadicHodge.PeriodRings.AxTheorem",
+      "path": "src/Lib/PadicHodge/PeriodRings/AxTheorem.lean",
+      "sha": "2ddc5868dd0b278c0fc3cf3a5be8ada92e4f39e1"
+    },
+    {
+      "module": "Lib.PadicHodge.PeriodRings.CrystallineRings",
+      "path": "src/Lib/PadicHodge/PeriodRings/CrystallineRings.lean",
+      "sha": "514919954f53f6d6e4b8eac1ae81ee41cd7fb3ac"
+    },
+    {
+      "module": "Lib.PadicHodge.PeriodRings.DeRhamPeriods",
+      "path": "src/Lib/PadicHodge/PeriodRings/DeRhamPeriods.lean",
+      "sha": "a6fa30bc1d72ee3bf502eddb38ba4ae6556680ea"
+    },
+    {
+      "module": "Lib.PadicHodge.RadiusLemma",
+      "path": "src/Lib/PadicHodge/RadiusLemma.lean",
+      "sha": "54cd7c26e86edcec0336f9807d0da8b16b0b8d46"
+    },
+    {
+      "module": "Lib.PadicHodge.TateSen",
+      "path": "src/Lib/PadicHodge/TateSen.lean",
+      "sha": "5dffefac09f99b2c2a366f27aa16e9e26fe4ace0"
+    },
+    {
+      "module": "Lib.Shimura.AbelianScheme.Basic",
+      "path": "src/Lib/Shimura/AbelianScheme/Basic.lean",
+      "sha": "27f0ad060b27426a9a711d46283fe2d43bb8f42f"
+    },
+    {
+      "module": "Lib.Shimura.AbelianScheme.IsogenyFlatness",
+      "path": "src/Lib/Shimura/AbelianScheme/IsogenyFlatness.lean",
+      "sha": "966f370eccd396f02a85013cef41f698a308ab3f"
+    },
+    {
+      "module": "Lib.Shimura.AbelianScheme.Pairings",
+      "path": "src/Lib/Shimura/AbelianScheme/Pairings.lean",
+      "sha": "f7b2a2390753ab322ff863093beb6d39ff368cad"
+    },
+    {
+      "module": "Lib.Shimura.AbelianScheme.TangentCoordinates",
+      "path": "src/Lib/Shimura/AbelianScheme/TangentCoordinates.lean",
+      "sha": "2ec8057981203b735ae058af46c2d980b9c239b0"
+    },
+    {
+      "module": "Lib.Shimura.ArcExtension",
+      "path": "src/Lib/Shimura/ArcExtension.lean",
+      "sha": "c807e2e9c7ad8592ba1039ca6526d7ddccb81cc0"
+    },
+    {
+      "module": "Lib.Shimura.ComplexTheta.AppellHumbertData",
+      "path": "src/Lib/Shimura/ComplexTheta/AppellHumbertData.lean",
+      "sha": "1325f8454412763872c5b3c525c5cdc38f9dc9bc"
+    },
+    {
+      "module": "Lib.Shimura.ComplexTheta.DimensionFormula",
+      "path": "src/Lib/Shimura/ComplexTheta/DimensionFormula.lean",
+      "sha": "94eb8e243e6adc9c676b370050358d5e051e10fd"
+    },
+    {
+      "module": "Lib.Shimura.CongruenceRelation.EichlerShimura",
+      "path": "src/Lib/Shimura/CongruenceRelation/EichlerShimura.lean",
+      "sha": "9b7adb455eafb5cd8061cda91eab10064e17482d"
+    },
+    {
+      "module": "Lib.Shimura.CongruenceRelation.HeckeNeighbours",
+      "path": "src/Lib/Shimura/CongruenceRelation/HeckeNeighbours.lean",
+      "sha": "a1bb5a3feae4974805c7c757f6e174f97a498b7b"
+    },
+    {
+      "module": "Lib.Shimura.CongruenceRelation.KernelReduction",
+      "path": "src/Lib/Shimura/CongruenceRelation/KernelReduction.lean",
+      "sha": "55e106c969158b3ea7f6378073e092ed47779274"
+    },
+    {
+      "module": "Lib.Shimura.Deformation.TangentBound",
+      "path": "src/Lib/Shimura/Deformation/TangentBound.lean",
+      "sha": "ba3478fd7544ee38f1520def2f423262bfaf9f88"
+    },
+    {
+      "module": "Lib.Shimura.Deformation.TangentCount",
+      "path": "src/Lib/Shimura/Deformation/TangentCount.lean",
+      "sha": "f7ff3085f41676ed808394f3f20efb70e584c8f3"
+    },
+    {
+      "module": "Lib.Shimura.Eigenspace",
+      "path": "src/Lib/Shimura/Eigenspace.lean",
+      "sha": "5d5c665c4390b71d70a875f452c804b2476f8fe6"
+    },
+    {
+      "module": "Lib.Shimura.GoodReduction.GaussSums",
+      "path": "src/Lib/Shimura/GoodReduction/GaussSums.lean",
+      "sha": "d2201506a9d253aac04106c778595dddb8eaca41"
+    },
+    {
+      "module": "Lib.Shimura.GoodReduction.MultiplicativeNorm",
+      "path": "src/Lib/Shimura/GoodReduction/MultiplicativeNorm.lean",
+      "sha": "cb371912ed2b646f070133d09c10b25758cca775"
+    },
+    {
+      "module": "Lib.Shimura.GoodReduction.TorsionSizes",
+      "path": "src/Lib/Shimura/GoodReduction/TorsionSizes.lean",
+      "sha": "f2ddf4d47e2c3a355826f587592717c2870c65e9"
+    },
+    {
+      "module": "Lib.Shimura.HeckeTower.HeckeData",
+      "path": "src/Lib/Shimura/HeckeTower/HeckeData.lean",
+      "sha": "27db02942d41bc84ec0bceccf635a4e1434397de"
+    },
+    {
+      "module": "Lib.Shimura.HeckeTower.Model",
+      "path": "src/Lib/Shimura/HeckeTower/Model.lean",
+      "sha": "dfbb40891050622c2d2acd05b9ce0db1b0501c31"
+    },
+    {
+      "module": "Lib.Shimura.IntegralModel.BallImmersion",
+      "path": "src/Lib/Shimura/IntegralModel/BallImmersion.lean",
+      "sha": "03968c2161cb1b0503f838262e4149dc82d6c65d"
+    },
+    {
+      "module": "Lib.Shimura.IntegralModel.PELDataExistence",
+      "path": "src/Lib/Shimura/IntegralModel/PELDataExistence.lean",
+      "sha": "6bf1f83393285cc11bfc9ba5038c9b51e87d7db2"
+    },
+    {
+      "module": "Lib.Shimura.IntegralModel.TowerExistence",
+      "path": "src/Lib/Shimura/IntegralModel/TowerExistence.lean",
+      "sha": "05acf4241c1902b2f63de1ea5020aa1a94430876"
+    },
+    {
+      "module": "Lib.Shimura.IntegralModel.UniversalFamily",
+      "path": "src/Lib/Shimura/IntegralModel/UniversalFamily.lean",
+      "sha": "5bc8fb438aaba4251747576afa35b5b4b9f1d86d"
+    },
+    {
+      "module": "Lib.Shimura.ThetaGroup",
+      "path": "src/Lib/Shimura/ThetaGroup.lean",
+      "sha": "6c61cddb4de10a7975178ed4bb7410428f84035b"
+    },
+    {
+      "module": "Lib.Shimura.ThetaModuli.FamilyFromPoints",
+      "path": "src/Lib/Shimura/ThetaModuli/FamilyFromPoints.lean",
+      "sha": "eef569b43c62d5b1e70e0610196044b9438a5ee8"
+    },
+    {
+      "module": "Lib.Shimura.ThetaModuli.FlatClosure",
+      "path": "src/Lib/Shimura/ThetaModuli/FlatClosure.lean",
+      "sha": "2845f4a1165504272882aa91a644a5522da22c15"
+    },
+    {
+      "module": "Lib.Shimura.ThetaModuli.PELThetaTori",
+      "path": "src/Lib/Shimura/ThetaModuli/PELThetaTori.lean",
+      "sha": "20165317ac25c8b7d4d92dee5dca0f6e8f4541c9"
+    },
+    {
+      "module": "Lib.Shimura.ThetaModuli.ThetaFamilyRigidity",
+      "path": "src/Lib/Shimura/ThetaModuli/ThetaFamilyRigidity.lean",
+      "sha": "3f12c6abec2b1981ba32a353fdc27a4a2314a5c0"
+    },
+    {
+      "module": "Lib.Shimura.ThetaModuli.UniversalFamily",
+      "path": "src/Lib/Shimura/ThetaModuli/UniversalFamily.lean",
+      "sha": "d0b65dd404c3bc4594ce052c7abc36bb3b2ab1b2"
+    },
+    {
+      "module": "Lib.Shimura.ThetaNormality.NormalGeneration",
+      "path": "src/Lib/Shimura/ThetaNormality/NormalGeneration.lean",
+      "sha": "d5a4b66ff0a13cab1186c16e066e3535d90058e7"
+    },
+    {
+      "module": "Lib.Shimura.ThetaNormality.RiemannRelation",
+      "path": "src/Lib/Shimura/ThetaNormality/RiemannRelation.lean",
+      "sha": "15db797d7b6c5a503f9bffbad431eb6c3a9b17d7"
+    },
+    {
+      "module": "Lib.Shimura.TraceFormula.DefiniteTrace",
+      "path": "src/Lib/Shimura/TraceFormula/DefiniteTrace.lean",
+      "sha": "16a24d6c1e9d03c0b74b05ae44b12b4adaefe76a"
+    },
+    {
+      "module": "Lib.Shimura.TraceFormula.MarkedDefiniteSums",
+      "path": "src/Lib/Shimura/TraceFormula/MarkedDefiniteSums.lean",
+      "sha": "b84878841f267d512a4675980ab591eb16a209b6"
+    },
+    {
+      "module": "Lib.Shimura.TraceFormula.TestFunction",
+      "path": "src/Lib/Shimura/TraceFormula/TestFunction.lean",
+      "sha": "49c9d6136eb40d1195b208be731dd27fee3bb4b8"
+    },
+    {
+      "module": "Lib.Shimura.Transfer.Lefschetz",
+      "path": "src/Lib/Shimura/Transfer/Lefschetz.lean",
+      "sha": "5fbb9997a7c07e7462260fb64b08a1c3739a4049"
+    },
+    {
+      "module": "Lib.Shimura.Transfer.MarkedPairs",
+      "path": "src/Lib/Shimura/Transfer/MarkedPairs.lean",
+      "sha": "c6b7180fcd39476f69468283048b0b9e6be6628a"
+    },
+    {
+      "module": "Lib.Shimura.Transfer.WeightOccurs",
+      "path": "src/Lib/Shimura/Transfer/WeightOccurs.lean",
+      "sha": "6860e9e5aaf989274dc8209d2dd0a40cf54ffe86"
+    },
+    {
+      "module": "Lib.Shimura.Uniformisation.AdelicFrames",
+      "path": "src/Lib/Shimura/Uniformisation/AdelicFrames.lean",
+      "sha": "1981b1c6150f2fe60e8c900b3c2f06de15d8b78d"
+    },
+    {
+      "module": "Lib.Shimura.Uniformisation.AppellHumbert",
+      "path": "src/Lib/Shimura/Uniformisation/AppellHumbert.lean",
+      "sha": "c10fafc2ed4f9a99876c18912d9ad631b593f46e"
+    },
+    {
+      "module": "Lib.Shimura.Uniformisation.BallModel",
+      "path": "src/Lib/Shimura/Uniformisation/BallModel.lean",
+      "sha": "e2bf12f3ad61e14d7422580b6d0b3ea6725fb267"
+    },
+    {
+      "module": "Lib.Shimura.Uniformisation.HolomorphicFamilies",
+      "path": "src/Lib/Shimura/Uniformisation/HolomorphicFamilies.lean",
+      "sha": "39c7bf55e64a9642585ea76ee4f1c52601835673"
+    },
+    {
+      "module": "Lib.Shimura.Uniformisation.LieExponential",
+      "path": "src/Lib/Shimura/Uniformisation/LieExponential.lean",
+      "sha": "d930adc572ec1fe23ef8d76f597003d96998f4e0"
+    },
+    {
+      "module": "Lib.Shimura.Uniformisation.ModelExists",
+      "path": "src/Lib/Shimura/Uniformisation/ModelExists.lean",
+      "sha": "ee86c6c7dd2f13454820f4db664450ad052bd16c"
+    },
+    {
+      "module": "Lib.Shimura.Uniformisation.TorusModel",
+      "path": "src/Lib/Shimura/Uniformisation/TorusModel.lean",
+      "sha": "f5b65b67ae537621bcbae01df08d1afa0beceff9"
+    },
+    {
+      "module": "Lib.SiegelWeil.Formula.LagrangianZeroTerms",
+      "path": "src/Lib/SiegelWeil/Formula/LagrangianZeroTerms.lean",
+      "sha": "f401cd75eea50faad398bc17d4a31d2c7a41ba1d"
+    },
+    {
+      "module": "Lib.SiegelWeil.Formula.StrongApproximation",
+      "path": "src/Lib/SiegelWeil/Formula/StrongApproximation.lean",
+      "sha": "82b78e62a0d27b1042df023cb784e421ede72cf8"
+    },
+    {
+      "module": "Lib.SiegelWeil.Formula.WeilRange",
+      "path": "src/Lib/SiegelWeil/Formula/WeilRange.lean",
+      "sha": "6fdb58c8aff32f5fc65eff4b7ed60908da67d902"
+    },
+    {
+      "module": "Lib.SiegelWeil.Mass",
+      "path": "src/Lib/SiegelWeil/Mass.lean",
+      "sha": "129c06cb7c60be742b9343af64264cd8d6d3f8c4"
+    },
+    {
+      "module": "Lib.SiegelWeil.NeighbourLattices",
+      "path": "src/Lib/SiegelWeil/NeighbourLattices.lean",
+      "sha": "003e7e30b878a8b82e9c80e2c2c298e857799598"
+    },
+    {
+      "module": "Lib.SiegelWeil.OneVector.ClassGaussSums",
+      "path": "src/Lib/SiegelWeil/OneVector/ClassGaussSums.lean",
+      "sha": "fad56554c62315fec0601c056ebf5cd95fde0bde"
+    },
+    {
+      "module": "Lib.SiegelWeil.OneVector.FinitePlaceDensity",
+      "path": "src/Lib/SiegelWeil/OneVector/FinitePlaceDensity.lean",
+      "sha": "6dcb552fc18a881fb31408bb7f6261d0f74e1f4f"
+    },
+    {
+      "module": "Lib.SiegelWeil.OneVector.ResidueClasses",
+      "path": "src/Lib/SiegelWeil/OneVector/ResidueClasses.lean",
+      "sha": "7a72cd7414bf36a278bf1651bd64352544249a99"
+    },
+    {
+      "module": "Lib.SiegelWeil.OneVector.SemilocalDensityBounds",
+      "path": "src/Lib/SiegelWeil/OneVector/SemilocalDensityBounds.lean",
+      "sha": "9eca96ffa2b67f3a5c7434546b9dca8fd4952b59"
+    },
+    {
+      "module": "Lib.SiegelWeil.OneVector.SiegelClassSum",
+      "path": "src/Lib/SiegelWeil/OneVector/SiegelClassSum.lean",
+      "sha": "04d212cb8ab19759e6200e18d9ec02870aacaf24"
+    },
+    {
+      "module": "Lib.SiegelWeil.OneVector.StandardQuadrics",
+      "path": "src/Lib/SiegelWeil/OneVector/StandardQuadrics.lean",
+      "sha": "82e1dae921b0d510e598140bddc97f2e27a86bae"
+    },
+    {
+      "module": "Lib.SiegelWeil.RallisInner.Doubling",
+      "path": "src/Lib/SiegelWeil/RallisInner/Doubling.lean",
+      "sha": "b8b0482fd65a953046a77c71e2978880b217759d"
+    },
+    {
+      "module": "Lib.SiegelWeil.RallisInner.SharpData",
+      "path": "src/Lib/SiegelWeil/RallisInner/SharpData.lean",
+      "sha": "cda5157e020222ad1a7acdad4815c18b8aa01e3b"
+    },
+    {
+      "module": "Lib.SiegelWeil.Reproduction",
+      "path": "src/Lib/SiegelWeil/Reproduction.lean",
+      "sha": "8d9372ea4256c0c40ba0bad885eeb5cd79acee1a"
+    },
+    {
+      "module": "Lib.SiegelWeil.SingularForms.CentreCoefficients",
+      "path": "src/Lib/SiegelWeil/SingularForms/CentreCoefficients.lean",
+      "sha": "dcb21b506732ad1e97403b7ba88ec7df3c2d0394"
+    },
+    {
+      "module": "Lib.SiegelWeil.SingularForms.UnimodularCoefficients",
+      "path": "src/Lib/SiegelWeil/SingularForms/UnimodularCoefficients.lean",
+      "sha": "d643ac9d57a173d4ac354048c9ec8cfdaabc0683"
+    },
+    {
+      "module": "Lib.SiegelWeil.Tower.ConstantTerm",
+      "path": "src/Lib/SiegelWeil/Tower/ConstantTerm.lean",
+      "sha": "e81e0c5d5a7ced273f18ea0ca697434ffab062be"
+    },
+    {
+      "module": "Lib.SiegelWeil.Tower.FiniteTateIntegral",
+      "path": "src/Lib/SiegelWeil/Tower/FiniteTateIntegral.lean",
+      "sha": "ca3239803336d75d3a686734df8a6fe12528ed5f"
+    },
+    {
+      "module": "Lib.SiegelWeil.Tower.FunctionalEquation",
+      "path": "src/Lib/SiegelWeil/Tower/FunctionalEquation.lean",
+      "sha": "92ed33095f593da42b1438bb77d16f69da8c6029"
+    },
+    {
+      "module": "Lib.SiegelWeil.Tower.LargeSideConstantTerm",
+      "path": "src/Lib/SiegelWeil/Tower/LargeSideConstantTerm.lean",
+      "sha": "d17a5b8e234bc9856725c3de0ba73022c5177047"
+    },
+    {
+      "module": "Lib.SiegelWeil.Tower.LineGaussSums",
+      "path": "src/Lib/SiegelWeil/Tower/LineGaussSums.lean",
+      "sha": "5c147fbc3f5d2317b872052c2d1ea06b18a753a6"
+    },
+    {
+      "module": "Lib.SiegelWeil.Tower.LineTerms",
+      "path": "src/Lib/SiegelWeil/Tower/LineTerms.lean",
+      "sha": "01a30f5a452499bc6a9becb9b86fd2ddce9fc53a"
+    },
+    {
+      "module": "Lib.SiegelWeil.Tower.PrincipalIdeles",
+      "path": "src/Lib/SiegelWeil/Tower/PrincipalIdeles.lean",
+      "sha": "4ecb474805139e9deb035e347e97d30f54dc9aba"
+    },
+    {
+      "module": "Lib.SiegelWeil.Tower.RealConeIntegral",
+      "path": "src/Lib/SiegelWeil/Tower/RealConeIntegral.lean",
+      "sha": "e59b39aa1a903d3f809e58a7960571c290b69483"
+    },
+    {
+      "module": "Lib.SiegelWeil.Tower.TestVector",
+      "path": "src/Lib/SiegelWeil/Tower/TestVector.lean",
+      "sha": "179cbf632efb40afc9d0a27c16a23dde1bc3575b"
+    },
+    {
+      "module": "Lib.SiegelWeil.UnramifiedSeries.RallisSeries",
+      "path": "src/Lib/SiegelWeil/UnramifiedSeries/RallisSeries.lean",
+      "sha": "35f5c6ac901ffacfd5b9478de347cf64c03894c4"
+    },
+    {
+      "module": "Lib.SiegelWeil.UnramifiedSeries.VacuumCoefficients",
+      "path": "src/Lib/SiegelWeil/UnramifiedSeries/VacuumCoefficients.lean",
+      "sha": "4427c0c8c6bcdc401f28cff2f594210059a2d4f5"
+    },
+    {
+      "module": "Lib.Speed",
+      "path": "src/Lib/Speed.lean",
+      "sha": "22033419eeaae6ba487717a1f7a1f7f4699482c4"
+    },
+    {
+      "module": "Lib.Weil.CompactLift.DefiniteThetaLift",
+      "path": "src/Lib/Weil/CompactLift/DefiniteThetaLift.lean",
+      "sha": "28755a7a8bb15147e8f567d6fbb15f1a590d2211"
+    },
+    {
+      "module": "Lib.Weil.CompactLift.ThetaKernelDefs",
+      "path": "src/Lib/Weil/CompactLift/ThetaKernelDefs.lean",
+      "sha": "ec6ff5a101cdb3910c90208e691a87e263b09261"
+    },
+    {
+      "module": "Lib.Weil.Construction.AdelicRepresentation",
+      "path": "src/Lib/Weil/Construction/AdelicRepresentation.lean",
+      "sha": "ba58629d4763b340068dd86d012a4d270092dddb"
+    },
+    {
+      "module": "Lib.Weil.Construction.CanonicalTheta",
+      "path": "src/Lib/Weil/Construction/CanonicalTheta.lean",
+      "sha": "64564b2cdcb6b58974d848d12f4edaabd32ce0f6"
+    },
+    {
+      "module": "Lib.Weil.Construction.FiniteCocycle",
+      "path": "src/Lib/Weil/Construction/FiniteCocycle.lean",
+      "sha": "f26a609d4d0df7ab16feb181b977ca8bed06e6a1"
+    },
+    {
+      "module": "Lib.Weil.Construction.FiniteMultiplier",
+      "path": "src/Lib/Weil/Construction/FiniteMultiplier.lean",
+      "sha": "be310c131ec94bbd575b09d709de2c2c05e33c9f"
+    },
+    {
+      "module": "Lib.Weil.Construction.FourierInversion",
+      "path": "src/Lib/Weil/Construction/FourierInversion.lean",
+      "sha": "8b12f6ceabdc1d45c7d6490a8cbb8c9c0aa1ac04"
+    },
+    {
+      "module": "Lib.Weil.Construction.HeisenbergModel",
+      "path": "src/Lib/Weil/Construction/HeisenbergModel.lean",
+      "sha": "55363256f07e52260a2d13818ed94d11dc60cb47"
+    },
+    {
+      "module": "Lib.Weil.Construction.ProductsAndTransport",
+      "path": "src/Lib/Weil/Construction/ProductsAndTransport.lean",
+      "sha": "78b4fde2b7128784481c6d85755ae0013948d282"
+    },
+    {
+      "module": "Lib.Weil.Construction.ThetaDictionary",
+      "path": "src/Lib/Weil/Construction/ThetaDictionary.lean",
+      "sha": "f8265fc2c06dfe2a734c5762e5c9cb0303c42fff"
+    },
+    {
+      "module": "Lib.Weil.Construction.ThetaJets",
+      "path": "src/Lib/Weil/Construction/ThetaJets.lean",
+      "sha": "b66b86bc8954b12391d75e5ba35a71b197bcd24e"
+    },
+    {
+      "module": "Lib.Weil.Construction.VacuumProjections",
+      "path": "src/Lib/Weil/Construction/VacuumProjections.lean",
+      "sha": "3d927b3bd34e83901c383257a6396fa4ac726026"
+    },
+    {
+      "module": "Lib.Weil.Construction.WeilData",
+      "path": "src/Lib/Weil/Construction/WeilData.lean",
+      "sha": "ceb2c06f66e704f84e22611c364b67d9a0db6aa7"
+    },
+    {
+      "module": "Lib.Weil.Construction.WeilOperators",
+      "path": "src/Lib/Weil/Construction/WeilOperators.lean",
+      "sha": "88835dd0837843104a543b618174e66841a5c34c"
+    },
+    {
+      "module": "Lib.Weil.DualPair.Defs",
+      "path": "src/Lib/Weil/DualPair/Defs.lean",
+      "sha": "0585f8eba05b7f31a346b881608e767a3e7e0575"
+    },
+    {
+      "module": "Lib.Weil.DualPair.FiniteAction",
+      "path": "src/Lib/Weil/DualPair/FiniteAction.lean",
+      "sha": "2899c8aa92e2bbcea424fc931035f8c882b03776"
+    },
+    {
+      "module": "Lib.Weil.DualPair.Flip",
+      "path": "src/Lib/Weil/DualPair/Flip.lean",
+      "sha": "690f3f32e7fbb2d6d347e361477bf7ec8f8c7c98"
+    },
+    {
+      "module": "Lib.Weil.DualPair.GaloisLaw",
+      "path": "src/Lib/Weil/DualPair/GaloisLaw.lean",
+      "sha": "699b96aabaf3b7c688545f6a6a636e132dd0220b"
+    },
+    {
+      "module": "Lib.Weil.DualPair.HolomorphicData",
+      "path": "src/Lib/Weil/DualPair/HolomorphicData.lean",
+      "sha": "bd4bef5f126b3583ae3e71af827ee624e2f8f63c"
+    },
+    {
+      "module": "Lib.Weil.DualPair.KernelDecay",
+      "path": "src/Lib/Weil/DualPair/KernelDecay.lean",
+      "sha": "547ef0d0ad5fd55ecd31ccb9f09dd2ecacd9b60f"
+    },
+    {
+      "module": "Lib.Weil.DualPair.KernelLaws",
+      "path": "src/Lib/Weil/DualPair/KernelLaws.lean",
+      "sha": "6084965a36df2991f836350aa1a89742150ffedf"
+    },
+    {
+      "module": "Lib.Weil.DualPair.Kronecker",
+      "path": "src/Lib/Weil/DualPair/Kronecker.lean",
+      "sha": "62b2f1633dcd56d9c0e32f3f792bfff1578670b0"
+    },
+    {
+      "module": "Lib.Weil.DualPair.MixedModel",
+      "path": "src/Lib/Weil/DualPair/MixedModel.lean",
+      "sha": "0c67ee04dfefa693171c0d8ddfd7ddfabf967248"
+    },
+    {
+      "module": "Lib.Weil.DualPair.ShortIsotropicVectors",
+      "path": "src/Lib/Weil/DualPair/ShortIsotropicVectors.lean",
+      "sha": "e6d8e95ba702ad0e08a494f1c74fb98a00197fde"
+    },
+    {
+      "module": "Lib.Weil.DualPair.ThetaIntegrals",
+      "path": "src/Lib/Weil/DualPair/ThetaIntegrals.lean",
+      "sha": "b8a961e38323743d3d64ecfbfdf52a0659d1f218"
+    },
+    {
+      "module": "Lib.Weil.DualPair.ThetaLiftConvergence",
+      "path": "src/Lib/Weil/DualPair/ThetaLiftConvergence.lean",
+      "sha": "edcaf7b942e7eabcdd8102cb781dbdfa6f3bf02e"
+    },
+    {
+      "module": "Lib.Weil.DualPair.TwoEdges",
+      "path": "src/Lib/Weil/DualPair/TwoEdges.lean",
+      "sha": "903184a8cb8efb77238f0c852a11623fd0c55991"
+    },
+    {
+      "module": "Lib.Weil.DualPair.WeilAction",
+      "path": "src/Lib/Weil/DualPair/WeilAction.lean",
+      "sha": "99f7de84c983eb941a5ba6c68d484231e920c536"
+    },
+    {
+      "module": "Lib.Weil.Fock.Basic",
+      "path": "src/Lib/Weil/Fock/Basic.lean",
+      "sha": "fd45706b5c54f907f5e4f51db98d3924d54dca92"
+    },
+    {
+      "module": "Lib.Weil.Fock.OscillatorPair",
+      "path": "src/Lib/Weil/Fock/OscillatorPair.lean",
+      "sha": "1c5449b65c645dfaa537cd79d0b6672a197aa1ca"
+    },
+    {
+      "module": "Lib.Weil.Fock.PolynomialVectors",
+      "path": "src/Lib/Weil/Fock/PolynomialVectors.lean",
+      "sha": "75f1d78465476cd104bbfdbe83ae0f91a6fccd77"
+    },
+    {
+      "module": "Lib.Weil.Fock.WeightedNorms",
+      "path": "src/Lib/Weil/Fock/WeightedNorms.lean",
+      "sha": "3766eb47061deb2b025975b22502d6e6f582c2b8"
+    },
+    {
+      "module": "Lib.Weil.Lift",
+      "path": "src/Lib/Weil/Lift.lean",
+      "sha": "5c0eb339f14cf938627cad331de96501a6e296ab"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.AdaptedSplitting",
+      "path": "src/Lib/Weil/MixedModel/AdaptedSplitting.lean",
+      "sha": "0a196d61aefa144b45b1cf543fcbd259ba5e3246"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.FockSections",
+      "path": "src/Lib/Weil/MixedModel/FockSections.lean",
+      "sha": "0a689c8fa8802808f19eafc2be4a9de2cc79192d"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.IsotropicSplitting",
+      "path": "src/Lib/Weil/MixedModel/IsotropicSplitting.lean",
+      "sha": "d26d0f121c9be8b280e82b2c740fc30426c3f072"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.NamedData",
+      "path": "src/Lib/Weil/MixedModel/NamedData.lean",
+      "sha": "4dff0a9986cfeb2762e1758c63d05686e8b835f9"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.RealTheta",
+      "path": "src/Lib/Weil/MixedModel/RealTheta.lean",
+      "sha": "8eaf01a1c8c80b9d0ed57fa4eaecd42ecb7c520d"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.SchwartzBruhat",
+      "path": "src/Lib/Weil/MixedModel/SchwartzBruhat.lean",
+      "sha": "38f312dc75789ed891a06b120f6b0c29dff49278"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.Slices",
+      "path": "src/Lib/Weil/MixedModel/Slices.lean",
+      "sha": "23984b00aef597168ed3acdcc22df10097056af9"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.TargetZeroTerm",
+      "path": "src/Lib/Weil/MixedModel/TargetZeroTerm.lean",
+      "sha": "e60ba808120a91aef95b6e423450b489c888e64c"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.ThetaInvariance",
+      "path": "src/Lib/Weil/MixedModel/ThetaInvariance.lean",
+      "sha": "9833a44aba1233e591939a242fdd23d2829aa1d9"
+    },
+    {
+      "module": "Lib.Weil.MixedModel.ZeroTerm",
+      "path": "src/Lib/Weil/MixedModel/ZeroTerm.lean",
+      "sha": "7647bd32ac70081cfc85379485c66acc5ed91a2b"
+    },
+    {
+      "module": "Lib.Weil.Periods.BesselIntegral",
+      "path": "src/Lib/Weil/Periods/BesselIntegral.lean",
+      "sha": "85935f3b2683da300fcb3eac0b22b5fd1ac67543"
+    },
+    {
+      "module": "Lib.Weil.Periods.ConstantTerm",
+      "path": "src/Lib/Weil/Periods/ConstantTerm.lean",
+      "sha": "10a10ed5ba6634787a24accbe1ffd4a27db3bd31"
+    },
+    {
+      "module": "Lib.Weil.Periods.DescentVanishing",
+      "path": "src/Lib/Weil/Periods/DescentVanishing.lean",
+      "sha": "37972ab294e6d8902d3f07496152c0b5b38bbcb0"
+    },
+    {
+      "module": "Lib.Weil.Periods.Equivariant",
+      "path": "src/Lib/Weil/Periods/Equivariant.lean",
+      "sha": "ee1aa677a53edd8a91a6ead4f62d7662bead5713"
+    },
+    {
+      "module": "Lib.Weil.Periods.GradedLattice",
+      "path": "src/Lib/Weil/Periods/GradedLattice.lean",
+      "sha": "f40fc028f5b60c5d47d870c3606d96d22455e7d5"
+    },
+    {
+      "module": "Lib.Weil.Periods.Grading",
+      "path": "src/Lib/Weil/Periods/Grading.lean",
+      "sha": "a29ba556a510d42780cc7e6d8b263071a02dc648"
+    },
+    {
+      "module": "Lib.Weil.Periods.LatticeBounds",
+      "path": "src/Lib/Weil/Periods/LatticeBounds.lean",
+      "sha": "2aba901d4063275c5424aac863257793f486f587"
+    },
+    {
+      "module": "Lib.Weil.Periods.PointLattice",
+      "path": "src/Lib/Weil/Periods/PointLattice.lean",
+      "sha": "edffe50c528d72b66630498d34895c8621693f25"
+    },
+    {
+      "module": "Lib.Weil.Periods.RealAndFinitePoints",
+      "path": "src/Lib/Weil/Periods/RealAndFinitePoints.lean",
+      "sha": "5375da96278414beeb4f0c1fc0c43b1274017694"
+    },
+    {
+      "module": "Lib.Weil.Periods.StringPowers",
+      "path": "src/Lib/Weil/Periods/StringPowers.lean",
+      "sha": "5975b8e9e5b010ab1c922f8084d0e618ac760f01"
+    },
+    {
+      "module": "Lib.Weil.Periods.Unfolding",
+      "path": "src/Lib/Weil/Periods/Unfolding.lean",
+      "sha": "0d97c14cd78f81c226c3ba2aee539d76616781bc"
+    },
+    {
+      "module": "Lib.Weil.Seesaw",
+      "path": "src/Lib/Weil/Seesaw.lean",
+      "sha": "0d000bcb34b64b0463cd78cc76191b43a991190f"
+    },
+    {
+      "module": "Lib.Weil.TameGaussSum",
+      "path": "src/Lib/Weil/TameGaussSum.lean",
+      "sha": "10c5b30a88813a25228ceb805c7314d9b35ad3f2"
+    },
+    {
+      "module": "Lib.Weil.Unramified.HeckeGL",
+      "path": "src/Lib/Weil/Unramified/HeckeGL.lean",
+      "sha": "bd3d5f76e33d72b0195a179df8ff6c4b9ae038e7"
+    },
+    {
+      "module": "Lib.Weil.Unramified.HeckeTransfer",
+      "path": "src/Lib/Weil/Unramified/HeckeTransfer.lean",
+      "sha": "09f39a533db89be5b27d1e39c1e013923f3e8a85"
+    },
+    {
+      "module": "Lib.Weil.Unramified.SplitHecke",
+      "path": "src/Lib/Weil/Unramified/SplitHecke.lean",
+      "sha": "acb9140c81841b713ad6cdcb1616d5c4650a65be"
+    },
+    {
+      "module": "Main",
+      "path": "src/Main.lean",
+      "sha": "1adf4187a938510363cdb0dde0a6d628ff39c600"
+    },
+    {
+      "module": "New.Appendix.DiscreteSeries.GaussianShape",
+      "path": "src/New/Appendix/DiscreteSeries/GaussianShape.lean",
+      "sha": "b53aa90f9bb75b66bd47b012da6bae5c6f6daded"
+    },
+    {
+      "module": "New.Appendix.DiscreteSeries.Localization",
+      "path": "src/New/Appendix/DiscreteSeries/Localization.lean",
+      "sha": "acdd0e042c0e43cf8358d2e3799a49af06f06524"
+    },
+    {
+      "module": "New.Appendix.DiscreteSeries.MinorSecondOrder",
+      "path": "src/New/Appendix/DiscreteSeries/MinorSecondOrder.lean",
+      "sha": "a3a467b3153473dd6774e7cc95274c0ab95a09d8"
+    },
+    {
+      "module": "New.Appendix.DiscreteSeries.OneMinor",
+      "path": "src/New/Appendix/DiscreteSeries/OneMinor.lean",
+      "sha": "762d8928faa2cd1b3a821a52e6d3147f21794a7d"
+    },
+    {
+      "module": "New.Appendix.DiscreteSeries.Periods",
+      "path": "src/New/Appendix/DiscreteSeries/Periods.lean",
+      "sha": "c9f9fdc97f020bfd18233d3a1294c23f525967f8"
+    },
+    {
+      "module": "New.Appendix.DiscreteSeries.PositionGroup",
+      "path": "src/New/Appendix/DiscreteSeries/PositionGroup.lean",
+      "sha": "85a1beea84a40ff5e133a5c8e53398cb63a9269e"
+    },
+    {
+      "module": "New.Appendix.DiscreteSeries.Positions",
+      "path": "src/New/Appendix/DiscreteSeries/Positions.lean",
+      "sha": "6d6ff5bc440c7b42f446570f84519fb6dacea3f9"
+    },
+    {
+      "module": "New.Appendix.DiscreteSeries.StationaryPosition",
+      "path": "src/New/Appendix/DiscreteSeries/StationaryPosition.lean",
+      "sha": "4cc906822b5f2a90d8df14e9c4dbe9e3552f7a28"
+    },
+    {
+      "module": "New.Appendix.DiscreteSeries.SteepParameters",
+      "path": "src/New/Appendix/DiscreteSeries/SteepParameters.lean",
+      "sha": "82a93816a133342769d49157ba89822f6a602cb9"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.AuxiliaryPrimeTie",
+      "path": "src/New/Congruences/FirstOrder/AuxiliaryPrimeTie.lean",
+      "sha": "f93465aa6fd708e65c655f7e8549c8c50c66bb02"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.DenominatorBound",
+      "path": "src/New/Congruences/FirstOrder/DenominatorBound.lean",
+      "sha": "2e9d8475684f0a24b5b47a086aa70bea2251affe"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.EvenClasses",
+      "path": "src/New/Congruences/FirstOrder/EvenClasses.lean",
+      "sha": "1e524de7c2a5c016d014cc441441b6eb25ac6f2d"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.FittingBlock",
+      "path": "src/New/Congruences/FirstOrder/FittingBlock.lean",
+      "sha": "452f357f31cdb8b3788832261abaf6ec20aa91df"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.HeckeStrings",
+      "path": "src/New/Congruences/FirstOrder/HeckeStrings.lean",
+      "sha": "0cf3729363d1cc246b02ec4e8a397f5a61feaf93"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.KummerMaps",
+      "path": "src/New/Congruences/FirstOrder/KummerMaps.lean",
+      "sha": "f2c2023d4b2ac50d4b68cbcdceba32408fbe4373"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.OnePrime",
+      "path": "src/New/Congruences/FirstOrder/OnePrime.lean",
+      "sha": "b65d1f3e945b5aa28047182109802a08d328073d"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.RibetElement",
+      "path": "src/New/Congruences/FirstOrder/RibetElement.lean",
+      "sha": "7d1087d880d58b22825fddb422ab5a097a1d7734"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.RibetLemma",
+      "path": "src/New/Congruences/FirstOrder/RibetLemma.lean",
+      "sha": "494233164deab7c51f03bc79f26f80d763feb4eb"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.RibetMatrices",
+      "path": "src/New/Congruences/FirstOrder/RibetMatrices.lean",
+      "sha": "202966d29116c40d44290fe79b8983183f6d4e2a"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.RibetMethod",
+      "path": "src/New/Congruences/FirstOrder/RibetMethod.lean",
+      "sha": "862e5c9a85f63be39962d73e6a0091382e24f541"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.TateTwistCocycles",
+      "path": "src/New/Congruences/FirstOrder/TateTwistCocycles.lean",
+      "sha": "806957ddacdfa840333b3c74a8412b4175b6630d"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.TiedTraces",
+      "path": "src/New/Congruences/FirstOrder/TiedTraces.lean",
+      "sha": "e32ea30da2620ccc1c164008adfd13392de1bb20"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.TraceRelations",
+      "path": "src/New/Congruences/FirstOrder/TraceRelations.lean",
+      "sha": "eae0ec8f38787bd2457fe7a420b48e94e202aa76"
+    },
+    {
+      "module": "New.Congruences.FirstOrder.TrianglePrimes",
+      "path": "src/New/Congruences/FirstOrder/TrianglePrimes.lean",
+      "sha": "390837878cf37f55392ad2dc165db6f592d19a45"
+    },
+    {
+      "module": "New.Congruences.FitTwistsExist",
+      "path": "src/New/Congruences/FitTwistsExist.lean",
+      "sha": "f284005b8963c0cd9996189cc971b8c0a212d525"
+    },
+    {
+      "module": "New.Congruences.GaloisRepresentations.AttachedRepresentations",
+      "path": "src/New/Congruences/GaloisRepresentations/AttachedRepresentations.lean",
+      "sha": "ed41379fb011780d4326557db5c183b7e1eab710"
+    },
+    {
+      "module": "New.Congruences.GaloisRepresentations.BaseLevelOfLabel",
+      "path": "src/New/Congruences/GaloisRepresentations/BaseLevelOfLabel.lean",
+      "sha": "3276883f7402a07ed550062a7397ebc7da919277"
+    },
+    {
+      "module": "New.Congruences.GaloisRepresentations.RowsAndColumnsFromLabels",
+      "path": "src/New/Congruences/GaloisRepresentations/RowsAndColumnsFromLabels.lean",
+      "sha": "2bac5e6a29aadc68fdcda8190ef469c91ec0e258"
+    },
+    {
+      "module": "New.Congruences.GaloisRepresentations.RowsFromEigensystems",
+      "path": "src/New/Congruences/GaloisRepresentations/RowsFromEigensystems.lean",
+      "sha": "434dfad1d3582cc9b268bbac1619cb25eb34817b"
+    },
+    {
+      "module": "New.Congruences.GaloisRepresentations.SelmerHypotheses",
+      "path": "src/New/Congruences/GaloisRepresentations/SelmerHypotheses.lean",
+      "sha": "5bbc8e04ecf4061f26fbea08f302d6f221f2a1f8"
+    },
+    {
+      "module": "New.Congruences.Lifting.CupOrthogonalityBounds",
+      "path": "src/New/Congruences/Lifting/CupOrthogonalityBounds.lean",
+      "sha": "193a094b753775a0915c38719fb99ff270f006bd"
+    },
+    {
+      "module": "New.Congruences.Lifting.CupProductBound",
+      "path": "src/New/Congruences/Lifting/CupProductBound.lean",
+      "sha": "45ab1a94dad28c21ae09347b0a416f872838039c"
+    },
+    {
+      "module": "New.Congruences.Lifting.CutExponentBounds",
+      "path": "src/New/Congruences/Lifting/CutExponentBounds.lean",
+      "sha": "e81b826cae86ed5aff6d93989c384a69a49695de"
+    },
+    {
+      "module": "New.Congruences.Lifting.DeepPoints",
+      "path": "src/New/Congruences/Lifting/DeepPoints.lean",
+      "sha": "3cdcb418de4d1de507b1ad157748946b343bcb9e"
+    },
+    {
+      "module": "New.Congruences.Lifting.ExponentLattices",
+      "path": "src/New/Congruences/Lifting/ExponentLattices.lean",
+      "sha": "0682df48bc8738f3e6cded5d391939c9940b8b94"
+    },
+    {
+      "module": "New.Congruences.Lifting.FewLowJumps",
+      "path": "src/New/Congruences/Lifting/FewLowJumps.lean",
+      "sha": "b4babd177f42623c0f7a2b3514afa397c2c5b442"
+    },
+    {
+      "module": "New.Congruences.Lifting.HodgeExpansion",
+      "path": "src/New/Congruences/Lifting/HodgeExpansion.lean",
+      "sha": "a0a0d9dde3552e5e9b8c042b6bfaef8bf25a643d"
+    },
+    {
+      "module": "New.Congruences.Lifting.LongGap",
+      "path": "src/New/Congruences/Lifting/LongGap.lean",
+      "sha": "041d6bd49b270167da40a38cf2a757d05355a826"
+    },
+    {
+      "module": "New.Congruences.Lifting.SafeMoves",
+      "path": "src/New/Congruences/Lifting/SafeMoves.lean",
+      "sha": "0c2e29f6585fbdde02e104abce788240b6904d2d"
+    },
+    {
+      "module": "New.Congruences.Lifting.SidePoints",
+      "path": "src/New/Congruences/Lifting/SidePoints.lean",
+      "sha": "59f9bb89b5c366d67f4d389db4253bc37fd70910"
+    },
+    {
+      "module": "New.Congruences.Lifting.TameCharts",
+      "path": "src/New/Congruences/Lifting/TameCharts.lean",
+      "sha": "cde9f85497406d315a2e8bffe0f6417cf99d4633"
+    },
+    {
+      "module": "New.Congruences.LocalLoss.Basic",
+      "path": "src/New/Congruences/LocalLoss/Basic.lean",
+      "sha": "af913f5abf3b1a5ededcd506b3edc0514c6ea295"
+    },
+    {
+      "module": "New.Congruences.LocalLoss.CrystallineCocycles",
+      "path": "src/New/Congruences/LocalLoss/CrystallineCocycles.lean",
+      "sha": "e0d7adf8161322fceb0e24e2e019c561221c4428"
+    },
+    {
+      "module": "New.Congruences.LocalLoss.CrystallineDefect",
+      "path": "src/New/Congruences/LocalLoss/CrystallineDefect.lean",
+      "sha": "d6b00b372d71a17ffc67725affb0958c5b53c213"
+    },
+    {
+      "module": "New.Congruences.LocalLoss.LocalLattices",
+      "path": "src/New/Congruences/LocalLoss/LocalLattices.lean",
+      "sha": "75c43ad35764e5e61d3f631c2c53912c92d45007"
+    },
+    {
+      "module": "New.Congruences.LocalLoss.TateDualBound",
+      "path": "src/New/Congruences/LocalLoss/TateDualBound.lean",
+      "sha": "cb90aa47d9a5d9a40ce17270ee47ca2772bc8134"
+    },
+    {
+      "module": "New.Congruences.Selmer.AuxiliaryPrimes",
+      "path": "src/New/Congruences/Selmer/AuxiliaryPrimes.lean",
+      "sha": "93f286e7f627ec10c5b76842fd3877bad1f65847"
+    },
+    {
+      "module": "New.Congruences.Selmer.ClassSums",
+      "path": "src/New/Congruences/Selmer/ClassSums.lean",
+      "sha": "fde2ccfd39a5e4fbdb96da451e635ee033724317"
+    },
+    {
+      "module": "New.Congruences.Selmer.Count",
+      "path": "src/New/Congruences/Selmer/Count.lean",
+      "sha": "ab3b08614cf6b862a890acdd8f61648a9c8a9582"
+    },
+    {
+      "module": "New.Congruences.Selmer.Descent",
+      "path": "src/New/Congruences/Selmer/Descent.lean",
+      "sha": "cb93dd46f57eb5cb6afff23a826c4065fa41b93f"
+    },
+    {
+      "module": "New.Congruences.Selmer.GeneralTheorem",
+      "path": "src/New/Congruences/Selmer/GeneralTheorem.lean",
+      "sha": "0515cf75c92dc84d19d3094637c5f738836eac9f"
+    },
+    {
+      "module": "New.Congruences.Selmer.Line",
+      "path": "src/New/Congruences/Selmer/Line.lean",
+      "sha": "1a20c53ed57880547c4770003a3cbc9e089cc07e"
+    },
+    {
+      "module": "New.Congruences.Selmer.LValueSystems",
+      "path": "src/New/Congruences/Selmer/LValueSystems.lean",
+      "sha": "72b9cde3dfec27657ffd3064ca04aca0555430af"
+    },
+    {
+      "module": "New.Congruences.Selmer.MainSummands",
+      "path": "src/New/Congruences/Selmer/MainSummands.lean",
+      "sha": "fac52e85ed56b0f1dc8dcdd57e99c6107bc36a10"
+    },
+    {
+      "module": "New.Congruences.Selmer.Mirror",
+      "path": "src/New/Congruences/Selmer/Mirror.lean",
+      "sha": "beacd99e33699b0b0bb511761b05444ceac4fca8"
+    },
+    {
+      "module": "New.Congruences.Selmer.OneSystem",
+      "path": "src/New/Congruences/Selmer/OneSystem.lean",
+      "sha": "6d59ab19880b8493ffd42ec9c8002a8aec7d1559"
+    },
+    {
+      "module": "New.Congruences.Selmer.RootsOfUnity",
+      "path": "src/New/Congruences/Selmer/RootsOfUnity.lean",
+      "sha": "b5ad128a2c44538e8783050a371e1e44af0c32d1"
+    },
+    {
+      "module": "New.Congruences.Selmer.SelmerData",
+      "path": "src/New/Congruences/Selmer/SelmerData.lean",
+      "sha": "0e6c5f61bece1cc1a974152e17c5f1b91a2d8c1c"
+    },
+    {
+      "module": "New.Congruences.Selmer.StickelbergerLine",
+      "path": "src/New/Congruences/Selmer/StickelbergerLine.lean",
+      "sha": "09293809c9435862cbda995fb8bad380bfece115"
+    },
+    {
+      "module": "New.Congruences.Selmer.StickelbergerSystems",
+      "path": "src/New/Congruences/Selmer/StickelbergerSystems.lean",
+      "sha": "99bba6bfe0bb7707205b45e06c8c6014b7f0c27e"
+    },
+    {
+      "module": "New.Congruences.Selmer.TwistingTheorem",
+      "path": "src/New/Congruences/Selmer/TwistingTheorem.lean",
+      "sha": "3f5a5fc163a22758b93731ac87cc333e2f981b70"
+    },
+    {
+      "module": "New.Congruences.Selmer.Untied",
+      "path": "src/New/Congruences/Selmer/Untied.lean",
+      "sha": "6142c17f6ae548bddab3df798113b72ed4e6100a"
+    },
+    {
+      "module": "New.Derivatives.Divisibility.Count",
+      "path": "src/New/Derivatives/Divisibility/Count.lean",
+      "sha": "3914fe17803d67862e5e24614b3de9a5f357b573"
+    },
+    {
+      "module": "New.Derivatives.Divisibility.NormalForm",
+      "path": "src/New/Derivatives/Divisibility/NormalForm.lean",
+      "sha": "7fc19106ec95b54d6c0dfc331ee9a209ae7335d9"
+    },
+    {
+      "module": "New.Derivatives.Divisibility.NullFrames",
+      "path": "src/New/Derivatives/Divisibility/NullFrames.lean",
+      "sha": "717dae5ab12a097d4f045f7f8ec7b3f768174b2f"
+    },
+    {
+      "module": "New.Derivatives.Field.ChosenPlaces",
+      "path": "src/New/Derivatives/Field/ChosenPlaces.lean",
+      "sha": "e6e1d93693077383285b3e2a1f1df9324ab827ef"
+    },
+    {
+      "module": "New.Derivatives.Field.PrimeDecomposition",
+      "path": "src/New/Derivatives/Field/PrimeDecomposition.lean",
+      "sha": "eed95980471416055ceefdb7a5b75b3f188471a9"
+    },
+    {
+      "module": "New.Derivatives.Field.WeilData",
+      "path": "src/New/Derivatives/Field/WeilData.lean",
+      "sha": "5ebad1764244fc5ae7d428653acfcf5b2cfcebea"
+    },
+    {
+      "module": "New.Derivatives.FormalGroup.Exponent",
+      "path": "src/New/Derivatives/FormalGroup/Exponent.lean",
+      "sha": "1cb701d55bee29b29ae786151d7760723a186f8e"
+    },
+    {
+      "module": "New.Derivatives.FormalGroup.FrobeniusCongruence",
+      "path": "src/New/Derivatives/FormalGroup/FrobeniusCongruence.lean",
+      "sha": "b11c4333036d2e2a5ea59846cfa2b4f81a8e357d"
+    },
+    {
+      "module": "New.Derivatives.FormalGroup.Resolution",
+      "path": "src/New/Derivatives/FormalGroup/Resolution.lean",
+      "sha": "e190d9d094a626b11863bb5449f5f0934589ea8d"
+    },
+    {
+      "module": "New.Derivatives.FormalGroup.ThetaProducts",
+      "path": "src/New/Derivatives/FormalGroup/ThetaProducts.lean",
+      "sha": "394ed6fef8cf2247f541f9f0b6c0dbf2df143630"
+    },
+    {
+      "module": "New.Derivatives.Sharpness.BoundAttained",
+      "path": "src/New/Derivatives/Sharpness/BoundAttained.lean",
+      "sha": "95fc1fb8b13805ce9c96a3fe84f8c103d6d8f2f4"
+    },
+    {
+      "module": "New.Derivatives.Sharpness.Cases",
+      "path": "src/New/Derivatives/Sharpness/Cases.lean",
+      "sha": "03d39d6241eaae46c8e0ae6728fe2fd2672afe7a"
+    },
+    {
+      "module": "New.Derivatives.Sharpness.Couplings",
+      "path": "src/New/Derivatives/Sharpness/Couplings.lean",
+      "sha": "de96c06ef8d3c8188cf780b6387ef34e18d71d38"
+    },
+    {
+      "module": "New.Derivatives.Sharpness.LeastValuation",
+      "path": "src/New/Derivatives/Sharpness/LeastValuation.lean",
+      "sha": "57023e123c8d731e02af8ce58748a8648b0c5c4e"
+    },
+    {
+      "module": "New.Derivatives.Sharpness.NearPairs",
+      "path": "src/New/Derivatives/Sharpness/NearPairs.lean",
+      "sha": "c6b4beef59f3eed4f79cca4b1355afce4386d073"
+    },
+    {
+      "module": "New.Derivatives.Sharpness.OneCurve",
+      "path": "src/New/Derivatives/Sharpness/OneCurve.lean",
+      "sha": "98a233e32e9549b916513f55226aa5ca0a709c51"
+    },
+    {
+      "module": "New.Derivatives.Vacuum.Divisibility",
+      "path": "src/New/Derivatives/Vacuum/Divisibility.lean",
+      "sha": "06f6b6658ee1b356c0a6554c424cccd3f61cfeb7"
+    },
+    {
+      "module": "New.Derivatives.Vacuum.IntegralVacuum",
+      "path": "src/New/Derivatives/Vacuum/IntegralVacuum.lean",
+      "sha": "f735c9a79aafe8d2e5b135e2dfebfaa7871dff5c"
+    },
+    {
+      "module": "New.Derivatives.Vacuum.JetIntegrality",
+      "path": "src/New/Derivatives/Vacuum/JetIntegrality.lean",
+      "sha": "14b025c82b24cea06fb949f39066303bd9703450"
+    },
+    {
+      "module": "New.Derivatives.Vacuum.Scale",
+      "path": "src/New/Derivatives/Vacuum/Scale.lean",
+      "sha": "92da49bb43f63177994efa75c45be0d4b6ba62f3"
+    },
+    {
+      "module": "New.Derivatives.Vacuum.ShortVectors",
+      "path": "src/New/Derivatives/Vacuum/ShortVectors.lean",
+      "sha": "836f43b9a3648434ff409824c0662bef38463071"
+    },
+    {
+      "module": "New.Derivatives.Vacuum.StandardDataProducts",
+      "path": "src/New/Derivatives/Vacuum/StandardDataProducts.lean",
+      "sha": "2713be8891cd6990e02a97217889fa10bdf3390c"
+    },
+    {
+      "module": "New.Derivatives.Vacuum.TightFrames",
+      "path": "src/New/Derivatives/Vacuum/TightFrames.lean",
+      "sha": "44c55b5863496a8dc27bf54eaaa34292fef9da20"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.DeepLevelPoincarePeriod",
+      "path": "src/New/Determinant/AuxiliaryForms/DeepLevelPoincarePeriod.lean",
+      "sha": "2c077dedea410264a24e8c918c0b8546ae28be43"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.DeepLevelVanishing",
+      "path": "src/New/Determinant/AuxiliaryForms/DeepLevelVanishing.lean",
+      "sha": "170ee34a38126ba09c23aa3934523dc515efb942"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.DiagonalTurns",
+      "path": "src/New/Determinant/AuxiliaryForms/DiagonalTurns.lean",
+      "sha": "5ffe0cd29dff439f20c8996320c8e1ecdf5b8c92"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.FirstPath",
+      "path": "src/New/Determinant/AuxiliaryForms/FirstPath.lean",
+      "sha": "3ccbe86b61478cf2a7ad58c7f8986a9d1a93a482"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.GridFirstColumns",
+      "path": "src/New/Determinant/AuxiliaryForms/GridFirstColumns.lean",
+      "sha": "aed1ca33304c2464f4138335e84a98f0edc0214f"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.GridPaths",
+      "path": "src/New/Determinant/AuxiliaryForms/GridPaths.lean",
+      "sha": "fc45b488982f0021470fc2c177878b83a148b311"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.LastPath",
+      "path": "src/New/Determinant/AuxiliaryForms/LastPath.lean",
+      "sha": "0b6bb9a5ca18305ad7297308411d2bccb5e3ebed"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.PathData",
+      "path": "src/New/Determinant/AuxiliaryForms/PathData.lean",
+      "sha": "b751af1d6e4dd49bf823005c630f2d31d7611ec9"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.RegularParameters",
+      "path": "src/New/Determinant/AuxiliaryForms/RegularParameters.lean",
+      "sha": "ecaa425425d297409cd02c1e8a5fbed012b38bcb"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.SpanningForms",
+      "path": "src/New/Determinant/AuxiliaryForms/SpanningForms.lean",
+      "sha": "80bcb6bee2bf0a4d29422f6ae845bafeea4ac80d"
+    },
+    {
+      "module": "New.Determinant.AuxiliaryForms.Turns",
+      "path": "src/New/Determinant/AuxiliaryForms/Turns.lean",
+      "sha": "816cfa1ae67e66453f6d6af76417f6f3d3e56d5a"
+    },
+    {
+      "module": "New.Determinant.Chain.ChainNorms",
+      "path": "src/New/Determinant/Chain/ChainNorms.lean",
+      "sha": "1627cf5c4f48e185d1abb5779456ed431c0c7346"
+    },
+    {
+      "module": "New.Determinant.Chain.Moduli",
+      "path": "src/New/Determinant/Chain/Moduli.lean",
+      "sha": "644b4df5d507fc386b638934478e417ad5d33f4e"
+    },
+    {
+      "module": "New.Determinant.Chain.NormOfChain",
+      "path": "src/New/Determinant/Chain/NormOfChain.lean",
+      "sha": "02e0f4522b73496a748419506dec76c6e415f112"
+    },
+    {
+      "module": "New.Determinant.Chain.SquareLaw",
+      "path": "src/New/Determinant/Chain/SquareLaw.lean",
+      "sha": "2cc6166470f656127207e6f56f8f46d1cb1fb0d4"
+    },
+    {
+      "module": "New.Determinant.Chain.TriangleLifts",
+      "path": "src/New/Determinant/Chain/TriangleLifts.lean",
+      "sha": "ea526b50d2588ebb12126a34cc365a2bf0492e9c"
+    },
+    {
+      "module": "New.Determinant.Chain.TriangleNorms",
+      "path": "src/New/Determinant/Chain/TriangleNorms.lean",
+      "sha": "c3e4e706aa9ef7d8ad5d94ddef8465eaad7926a9"
+    },
+    {
+      "module": "New.Determinant.Exchange.ConeImage",
+      "path": "src/New/Determinant/Exchange/ConeImage.lean",
+      "sha": "2bc0b37a897fa206c8732fa33451930d137496d6"
+    },
+    {
+      "module": "New.Determinant.Exchange.EquivariantDifference",
+      "path": "src/New/Determinant/Exchange/EquivariantDifference.lean",
+      "sha": "1b5d2c3fd9b682cde715aeaac919e96828487fbe"
+    },
+    {
+      "module": "New.Determinant.Exchange.ExplicitMatching",
+      "path": "src/New/Determinant/Exchange/ExplicitMatching.lean",
+      "sha": "8ecca7d70120193d65bfd7be9af4573b9cc17a41"
+    },
+    {
+      "module": "New.Determinant.Exchange.LargeTriple",
+      "path": "src/New/Determinant/Exchange/LargeTriple.lean",
+      "sha": "7f68573eed0b59e2b6d98325935e6567038b4741"
+    },
+    {
+      "module": "New.Determinant.Exchange.MatchingPartners",
+      "path": "src/New/Determinant/Exchange/MatchingPartners.lean",
+      "sha": "126f9582d768d64a52a3685e8608cf33ab455dfb"
+    },
+    {
+      "module": "New.Determinant.Exchange.NegativeIndices",
+      "path": "src/New/Determinant/Exchange/NegativeIndices.lean",
+      "sha": "6ca92758a2b89d555866b66bd436e75fd9c7bf25"
+    },
+    {
+      "module": "New.Determinant.Exchange.OneSquare",
+      "path": "src/New/Determinant/Exchange/OneSquare.lean",
+      "sha": "4d5b2a346f83d9db13a693fdec719f86cc14b76b"
+    },
+    {
+      "module": "New.Determinant.Exchange.RealVectors",
+      "path": "src/New/Determinant/Exchange/RealVectors.lean",
+      "sha": "cebbd799fea7a6627044b6dcfa6928750a69cac8"
+    },
+    {
+      "module": "New.Determinant.Exchange.RemovingPlanes",
+      "path": "src/New/Determinant/Exchange/RemovingPlanes.lean",
+      "sha": "72b9cee2e38e79f7f3e31b9d9dad7be91795eeae"
+    },
+    {
+      "module": "New.Determinant.Exchange.StableSpacesStandardData",
+      "path": "src/New/Determinant/Exchange/StableSpacesStandardData.lean",
+      "sha": "a01a3105c532dd9da1c2ff849d9e2e7ce94da6d3"
+    },
+    {
+      "module": "New.Determinant.Exchange.TheoremForPartners",
+      "path": "src/New/Determinant/Exchange/TheoremForPartners.lean",
+      "sha": "b0a9948755a70d7bfe0b72558549ba8db99df6e0"
+    },
+    {
+      "module": "New.Determinant.Exchange.VanishingDescends",
+      "path": "src/New/Determinant/Exchange/VanishingDescends.lean",
+      "sha": "2df8605289673d41a987ef240c6e3d9dbd76d7b1"
+    },
+    {
+      "module": "New.Determinant.Norms.AdjointThetaLift",
+      "path": "src/New/Determinant/Norms/AdjointThetaLift.lean",
+      "sha": "36080891c41ecbcf6780cfcee3e4171ac0e7551f"
+    },
+    {
+      "module": "New.Determinant.Norms.VectorKernel",
+      "path": "src/New/Determinant/Norms/VectorKernel.lean",
+      "sha": "0531a2670210c8f409c3e91061252da3672ace52"
+    },
+    {
+      "module": "New.Determinant.Twist.FitTwists",
+      "path": "src/New/Determinant/Twist/FitTwists.lean",
+      "sha": "93577c4d44404db8d68ca31c965a3a822e95b658"
+    },
+    {
+      "module": "New.Determinant.Twist.LongForms",
+      "path": "src/New/Determinant/Twist/LongForms.lean",
+      "sha": "4a2020bcbb5b0510d4106b750db0453c8af9dfc2"
+    },
+    {
+      "module": "New.Main",
+      "path": "src/New/Main.lean",
+      "sha": "d53aa9e3411dd198b2dad72a7d6eeba9ce383136"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.DeterminantProducts",
+      "path": "src/New/OneLift/ComparisonOperator/DeterminantProducts.lean",
+      "sha": "030346cc8ede124cfeb649c2d676fa162639c71d"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.ExchangeData",
+      "path": "src/New/OneLift/ComparisonOperator/ExchangeData.lean",
+      "sha": "7b0ee0953eeda998c465864203b3cdb001f79b46"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.FirstFactors",
+      "path": "src/New/OneLift/ComparisonOperator/FirstFactors.lean",
+      "sha": "79e05a9b45adaae274f86b3b2f8dc83bebb71e73"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.GluedForms",
+      "path": "src/New/OneLift/ComparisonOperator/GluedForms.lean",
+      "sha": "d7e2c7e1bccd23c6bc3d0e88b6f7d537b61cea00"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.GluedLattices",
+      "path": "src/New/OneLift/ComparisonOperator/GluedLattices.lean",
+      "sha": "43dd46808bfd4e236a4e01f3d7369f1cb50e309d"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.GluingMaps",
+      "path": "src/New/OneLift/ComparisonOperator/GluingMaps.lean",
+      "sha": "0b446b9af4e57b584f21108eeb2d97fcdb0f6510"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.LineCoordinates",
+      "path": "src/New/OneLift/ComparisonOperator/LineCoordinates.lean",
+      "sha": "af5bdcdec9bb41e5d2b9b0f1b6bacaad2a6a956e"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.OneExchange",
+      "path": "src/New/OneLift/ComparisonOperator/OneExchange.lean",
+      "sha": "f2e54ddcc792dd2f3d7225b76c5443ff9fa98f84"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.ProductsSpan",
+      "path": "src/New/OneLift/ComparisonOperator/ProductsSpan.lean",
+      "sha": "9c8c3884959ff829970948eeea0d327fac78bbfd"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.ThetaKernelEstimates",
+      "path": "src/New/OneLift/ComparisonOperator/ThetaKernelEstimates.lean",
+      "sha": "8fdb85c83fd54d0f2ee2d0834d6b83e6662e368d"
+    },
+    {
+      "module": "New.OneLift.ComparisonOperator.ThreeExchanges",
+      "path": "src/New/OneLift/ComparisonOperator/ThreeExchanges.lean",
+      "sha": "0a17364df7400aaac53a6117440e2b3f2e8b3010"
+    },
+    {
+      "module": "New.OneLift.FalseLifts.BottomOfTower",
+      "path": "src/New/OneLift/FalseLifts/BottomOfTower.lean",
+      "sha": "57a016862830b2b8f6bb6143eca61cd571d32699"
+    },
+    {
+      "module": "New.OneLift.FalseLifts.HyperbolicPlaneStep",
+      "path": "src/New/OneLift/FalseLifts/HyperbolicPlaneStep.lean",
+      "sha": "5bb1dacd935623d0c3b19af60cc46ee8ae0778dd"
+    },
+    {
+      "module": "New.OneLift.FalseLifts.PeriodsOfFalseLifts",
+      "path": "src/New/OneLift/FalseLifts/PeriodsOfFalseLifts.lean",
+      "sha": "ca654017d671c54a4ce847333804022c4e5e5573"
+    },
+    {
+      "module": "New.OneLift.HeckeValues.AlgebraicPartIntegrality",
+      "path": "src/New/OneLift/HeckeValues/AlgebraicPartIntegrality.lean",
+      "sha": "dd5a60fe20d181d6c04d714a497cf394b2d42c5b"
+    },
+    {
+      "module": "New.OneLift.HeckeValues.AlgebraicPartSize",
+      "path": "src/New/OneLift/HeckeValues/AlgebraicPartSize.lean",
+      "sha": "28df921a8c04ae4f7ee55ece1c3e3642b4aa5c01"
+    },
+    {
+      "module": "New.OneLift.HeckeValues.CentralAction",
+      "path": "src/New/OneLift/HeckeValues/CentralAction.lean",
+      "sha": "ae89371477d6416d4dc049c3524350cc1fe22902"
+    },
+    {
+      "module": "New.OneLift.HeckeValues.CharacterLift",
+      "path": "src/New/OneLift/HeckeValues/CharacterLift.lean",
+      "sha": "f5cb7320f6c1931837ecd99d519dc7a04e77fbf6"
+    },
+    {
+      "module": "New.OneLift.HeckeValues.CharacterLiftNorm",
+      "path": "src/New/OneLift/HeckeValues/CharacterLiftNorm.lean",
+      "sha": "81d81f816343af3f28155519825f06f4056a3619"
+    },
+    {
+      "module": "New.OneLift.HeckeValues.PeriodAtOne",
+      "path": "src/New/OneLift/HeckeValues/PeriodAtOne.lean",
+      "sha": "9b00214d3e3641ef10c0b44d07eed88dfb1d0bd6"
+    },
+    {
+      "module": "New.OneLift.HeckeValues.TwistedRatio",
+      "path": "src/New/OneLift/HeckeValues/TwistedRatio.lean",
+      "sha": "25ecfee7d9fea2aa9fbc71105b521c96d41d7bdb"
+    },
+    {
+      "module": "New.OneLift.HeckeValues.TwistedValueHeights",
+      "path": "src/New/OneLift/HeckeValues/TwistedValueHeights.lean",
+      "sha": "ddfc466fb70a096b21707df61c6a0af498151f6c"
+    },
+    {
+      "module": "New.OneLift.LiftVolumeHeight",
+      "path": "src/New/OneLift/LiftVolumeHeight.lean",
+      "sha": "7773d1334443460b5c920472da37b9e4b77ddb99"
+    },
+    {
+      "module": "New.OneLift.TestedForms",
+      "path": "src/New/OneLift/TestedForms.lean",
+      "sha": "fd293523f52fdef03cf3f7353aaf941ccecff174"
+    },
+    {
+      "module": "New.Reduction.Data.AdmissibleData",
+      "path": "src/New/Reduction/Data/AdmissibleData.lean",
+      "sha": "b964a37ce881e4f4b8d93849e1fda1087806e96f"
+    },
+    {
+      "module": "New.Reduction.Data.Existence",
+      "path": "src/New/Reduction/Data/Existence.lean",
+      "sha": "069f1a373dcaf571b99ba55893933a89ce77400c"
+    },
+    {
+      "module": "New.Reduction.Data.FieldsAndPlaces",
+      "path": "src/New/Reduction/Data/FieldsAndPlaces.lean",
+      "sha": "f9ce51bba52bbcb44f612f35360ace361a7a219a"
+    },
+    {
+      "module": "New.Reduction.Data.LevelAndTwists",
+      "path": "src/New/Reduction/Data/LevelAndTwists.lean",
+      "sha": "e6e168db679341def7127df181494b7304425992"
+    },
+    {
+      "module": "New.Reduction.Data.Magnitudes",
+      "path": "src/New/Reduction/Data/Magnitudes.lean",
+      "sha": "52f140a66c0a513e275e8fb2e42326c82a11b77b"
+    },
+    {
+      "module": "New.Reduction.Data.Sizes",
+      "path": "src/New/Reduction/Data/Sizes.lean",
+      "sha": "d5682483a479400da9628936270bd69547952b81"
+    },
+    {
+      "module": "New.Reduction.IntegralTargetForms",
+      "path": "src/New/Reduction/IntegralTargetForms.lean",
+      "sha": "c39121100e39940b6d17a1502622298e512aa4c6"
+    },
+    {
+      "module": "New.Reduction.Lattices.Colength",
+      "path": "src/New/Reduction/Lattices/Colength.lean",
+      "sha": "6423c1f6d00a5e3c50f34b167d288f308e5c6a08"
+    },
+    {
+      "module": "New.Reduction.Lattices.Heights",
+      "path": "src/New/Reduction/Lattices/Heights.lean",
+      "sha": "b90e3578c79421bb851014e93475eb61ed3b37bf"
+    },
+    {
+      "module": "New.Reduction.Lattices.TwistedLattice",
+      "path": "src/New/Reduction/Lattices/TwistedLattice.lean",
+      "sha": "37ddbc9f9517d07781743bfbbf3cfbc060ec0530"
+    },
+    {
+      "module": "New.Reduction.MainInequality",
+      "path": "src/New/Reduction/MainInequality.lean",
+      "sha": "97f83ab52b2feb420e952a2722b4cef454b9e579"
+    },
+    {
+      "module": "New.Reduction.OneSidedBound",
+      "path": "src/New/Reduction/OneSidedBound.lean",
+      "sha": "4e4862474e15d136c65859e30c6f29c47d68db64"
+    },
+    {
+      "module": "New.Reduction.PrimeSums",
+      "path": "src/New/Reduction/PrimeSums.lean",
+      "sha": "7f46e9f35bfc1c47ef62d8753757ec8735cec9f5"
+    },
+    {
+      "module": "New.Reduction.ShortAndEnough",
+      "path": "src/New/Reduction/ShortAndEnough.lean",
+      "sha": "c590e1881afcc96956bef7b9cca52c7e311b5928"
+    },
+    {
+      "module": "New.Reduction.Zeros.Criterion",
+      "path": "src/New/Reduction/Zeros/Criterion.lean",
+      "sha": "f85881dd96b457cc4dd9d657b27d0e49e5029f46"
+    },
+    {
+      "module": "New.Reduction.Zeros.PrimeError",
+      "path": "src/New/Reduction/Zeros/PrimeError.lean",
+      "sha": "102fc7f4ab8632fbb91e6af0e2eb230c30b60032"
+    },
+    {
+      "module": "New.Reduction.Zeros.PrimeNumberTheorem",
+      "path": "src/New/Reduction/Zeros/PrimeNumberTheorem.lean",
+      "sha": "6618aced1c8dea8422627ee688fc323a005ba96c"
+    },
+    {
+      "module": "New.Spanning.Bessel.Average",
+      "path": "src/New/Spanning/Bessel/Average.lean",
+      "sha": "fd3787d3343b3b7f9bbc6eca26c569fbf0e8e59a"
+    },
+    {
+      "module": "New.Spanning.Bessel.Basic",
+      "path": "src/New/Spanning/Bessel/Basic.lean",
+      "sha": "415246e7e184dca8c79ceeb4028b80066b6f3b8f"
+    },
+    {
+      "module": "New.Spanning.Bessel.CutTailBound",
+      "path": "src/New/Spanning/Bessel/CutTailBound.lean",
+      "sha": "a06560c397138b3a42de7cc3186bd8f39029f770"
+    },
+    {
+      "module": "New.Spanning.Bessel.FillingData",
+      "path": "src/New/Spanning/Bessel/FillingData.lean",
+      "sha": "a1a6140aaac1ff6564cfddc3c3c15926c3a772c5"
+    },
+    {
+      "module": "New.Spanning.Bessel.GramSection",
+      "path": "src/New/Spanning/Bessel/GramSection.lean",
+      "sha": "031bafeb45d049d233533a12b4f055e4f911b048"
+    },
+    {
+      "module": "New.Spanning.Bessel.LargeFunction",
+      "path": "src/New/Spanning/Bessel/LargeFunction.lean",
+      "sha": "841f101ba1dea87147371982299ad4604fef5716"
+    },
+    {
+      "module": "New.Spanning.Bessel.MeanValue",
+      "path": "src/New/Spanning/Bessel/MeanValue.lean",
+      "sha": "01e9e122b3dbf461810f5dc63e3ca0a442952012"
+    },
+    {
+      "module": "New.Spanning.Bessel.OpenCellBound",
+      "path": "src/New/Spanning/Bessel/OpenCellBound.lean",
+      "sha": "800da5fc71724ed37f67898e954b34f3e29d7e3f"
+    },
+    {
+      "module": "New.Spanning.Bessel.OpenCellPairing",
+      "path": "src/New/Spanning/Bessel/OpenCellPairing.lean",
+      "sha": "dc51bef6b2ac75c7cd17c3d67c1d3f54d2b6cc32"
+    },
+    {
+      "module": "New.Spanning.Bessel.Orthonormality",
+      "path": "src/New/Spanning/Bessel/Orthonormality.lean",
+      "sha": "b478fe1ea3e8926f9b814201ed9d85c89fd8d025"
+    },
+    {
+      "module": "New.Spanning.Bessel.SchurBound",
+      "path": "src/New/Spanning/Bessel/SchurBound.lean",
+      "sha": "8a82cd08e213dd8f2b223a783540f244a643207b"
+    },
+    {
+      "module": "New.Spanning.Bessel.SobolevBound",
+      "path": "src/New/Spanning/Bessel/SobolevBound.lean",
+      "sha": "15409ca2d0b65343a6588c5be2504f456c4e4c23"
+    },
+    {
+      "module": "New.Spanning.Frames.BesselVector",
+      "path": "src/New/Spanning/Frames/BesselVector.lean",
+      "sha": "7b5b4ed5d5c99a388e8ae6774fdd5c72e6efc888"
+    },
+    {
+      "module": "New.Spanning.Frames.Correlations",
+      "path": "src/New/Spanning/Frames/Correlations.lean",
+      "sha": "e82dddd20468532efe9e6cf9d44fcbad33d9eb22"
+    },
+    {
+      "module": "New.Spanning.Frames.Densities",
+      "path": "src/New/Spanning/Frames/Densities.lean",
+      "sha": "11f91ef7bfb6202abfe2d490390794cc42ff5a9e"
+    },
+    {
+      "module": "New.Spanning.Frames.Depth",
+      "path": "src/New/Spanning/Frames/Depth.lean",
+      "sha": "391fe40e4b6452881bdab87138980ea9ad4b2c23"
+    },
+    {
+      "module": "New.Spanning.Frames.FiberMeasures",
+      "path": "src/New/Spanning/Frames/FiberMeasures.lean",
+      "sha": "4b1415a30bd1fdbbaa2ebb941eb654946dc0c0d7"
+    },
+    {
+      "module": "New.Spanning.Frames.FiniteDepth",
+      "path": "src/New/Spanning/Frames/FiniteDepth.lean",
+      "sha": "477f248dbb7b19f71f5182c1e7191338e7d678e9"
+    },
+    {
+      "module": "New.Spanning.Frames.FiniteShells",
+      "path": "src/New/Spanning/Frames/FiniteShells.lean",
+      "sha": "e2c9a3d392ade71c21efd4bf57c83cc3b535c0b0"
+    },
+    {
+      "module": "New.Spanning.Frames.FixedLines",
+      "path": "src/New/Spanning/Frames/FixedLines.lean",
+      "sha": "18ba05d8b522be18d35cf62406751b4e5c38f780"
+    },
+    {
+      "module": "New.Spanning.Frames.Gains",
+      "path": "src/New/Spanning/Frames/Gains.lean",
+      "sha": "7a3dd4b06976ea3899451ff97a650f9b924d31eb"
+    },
+    {
+      "module": "New.Spanning.Frames.Lengths",
+      "path": "src/New/Spanning/Frames/Lengths.lean",
+      "sha": "53061a35957fe2f78c7eef72dd1d278d399d18a6"
+    },
+    {
+      "module": "New.Spanning.Frames.Levels",
+      "path": "src/New/Spanning/Frames/Levels.lean",
+      "sha": "0fd34c3a562cad3dc5600d1a997980d0e68c5409"
+    },
+    {
+      "module": "New.Spanning.Frames.OneFrame",
+      "path": "src/New/Spanning/Frames/OneFrame.lean",
+      "sha": "d9f284ee18726c165f77a940bd84c828d89e9389"
+    },
+    {
+      "module": "New.Spanning.Frames.QuadricPlancherel",
+      "path": "src/New/Spanning/Frames/QuadricPlancherel.lean",
+      "sha": "a4f98eaa0c8e94f72d16f2b872cbb6f81f4551f6"
+    },
+    {
+      "module": "New.Spanning.Frames.QuadricVolumes",
+      "path": "src/New/Spanning/Frames/QuadricVolumes.lean",
+      "sha": "37ad5385b0980fb9a605d1da6ca7de6cbcbc0214"
+    },
+    {
+      "module": "New.Spanning.Frames.RealBandLimits",
+      "path": "src/New/Spanning/Frames/RealBandLimits.lean",
+      "sha": "e976184bc33fb0972d593182ce56145ad74fe9c3"
+    },
+    {
+      "module": "New.Spanning.Frames.RealPlaceGauge",
+      "path": "src/New/Spanning/Frames/RealPlaceGauge.lean",
+      "sha": "699e4a36a37eafd894a387dd45c18b6c7bb57a40"
+    },
+    {
+      "module": "New.Spanning.Frames.RealShells",
+      "path": "src/New/Spanning/Frames/RealShells.lean",
+      "sha": "a05258a014ce14518b14cf6bc42b877e7e3d7378"
+    },
+    {
+      "module": "New.Spanning.Frames.Shells",
+      "path": "src/New/Spanning/Frames/Shells.lean",
+      "sha": "ca370d401b1962acf862358520e57dfa0d8587e8"
+    },
+    {
+      "module": "New.Spanning.Frames.StandardLevel",
+      "path": "src/New/Spanning/Frames/StandardLevel.lean",
+      "sha": "042ef36f0cf94ebc39b5d03eb5350ed475d97015"
+    },
+    {
+      "module": "New.Spanning.Frames.TopCorrelation",
+      "path": "src/New/Spanning/Frames/TopCorrelation.lean",
+      "sha": "583862cfe2580f77dd052a35b0bab48144b7e790"
+    },
+    {
+      "module": "New.Spanning.Frames.TopFloor",
+      "path": "src/New/Spanning/Frames/TopFloor.lean",
+      "sha": "437318a825d3768ce9ae7c8885b91577c3ba6b35"
+    },
+    {
+      "module": "New.Spanning.Frames.TwoGauges",
+      "path": "src/New/Spanning/Frames/TwoGauges.lean",
+      "sha": "f7c06e503ead311e8d1090f3b9d538b27a588e99"
+    },
+    {
+      "module": "New.Spanning.MainTerm.BadTypes",
+      "path": "src/New/Spanning/MainTerm/BadTypes.lean",
+      "sha": "2633c843367facd8e261933a53662e757a8c8195"
+    },
+    {
+      "module": "New.Spanning.MainTerm.EnergyEstimate",
+      "path": "src/New/Spanning/MainTerm/EnergyEstimate.lean",
+      "sha": "9c89b404f5f3b3b7e17870a76ad544cfc4ae15ef"
+    },
+    {
+      "module": "New.Spanning.MainTerm.FillingLevel",
+      "path": "src/New/Spanning/MainTerm/FillingLevel.lean",
+      "sha": "95e23b9830709979b01b91f2e6e0b097d52e007b"
+    },
+    {
+      "module": "New.Spanning.MainTerm.FiniteSieveSystem",
+      "path": "src/New/Spanning/MainTerm/FiniteSieveSystem.lean",
+      "sha": "c297003676ed56e6519f9716694160c68ffc79c3"
+    },
+    {
+      "module": "New.Spanning.MainTerm.Frequencies",
+      "path": "src/New/Spanning/MainTerm/Frequencies.lean",
+      "sha": "f4a6fd74993585e96e70297a1ff7912d393cc23e"
+    },
+    {
+      "module": "New.Spanning.MainTerm.GlobalSieve",
+      "path": "src/New/Spanning/MainTerm/GlobalSieve.lean",
+      "sha": "deefa22191dfee3f29c4f348003088b3711720dc"
+    },
+    {
+      "module": "New.Spanning.MainTerm.GlobalToLocal",
+      "path": "src/New/Spanning/MainTerm/GlobalToLocal.lean",
+      "sha": "066d0c461575b943887acdd0fe337a77d2a11b03"
+    },
+    {
+      "module": "New.Spanning.MainTerm.KloostermanSum",
+      "path": "src/New/Spanning/MainTerm/KloostermanSum.lean",
+      "sha": "11105a6ed66c30bfbaf6689376ba374e6257026c"
+    },
+    {
+      "module": "New.Spanning.MainTerm.SiegelTopBound",
+      "path": "src/New/Spanning/MainTerm/SiegelTopBound.lean",
+      "sha": "ae0c6f5fbf03767cec77d7d79b429fbf79f2f3ef"
+    },
+    {
+      "module": "New.Spanning.MainTerm.SieveSystem",
+      "path": "src/New/Spanning/MainTerm/SieveSystem.lean",
+      "sha": "408b4cfb6c5f3fa69245ddb4a135608ce92b8fdd"
+    },
+    {
+      "module": "New.Spanning.Multiplicities.EqualMultiplicities",
+      "path": "src/New/Spanning/Multiplicities/EqualMultiplicities.lean",
+      "sha": "2a7e15a4c3f59f71ed7cb1f8e7c08302c18736b5"
+    },
+    {
+      "module": "New.Spanning.Multiplicities.HeckeEigensystems",
+      "path": "src/New/Spanning/Multiplicities/HeckeEigensystems.lean",
+      "sha": "ed260f946bdfb66fbe3d821e507022e0d5b7919c"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.BorderedDeterminant",
+      "path": "src/New/Spanning/RemainingTerms/BorderedDeterminant.lean",
+      "sha": "2cb4d26594f3d961e2cda225516a9fe5329a2671"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.Box",
+      "path": "src/New/Spanning/RemainingTerms/Box.lean",
+      "sha": "2f53d6f65f9f2ccdb768c02518236459330ebab9"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.ColumnLattice",
+      "path": "src/New/Spanning/RemainingTerms/ColumnLattice.lean",
+      "sha": "7ef9df07a63a514c6989b9ff25754f7811d9a3e9"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.Count",
+      "path": "src/New/Spanning/RemainingTerms/Count.lean",
+      "sha": "1978ffd7969b8df8a3aa9a6aca15a31e69b776a4"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.Cut",
+      "path": "src/New/Spanning/RemainingTerms/Cut.lean",
+      "sha": "9479b7e3af2bd8fccf1f56c29119c7466314fac4"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.Data",
+      "path": "src/New/Spanning/RemainingTerms/Data.lean",
+      "sha": "df72908b356a809a92d6aa16246964e7dfd8562d"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.Discriminants",
+      "path": "src/New/Spanning/RemainingTerms/Discriminants.lean",
+      "sha": "1a9a5b38e384c6053bda4d155ffe78b77a85ab4f"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.FrameCount",
+      "path": "src/New/Spanning/RemainingTerms/FrameCount.lean",
+      "sha": "83cc942920af3fdc6469cb5d528a3b9d93ef13ff"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.FrameParts",
+      "path": "src/New/Spanning/RemainingTerms/FrameParts.lean",
+      "sha": "41945429e3fc94f34a2d5a033f24c5246c8e0f99"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.FramesOverLattice",
+      "path": "src/New/Spanning/RemainingTerms/FramesOverLattice.lean",
+      "sha": "19b44215756f612208cb1167ef1ef741ed10de77"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.Gain",
+      "path": "src/New/Spanning/RemainingTerms/Gain.lean",
+      "sha": "b030c53edeba6b2172eacc822367501d978215c7"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.LatticesOfCorank",
+      "path": "src/New/Spanning/RemainingTerms/LatticesOfCorank.lean",
+      "sha": "ccd6650e56236c42184589419c343aa1bfb63f10"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.LinkLattice",
+      "path": "src/New/Spanning/RemainingTerms/LinkLattice.lean",
+      "sha": "1c850a3676544e6963442bb2a8a4926fa2aa1407"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.LinkVectors",
+      "path": "src/New/Spanning/RemainingTerms/LinkVectors.lean",
+      "sha": "5548b0c0eb8322c8f995477d55a87f123c85ae6b"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.OneRealPlace",
+      "path": "src/New/Spanning/RemainingTerms/OneRealPlace.lean",
+      "sha": "6c2b874c6dda209332ea161e3a172db051dc2a53"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.OrbitSize",
+      "path": "src/New/Spanning/RemainingTerms/OrbitSize.lean",
+      "sha": "e074ade02c9425950dbd2e15491ce1bb3afa5268"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.OrthogonalLifts",
+      "path": "src/New/Spanning/RemainingTerms/OrthogonalLifts.lean",
+      "sha": "d491e72f602b9b74a480866c4fc0ab09cba91de4"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.SchurOrbit",
+      "path": "src/New/Spanning/RemainingTerms/SchurOrbit.lean",
+      "sha": "39bde845573820ae3ec2d8771e1060c36a88083e"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.SchurTest",
+      "path": "src/New/Spanning/RemainingTerms/SchurTest.lean",
+      "sha": "db75fa603da05633f315d87b2f5bdb8c4a82a090"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.SiegelLemma",
+      "path": "src/New/Spanning/RemainingTerms/SiegelLemma.lean",
+      "sha": "2c8b4bd09c6225a730c44226c6a25f4d04ddcfda"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.Size",
+      "path": "src/New/Spanning/RemainingTerms/Size.lean",
+      "sha": "0e58177451012a0eb37a3057b617a774377040a4"
+    },
+    {
+      "module": "New.Spanning.RemainingTerms.Sum",
+      "path": "src/New/Spanning/RemainingTerms/Sum.lean",
+      "sha": "190dba8d2b32873ec412a30f5778868d7b2f9677"
+    },
+    {
+      "module": "New.Spanning.SecondMoment.FewTranslates",
+      "path": "src/New/Spanning/SecondMoment/FewTranslates.lean",
+      "sha": "82f674740e21326fb1e22c6600035ce0addb9d62"
+    },
+    {
+      "module": "New.Spanning.SecondMoment.PositiveType",
+      "path": "src/New/Spanning/SecondMoment/PositiveType.lean",
+      "sha": "2832d7465ef520ca8c216616ff2ca4e25c746e1c"
+    },
+    {
+      "module": "New.Spanning.SecondMoment.SpanningTheorem",
+      "path": "src/New/Spanning/SecondMoment/SpanningTheorem.lean",
+      "sha": "4b47ff63873e2e0b0a349be79900a1e47e5b1933"
+    },
+    {
+      "module": "New.Spanning.Unfolding.AmplitudeSums",
+      "path": "src/New/Spanning/Unfolding/AmplitudeSums.lean",
+      "sha": "9a58dc5ced430e7ac2d374b1b943c9e52c250f48"
+    },
+    {
+      "module": "New.Spanning.Unfolding.BesselFormula",
+      "path": "src/New/Spanning/Unfolding/BesselFormula.lean",
+      "sha": "ab5041d2e084b7ffd64d5d7af9e529c6ba99e3ac"
+    },
+    {
+      "module": "New.Spanning.Unfolding.BesselLevelStructure",
+      "path": "src/New/Spanning/Unfolding/BesselLevelStructure.lean",
+      "sha": "45554a0f5f7867b26be35834797199d19b4ad6ca"
+    },
+    {
+      "module": "New.Spanning.Unfolding.Climbing",
+      "path": "src/New/Spanning/Unfolding/Climbing.lean",
+      "sha": "8a9ba2e08228323ba5aaccd2dc8a530e05c49d89"
+    },
+    {
+      "module": "New.Spanning.Unfolding.CutoffIntegral",
+      "path": "src/New/Spanning/Unfolding/CutoffIntegral.lean",
+      "sha": "6c6f4ed770038193778defba38584b6e1e5cc80c"
+    },
+    {
+      "module": "New.Spanning.Unfolding.FillingAdmissible",
+      "path": "src/New/Spanning/Unfolding/FillingAdmissible.lean",
+      "sha": "6a2079ebde653a6cf7b6d68077595c978bd59b01"
+    },
+    {
+      "module": "New.Spanning.Unfolding.FrameMass",
+      "path": "src/New/Spanning/Unfolding/FrameMass.lean",
+      "sha": "b09897e560bef46116511c2835474e54f24c8423"
+    },
+    {
+      "module": "New.Spanning.Unfolding.Link",
+      "path": "src/New/Spanning/Unfolding/Link.lean",
+      "sha": "d347e008c995b315b7470e81c269a5c9b8434910"
+    },
+    {
+      "module": "New.Spanning.Unfolding.MomentBounds",
+      "path": "src/New/Spanning/Unfolding/MomentBounds.lean",
+      "sha": "1ba2d84ad45d2d71d4cac68f2e9403b738e65c56"
+    },
+    {
+      "module": "New.Spanning.Unfolding.Moments",
+      "path": "src/New/Spanning/Unfolding/Moments.lean",
+      "sha": "325164874765cfb0cf5ac00c7fa1339db61fdb60"
+    },
+    {
+      "module": "New.Spanning.Unfolding.Packing",
+      "path": "src/New/Spanning/Unfolding/Packing.lean",
+      "sha": "f4f28bbb15b4ca4d3def1ae51d561846c42821dd"
+    },
+    {
+      "module": "New.Spanning.Unfolding.PoincareSeries",
+      "path": "src/New/Spanning/Unfolding/PoincareSeries.lean",
+      "sha": "9b5bcc08e28e2d024c03d97ba75533d8835404e1"
+    },
+    {
+      "module": "New.Spanning.Unfolding.ReducedGroups",
+      "path": "src/New/Spanning/Unfolding/ReducedGroups.lean",
+      "sha": "4968eb66fcf0629d63673895ceb06b7bd7c956cd"
+    },
+    {
+      "module": "New.Spanning.Unfolding.ReducedPoints",
+      "path": "src/New/Spanning/Unfolding/ReducedPoints.lean",
+      "sha": "154199b3c18edc036893f29cd8467620512a111c"
+    },
+    {
+      "module": "New.Spanning.Unfolding.SeriesPeriod",
+      "path": "src/New/Spanning/Unfolding/SeriesPeriod.lean",
+      "sha": "fb40f310445438275ef60d8cb4cfc0c25a180dd6"
+    },
+    {
+      "module": "New.Spanning.Unfolding.Setup",
+      "path": "src/New/Spanning/Unfolding/Setup.lean",
+      "sha": "a25146dcc5b2e7336854a6a90a41eb63db4ef865"
+    },
+    {
+      "module": "New.Spanning.Unfolding.SquareExpansion",
+      "path": "src/New/Spanning/Unfolding/SquareExpansion.lean",
+      "sha": "d4f32ebf92c7198efefd9c3a6b6ef7b502a49652"
+    },
+    {
+      "module": "New.Spanning.Unfolding.Terms",
+      "path": "src/New/Spanning/Unfolding/Terms.lean",
+      "sha": "dd64cc573bc27ec0c440f15120bbc6e0634bf915"
+    },
+    {
+      "module": "New.Spanning.Unfolding.TermStructure",
+      "path": "src/New/Spanning/Unfolding/TermStructure.lean",
+      "sha": "e1f0a711004ef3531a9d172b8924ee71168378f7"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.ChainDatumExpansion",
+      "path": "src/New/UpperBound/Divisibility/ChainDatumExpansion.lean",
+      "sha": "a0f9a505de5e9b6afde9194192d220063f8ab35a"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.ChainValuation",
+      "path": "src/New/UpperBound/Divisibility/ChainValuation.lean",
+      "sha": "f0d35ec607caa55da433aa70f42cfb8d7a1f5fd6"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.ColengthAtLevel",
+      "path": "src/New/UpperBound/Divisibility/ColengthAtLevel.lean",
+      "sha": "858d51e8faa0d7ff02ea5b29fe1c7c0ddd900895"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.HeckeEdges",
+      "path": "src/New/UpperBound/Divisibility/HeckeEdges.lean",
+      "sha": "2970d8b3b1499375bcbf51b505af9e37939e921c"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.JetExponent",
+      "path": "src/New/UpperBound/Divisibility/JetExponent.lean",
+      "sha": "dd8dd7ad0ff07cc430b2a551a0ba938454252729"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.LocalDivisibility",
+      "path": "src/New/UpperBound/Divisibility/LocalDivisibility.lean",
+      "sha": "4fcad0ba94409bdf25c56f5279a4a5cb92d4d5ff"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.MarkedPrimes",
+      "path": "src/New/UpperBound/Divisibility/MarkedPrimes.lean",
+      "sha": "48c35f6f3ece0a9d4e926337173bb8be3841c282"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.MarkOperator",
+      "path": "src/New/UpperBound/Divisibility/MarkOperator.lean",
+      "sha": "db9b4c5fb34e2ce0cd64b5c0e8d5354fc7ba588f"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.SetupAtLevel",
+      "path": "src/New/UpperBound/Divisibility/SetupAtLevel.lean",
+      "sha": "7515f36c5a0805d7871bc8f8bbe7cc0ec37976fc"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.ValuationAtLevel",
+      "path": "src/New/UpperBound/Divisibility/ValuationAtLevel.lean",
+      "sha": "bd9251ae6dcb3e083e2c53a2620b031a4f370b9c"
+    },
+    {
+      "module": "New.UpperBound.Divisibility.ValuationAtNonSplitPrimes",
+      "path": "src/New/UpperBound/Divisibility/ValuationAtNonSplitPrimes.lean",
+      "sha": "ee5dd02185667e58e4d9bcacfa2f500f2b54ed3c"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.AveragingMap",
+      "path": "src/New/UpperBound/ElementaryDivisors/AveragingMap.lean",
+      "sha": "b9fc97b255dc218f164c9da8b5ce4b8418f04638"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.DefectCount",
+      "path": "src/New/UpperBound/ElementaryDivisors/DefectCount.lean",
+      "sha": "9296d384ee2da6136ed38c0a2dd2c84577692307"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.Depth",
+      "path": "src/New/UpperBound/ElementaryDivisors/Depth.lean",
+      "sha": "ab176c41789ed7b29c3b83bd781dc59d10c487a3"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.Edges",
+      "path": "src/New/UpperBound/ElementaryDivisors/Edges.lean",
+      "sha": "aa175f629ae13e1a7605783a96301fdfe1a75a47"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.ElementaryDivisorTheorem",
+      "path": "src/New/UpperBound/ElementaryDivisors/ElementaryDivisorTheorem.lean",
+      "sha": "cbacc0114a6afb577b57e77c52c4c9af05524875"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.FrobeniusFactors",
+      "path": "src/New/UpperBound/ElementaryDivisors/FrobeniusFactors.lean",
+      "sha": "9e40809b5b669292634b93e37bb9c93b53937f24"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.InvariantAverage",
+      "path": "src/New/UpperBound/ElementaryDivisors/InvariantAverage.lean",
+      "sha": "85eb3f83e57363c0ca60a8f486a97457c29e4c58"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.PieriCone",
+      "path": "src/New/UpperBound/ElementaryDivisors/PieriCone.lean",
+      "sha": "80e7847a43cdc84b413ca5a53d494eb3bbdd7694"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.RootLemma",
+      "path": "src/New/UpperBound/ElementaryDivisors/RootLemma.lean",
+      "sha": "819f1c76038993f98314c28b2d75364592faa5f0"
+    },
+    {
+      "module": "New.UpperBound.ElementaryDivisors.TwistingData",
+      "path": "src/New/UpperBound/ElementaryDivisors/TwistingData.lean",
+      "sha": "f46794b0eb6790b3e3656b1e4dea8b1e44d44f47"
+    },
+    {
+      "module": "New.UpperBound.Kernels.DefiniteKernelSize",
+      "path": "src/New/UpperBound/Kernels/DefiniteKernelSize.lean",
+      "sha": "da083c5860c45de91f57af9469c91ccb5a3fbecd"
+    },
+    {
+      "module": "New.UpperBound.Kernels.JetConjugatesAndBounds",
+      "path": "src/New/UpperBound/Kernels/JetConjugatesAndBounds.lean",
+      "sha": "50704f1a52d8e24787c10b1219c9bd5bc93c2f80"
+    },
+    {
+      "module": "New.UpperBound.Kernels.ThetaLiftGauge",
+      "path": "src/New/UpperBound/Kernels/ThetaLiftGauge.lean",
+      "sha": "8d71e0b5147b95daba7d3e099a9866b04f11e60e"
+    },
+    {
+      "module": "New.UpperBound.Objects.AuxiliaryPair",
+      "path": "src/New/UpperBound/Objects/AuxiliaryPair.lean",
+      "sha": "666d0794e5bcf8ce80b773e0907a83a149a4357f"
+    },
+    {
+      "module": "New.UpperBound.Objects.CharactersAtLevel",
+      "path": "src/New/UpperBound/Objects/CharactersAtLevel.lean",
+      "sha": "46e549d192b361b5042700e152b461d683cc8412"
+    },
+    {
+      "module": "New.UpperBound.Objects.Columns",
+      "path": "src/New/UpperBound/Objects/Columns.lean",
+      "sha": "61f431a0776d0bceffea8fba87043fe2d787b67a"
+    },
+    {
+      "module": "New.UpperBound.Objects.InsertBlock",
+      "path": "src/New/UpperBound/Objects/InsertBlock.lean",
+      "sha": "44d4f2046023bcd142a55d8cea032ef6f1bb64bf"
+    },
+    {
+      "module": "New.UpperBound.Objects.LabelsAndIndexTypes",
+      "path": "src/New/UpperBound/Objects/LabelsAndIndexTypes.lean",
+      "sha": "b8ce601bffcfb0c5b523cc3b6acb4db758bc67f1"
+    },
+    {
+      "module": "New.UpperBound.Objects.LiftChains",
+      "path": "src/New/UpperBound/Objects/LiftChains.lean",
+      "sha": "5f08434660ba218bcfbdb84104e5182f89577237"
+    },
+    {
+      "module": "New.UpperBound.Objects.LiftLawsModuloN",
+      "path": "src/New/UpperBound/Objects/LiftLawsModuloN.lean",
+      "sha": "780cfa06bdbf17b9c68f699aa552d5fa808aa277"
+    },
+    {
+      "module": "New.UpperBound.Objects.Parameters",
+      "path": "src/New/UpperBound/Objects/Parameters.lean",
+      "sha": "0048689d0131e80484c36a45893468c778b32add"
+    },
+    {
+      "module": "New.UpperBound.Objects.PoincareMap",
+      "path": "src/New/UpperBound/Objects/PoincareMap.lean",
+      "sha": "be562ed23f780e9fd4669b5a25b52f7ad4a1e4a6"
+    },
+    {
+      "module": "New.UpperBound.Objects.RowChain",
+      "path": "src/New/UpperBound/Objects/RowChain.lean",
+      "sha": "3ce2e0b9c4016841e16270d4f4ebdc81d69d8922"
+    },
+    {
+      "module": "New.UpperBound.Objects.Rows",
+      "path": "src/New/UpperBound/Objects/Rows.lean",
+      "sha": "414032e248c3bc9f30284224b948bfb79de30871"
+    },
+    {
+      "module": "New.UpperBound.Objects.Weights",
+      "path": "src/New/UpperBound/Objects/Weights.lean",
+      "sha": "5a74d8efeb948e6dd55a81abb07706532d4f86e3"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.AdmissibleCombinations",
+      "path": "src/New/UpperBound/Seesaw/AdmissibleCombinations.lean",
+      "sha": "7c6f3662c657408eab5a2eef4c6f63942e5f3505"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.AdmissibleEvaluation",
+      "path": "src/New/UpperBound/Seesaw/AdmissibleEvaluation.lean",
+      "sha": "5f90436c1facb1aa4ebc7dd58cf8f4cf74587cef"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.Cut",
+      "path": "src/New/UpperBound/Seesaw/Cut.lean",
+      "sha": "d619a433d9fe61bc85cd0a2ea9e761508b79cb31"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.EdgePairEvaluation",
+      "path": "src/New/UpperBound/Seesaw/EdgePairEvaluation.lean",
+      "sha": "ff8572d172823b48da5d22dbf3532e31a5e346b4"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.Frequency",
+      "path": "src/New/UpperBound/Seesaw/Frequency.lean",
+      "sha": "94c800643df8c97b12e495f4b51e68bd75453b0f"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.GluedLevel",
+      "path": "src/New/UpperBound/Seesaw/GluedLevel.lean",
+      "sha": "988b84982dcac01d674c2ad95d07a3c4e9ac6c5f"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.GoodDatum",
+      "path": "src/New/UpperBound/Seesaw/GoodDatum.lean",
+      "sha": "872c165dc29a781435b6e066f8cab5166d221c84"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.IntegralAsCosetSum",
+      "path": "src/New/UpperBound/Seesaw/IntegralAsCosetSum.lean",
+      "sha": "214a02db365bf89ceec38c5433ae7ccd7a5d514b"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.LevelIdeles",
+      "path": "src/New/UpperBound/Seesaw/LevelIdeles.lean",
+      "sha": "a03ea3b0a51c48035953b1d82b158420901f5c5a"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.NeighbourLattice",
+      "path": "src/New/UpperBound/Seesaw/NeighbourLattice.lean",
+      "sha": "c2a1464e5ea01efd1ce8297cdbf5ed11b0d82ad9"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.NeighbourVacuum",
+      "path": "src/New/UpperBound/Seesaw/NeighbourVacuum.lean",
+      "sha": "f27c43afaafa4ba10391566559acc180ceba7ab0"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.Sandwich",
+      "path": "src/New/UpperBound/Seesaw/Sandwich.lean",
+      "sha": "53d852a4273b08df885a07e6f9a2a34c4d5542fc"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.SeesawIdentity",
+      "path": "src/New/UpperBound/Seesaw/SeesawIdentity.lean",
+      "sha": "6a3f518abfbc1b7fee97cd05d54ed062f87a733d"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.StandardLines",
+      "path": "src/New/UpperBound/Seesaw/StandardLines.lean",
+      "sha": "c74e8795b7f5311052eacdc8bdf97eb73219b097"
+    },
+    {
+      "module": "New.UpperBound.Seesaw.UnfoldingStages",
+      "path": "src/New/UpperBound/Seesaw/UnfoldingStages.lean",
+      "sha": "bf8e349cf2ca94a949d8d1d6aa476f6507cd4111"
+    },
+    {
+      "module": "New.UpperBound.Size.ArchimedeanSize",
+      "path": "src/New/UpperBound/Size/ArchimedeanSize.lean",
+      "sha": "f695b378e231384644eb940ece12ee0a90305b49"
+    },
+    {
+      "module": "New.UpperBound.Size.ClassCount",
+      "path": "src/New/UpperBound/Size/ClassCount.lean",
+      "sha": "9a9876a4572e92d1918fb4e1d4e01b30e4705fd8"
+    },
+    {
+      "module": "New.UpperBound.Size.Estimates",
+      "path": "src/New/UpperBound/Size/Estimates.lean",
+      "sha": "cd56e4c4904ca8083a1b9aa48bff53c59704b5c2"
+    },
+    {
+      "module": "New.UpperBound.Size.ShortColumns",
+      "path": "src/New/UpperBound/Size/ShortColumns.lean",
+      "sha": "48f79395cedb513a3c1b39d7998cac2e911fa775"
+    },
+    {
+      "module": "Statements",
+      "path": "src/Statements.lean",
+      "sha": "1cd1bce93344065936b2b392b23306254e0785ef"
+    }
+  ],
+  "legacyExportTargets": false
+}
