@@ -100,7 +100,7 @@ function engine(cut){
   }).join("\n")+"\n";
  }
  function parse(r,log){
-  const m=new Map();for(const line of log.split(/\r?\n/)){const a=line.match(/PROOFOPT_ALIAS_(PASS|REJECT) ([0-9]+)(?:\s|$)/);if(!a)continue;
+  const m=new Map();for(const line of log.split(/\r?\n/)){const a=line.match(/PROOFOPT_ALIAS_(PASS|REJECT) ([0-9]+)(?=[:\s]|$)/);if(!a)continue;
    const i=Number(a[2]);need(i<r.candidates.length&&!m.has(i),"duplicate/unexpected outcome");m.set(i,a[1]==="PASS")}
   need(m.size===r.candidates.length,"missing outcomes");
   return {schema:1,input_sha256:r.input_sha256,scope_sha256:r.scope_sha256,attempted:m.size,certified:[...m.values()].filter(Boolean).length,
@@ -132,7 +132,8 @@ function engine(cut){
   const p=report(g);p.input_sha256="a";p.scope_sha256="b";
   eq(render(p,"import Lean").includes('#proofopt_alias 0 "A" "B"'),true);
   const cert=parse(p,"info: PROOFOPT_ALIAS_PASS 0");eq(cert.certified,1);eq(replay(g,p,cert).joint.net,2);
-  eq(replay(g,p,parse(p,"PROOFOPT_ALIAS_REJECT 0")).joint.net,0);
+  eq(replay(g,p,parse(p,"Real.lean:4:0: info: PROOFOPT_ALIAS_REJECT 0: type mismatch")).joint.net,0);
+  eq(parse(p,"Real.lean:4:0: info: PROOFOPT_ALIAS_PASS 0\n").certified,1);
   fail(()=>parse(p,""));fail(()=>parse(p,"PROOFOPT_ALIAS_PASS 0\nPROOFOPT_ALIAS_PASS 0"));fail(()=>replay(g,p,{...cert,input_sha256:"x"}));fail(()=>replay(g,p,{...cert,results:[{index:0,source:"A",target:"X",passed:true}]}));
   let seed=1531;const rnd=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed};
   // Random cyclic and acyclic graphs, every old direct edge and every

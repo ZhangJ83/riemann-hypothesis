@@ -69,6 +69,9 @@ jobs:
           for i in 2 3 4 5; do grep -E "PROOFOPT_ALIAS_REJECT $i:" "$RUNNER_TEMP/alias-fixtures.log"; done
           test "$(grep -c 'PROOFOPT_ALIAS_PASS ' "$RUNNER_TEMP/alias-fixtures.log")" = 2
           test "$(grep -c 'PROOFOPT_ALIAS_REJECT ' "$RUNNER_TEMP/alias-fixtures.log")" = 4
+          node -e 'const fs=require("fs"); const candidates=Array.from({length:6},(_,index)=>({index,source:"Fixture.Source"+index,target:"Fixture.Target"+index})); fs.writeFileSync(process.argv[1],JSON.stringify({schema:1,candidates}))' "$RUNNER_TEMP/fixture-report.json"
+          node scripts/proofopt/alias_pass.cjs --parse "$RUNNER_TEMP/fixture-report.json" "$RUNNER_TEMP/alias-fixtures.log" "$RUNNER_TEMP/fixture-cert.json"
+          node -e 'const c=require(process.argv[1]); if(c.attempted!==6||c.certified!==2||c.results.some((x,i)=>x.passed!==(i<2)))process.exit(1)' "$RUNNER_TEMP/fixture-cert.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

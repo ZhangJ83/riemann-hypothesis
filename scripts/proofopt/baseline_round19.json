@@ -28,11 +28,13 @@
     "round17_full": "in_progress when inspected"
   },
   "tests": {
-    "javascript_isolate_assertions": 19683,
+    "javascript_isolate_assertions": 19684,
     "random_graphs": 384,
     "lean_fixtures": 6,
     "lean_status": "pending",
-    "historical_integration": "pending"
+    "historical_integration": "pending",
+    "log_parser_regression": "actual Lean rejection colon and info prefix",
+    "initial_commit": "00c6ff9400a6e85a2fde7de1a6ee5450c22dc438"
   },
   "flagship": {
     "dependency_reduction": null,
