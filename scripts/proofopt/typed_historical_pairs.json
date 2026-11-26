@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "candidates": [
+    {
+      "left": {
+        "name": "New.DiscreteSeries.conjTranspose_signMatrix",
+        "module": "New.Appendix.DiscreteSeries.Localization"
+      },
+      "right": {
+        "name": "New.Fock.conjTranspose_signMatrix",
+        "module": "Lib.Weil.Fock.Basic"
+      },
+      "result": {
+        "ok": true,
+        "kernelChecked": false
+      }
+    },
+    {
+      "left": {
+        "name": "New.Lift.KummerChart.JumpLattice.tau_pow_smul_mem_kisinAinf",
+        "module": "New.Congruences.Lifting.ExponentLattices"
+      },
+      "right": {
+        "name": "New.Lift.KummerChart.JumpLattice.tau_pow_jumpBound_smul_mem_kisinAinf_of_mem_ainfLattice",
+        "module": "Lib.PadicHodge.Kisin.FrameTheorem"
+      },
+      "result": {
+        "ok": true,
+        "kernelChecked": false
+      }
+    },
+    {
+      "left": {
+        "name": "New.CMLattice.mem_valRingCp_iff_norm_le_one",
+        "module": "Lib.CM.Integrality.TorsionValues"
+      },
+      "right": {
+        "name": "New.mem_valRingCp",
+        "module": "Lib.General.Algebra.AdicCompletion"
+      },
+      "result": {
+        "ok": true,
+        "kernelChecked": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+name: ProofOpt round 16 typed certificates
+on:
+  push:
+    branches: [proofopt/round16-typed-extraction]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fixtures:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test driver
+        run: node scripts/proofopt/typed_driver.cjs --self-test
+      - name: Install pinned Lean
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Kernel-check extraction fixtures
+        run: |
+          set -euo pipefail
+          cat scripts/proofopt/TypedExtract.lean scripts/proofopt/TypedFixtures.lean > "$RUNNER_TEMP/TypedTest.lean"
+          lean "$RUNNER_TEMP/TypedTest.lean" 2>&1 | tee "$RUNNER_TEMP/typed-fixtures.log"
+          test "$(grep -c PROOFOPT_FIXTURE_PASS "$RUNNER_TEMP/typed-fixtures.log")" = 3
+          test "$(grep -c PROOFOPT_FIXTURE_REJECT "$RUNNER_TEMP/typed-fixtures.log")" = 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round16-fixtures
+          path: ${{ runner.temp }}/typed-fixtures.log
+  historical:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    needs: fixtures
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      BASE: 2746005d8130ee6d0c82d771ec11d69521a65093
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify unchanged snapshot
+        run: git diff --exit-code "$BASE" HEAD -- src Challenge.lean comparator.json comparator export-targets.txt lakefile.toml lake-manifest.json lean-toolchain
+      - name: Install pinned Lean
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore cache and compile Main
+        run: |
+          set -euo pipefail
+          lake exe mathlib/cache get
+          python3 scripts/tauceti-cache-get.py
+          status=0
+          python3 scripts/ci-cache-get.py --baseline "$BASE" || status=$?
+          case "$status" in 0|4) ;; *) exit 1 ;; esac
+          lake build
+      - name: Attempt actual project certificates
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/typed"
+          node scripts/proofopt/typed_driver.cjs scripts/proofopt/typed_historical_pairs.json scripts/proofopt/TypedExtract.lean "$RUNNER_TEMP/typed/Real.lean" "$RUNNER_TEMP/typed/pairs.json"
+          lake env lean "$RUNNER_TEMP/typed/Real.lean" 2>&1 | tee "$RUNNER_TEMP/typed/real.log"
+          python3 -c 'import json,os; p=os.environ["RUNNER_TEMP"]+"/typed/"; n=len(json.load(open(p+"pairs.json"))["pairs"]); lines=open(p+"real.log").read().splitlines(); yes=sum("PROOFOPT_CERTIFIED " in l for l in lines); no=sum("PROOFOPT_REJECTED " in l for l in lines); assert yes+no==n,(yes,no,n); json.dump({"attempted":n,"certified":yes,"rejected":no,"actual_dependency_reduction":None,"actual_dag_reduction":None},open(p+"summary.json","w"))'
+          git diff --exit-code "$BASE" HEAD -- src Challenge.lean comparator.json comparator export-targets.txt lakefile.toml lake-manifest.json lean-toolchain
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round16-historical
+          path: ${{ runner.temp }}/typed

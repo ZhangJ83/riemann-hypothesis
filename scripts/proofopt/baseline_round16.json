@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "round": 16,
+  "parent": "9e2546c018383befe7a71d9d2b64251f36e5ee43",
+  "branch": "proofopt/round16-typed-extraction",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "observed_fork_main": "91b273530883b723ef4422436e0dc3557749325a",
+  "observed_upstream_main": "41c2716658c42ba08eb0648994a2efe83082a95c",
+  "historical_integration_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "historical_lean": "v4.37.0-rc1",
+  "historical_mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "tests": {
+    "javascript_isolate_assertions": 307,
+    "lean_fixture_cases": 7,
+    "lean_fixture_status": "not executed",
+    "historical_pairs": 3,
+    "historical_status": "not executed"
+  },
+  "policy": {
+    "closed_mismatches": true,
+    "max_holes": 8,
+    "max_depth": 128,
+    "max_pairs": 20000,
+    "parameter_order": "greedy dependency-compatible",
+    "kernel_checks_per_success": 3,
+    "allowed_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "sandbox_only": true
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "other_projects_verified": 0,
+    "upstream_prs_merged": 0
+  },
+  "limitations": [
+    "No local Lean or GitHub DNS; typed engine compilation and certificates not yet verified.",
+    "Historical twin pairs are reference-signature hypotheses, not previously validated AU output.",
+    "Direct cycle guard only; transitive cycles, module placement, source rewrite and net savings require separate validation.",
+    "A greedy order and closed holes are incomplete; certificates do not establish savings."
+  ]
+}
