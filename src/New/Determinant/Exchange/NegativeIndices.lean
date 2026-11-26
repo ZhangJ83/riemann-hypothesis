@@ -50,7 +50,7 @@ vector in the span of the columns to the positive basis vector `i`. -/
 lemma New.Exchange.exists_unitary_mulVec_eq_single {i : n} (hs_pos : s i = 1) {x : Matrix n b ℂ}
     (hx : ¬∃ c : Matrix b b ℂ, cᴴ * signMatrix (-1 : b → ℤˣ) * c = xᴴ * signMatrix s * x) :
     ∃ (u : U (signMatrix s)) (v : b → ℂ), (u.val.val * x) *ᵥ v = Pi.single i 1 := by
-  have hs_herm : (signMatrix s)ᴴ = signMatrix s := New.Fock.conjTranspose_signMatrix
+  have hs_herm : (signMatrix s)ᴴ = signMatrix s := New.conjTranspose_signMatrix
   have h_herm : (xᴴ * signMatrix s * x).IsHermitian := isHermitian_conjTranspose_mul_mul x hs_herm
   -- the Gram form is not negative semidefinite, so it represents `1`
   have h_not_nsd : ¬(-(xᴴ * signMatrix s * x)).PosSemidef := fun h_psd ↦ by

@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "round": "17-recovery",
+  "parent": "3d4d165c1e15144e31803518bad73165f8d4fea7",
+  "branch": "proofopt/round17-real-refactor",
+  "observed_upstream_main": "b6579d3ca142665397e4ccd254cda914325a65da",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "historical_comparison_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "failure": {
+    "run": 45800302361,
+    "job": 139841489077,
+    "conclusion": "failure",
+    "error": "NegativeIndices.lean:53:51 Unknown identifier Fock.conjTranspose_signMatrix",
+    "full_graph_export": "skipped"
+  },
+  "changes": [
+    "canonical namespace in fourth consumer",
+    "snapshot-driven source audit and stale artifact invalidation",
+    "targeted changed-module build before full project build"
+  ],
+  "tests": {
+    "isolate_assertions": 399,
+    "actual_four_source_audit": {
+      "declarations": 1,
+      "references": 6
+    },
+    "remote_node_and_lean": "pending"
+  },
+  "independent_upstream_solution": true,
+  "originality_claim": false,
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "upstream_prs_merged": 0
+  }
+}
