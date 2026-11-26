@@ -25,7 +25,96 @@ jobs:
           set -euo pipefail
           git diff --check "$BASE"...HEAD
           git diff --exit-code "$BASE"...HEAD -- Challenge.lean src/Challenge.lean comparator.json export-targets.txt
-          test "$(git diff --name-only "$BASE"...HEAD | grep -c '^src/.*\.lean
+          test "$(git diff --name-only "$BASE"...HEAD | grep -c '^src/.*\\.lean          grep -F 'New.Fock.conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
+          ! grep -nE '(^|[[:space:]])Fock[.]conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
+      - name: Test reachable-source LOC counter
+        run: python3 scripts/proofopt/measure_reachable_loc.py --self-test
+      - name: Install pinned Lean
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore pinned dependencies and baseline cache
+        env:
+          MATHLIB_CACHE_GET_URL: https://cache.mathlib.org/mathlib4
+        run: |
+          set -euo pipefail
+          lake --version
+          lake exe mathlib/cache get
+          python3 scripts/tauceti-cache-get.py
+          python3 scripts/ci-cache-get.py --baseline "$BASE"
+      - name: Compile affected module and downstream target
+        run: |
+          set -euo pipefail
+          /usr/bin/time -v lake build New.Determinant.Exchange.NegativeIndices 2>&1 | tee "$RUNNER_TEMP/round17-build.log"
+          ! grep -F 'Unknown identifier `Fock.conjTranspose_signMatrix`' "$RUNNER_TEMP/round17-build.log"
+          ! grep -E 'declaration uses .sorry.' "$RUNNER_TEMP/round17-build.log"
+      - name: Export fresh five-root kernel reference graph
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os
+          s=json.load(open("scripts/proofopt/readable_snapshot.json"))
+          open(os.path.join(os.environ["RUNNER_TEMP"],"modules.txt"),"w").write(chr(10).join(x["module"] for x in s["modules"])+chr(10))
+          PY
+          timeout 40m lake env lean --run scripts/proofopt/KernelGraph.lean "$RUNNER_TEMP/kernel-graph.jsonl" "$RUNNER_TEMP/modules.txt" riemannHypothesis riemannZeta_eq_zero_re LFunction_ne_zero_of_half_lt_re LFunction_eq_zero_re LFunction_eq_zero_re_of_isPrimitive
+          gzip -1 "$RUNNER_TEMP/kernel-graph.jsonl"
+          python3 scripts/proofopt/measure_reachable_loc.py --graph "$RUNNER_TEMP/kernel-graph.jsonl.gz" --repo . --output "$RUNNER_TEMP/reachable-loc.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round17-fock-fix
+          path: |
+            ${{ runner.temp }}/round17-build.log
+            ${{ runner.temp }}/reachable-loc.json
+            ${{ runner.temp }}/kernel-graph.jsonl.gz
+          retention-days: 14
+)" -eq 4
+          grep -F 'New.Fock.conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
+          ! grep -nE '(^|[[:space:]])Fock[.]conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
+      - name: Test reachable-source LOC counter
+        run: python3 scripts/proofopt/measure_reachable_loc.py --self-test
+      - name: Install pinned Lean
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore pinned dependencies and baseline cache
+        env:
+          MATHLIB_CACHE_GET_URL: https://cache.mathlib.org/mathlib4
+        run: |
+          set -euo pipefail
+          lake --version
+          lake exe mathlib/cache get
+          python3 scripts/tauceti-cache-get.py
+          python3 scripts/ci-cache-get.py --baseline "$BASE"
+      - name: Compile affected module and downstream target
+        run: |
+          set -euo pipefail
+          /usr/bin/time -v lake build New.Determinant.Exchange.NegativeIndices 2>&1 | tee "$RUNNER_TEMP/round17-build.log"
+          ! grep -F 'Unknown identifier `Fock.conjTranspose_signMatrix`' "$RUNNER_TEMP/round17-build.log"
+          ! grep -E 'declaration uses .sorry.' "$RUNNER_TEMP/round17-build.log"
+      - name: Export fresh five-root kernel reference graph
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os
+          s=json.load(open("scripts/proofopt/readable_snapshot.json"))
+          open(os.path.join(os.environ["RUNNER_TEMP"],"modules.txt"),"w").write(chr(10).join(x["module"] for x in s["modules"])+chr(10))
+          PY
+          timeout 40m lake env lean --run scripts/proofopt/KernelGraph.lean "$RUNNER_TEMP/kernel-graph.jsonl" "$RUNNER_TEMP/modules.txt" riemannHypothesis riemannZeta_eq_zero_re LFunction_ne_zero_of_half_lt_re LFunction_eq_zero_re LFunction_eq_zero_re_of_isPrimitive
+          gzip -1 "$RUNNER_TEMP/kernel-graph.jsonl"
+          python3 scripts/proofopt/measure_reachable_loc.py --graph "$RUNNER_TEMP/kernel-graph.jsonl.gz" --repo . --output "$RUNNER_TEMP/reachable-loc.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round17-fock-fix
+          path: |
+            ${{ runner.temp }}/round17-build.log
+            ${{ runner.temp }}/reachable-loc.json
+            ${{ runner.temp }}/kernel-graph.jsonl.gz
+          retention-days: 14
+)" -eq 4
           grep -F 'New.Fock.conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
           ! grep -nE '(^|[[:space:]])Fock[.]conjTranspose_signMatrix' src/New/Determinant/Exchange/NegativeIndices.lean
       - name: Test reachable-source LOC counter
