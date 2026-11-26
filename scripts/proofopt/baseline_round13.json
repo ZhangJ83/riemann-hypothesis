@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "round": 13,
+  "parent": "23c6a2708cb8f14645f111a8da9aab6b8bea787d",
+  "branch": "proofopt/round13-closure-counterfactual",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "historical_readable_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "current_upstream_main": "a7c4d6a94945f49da752e237a6b1e944ab62677e",
+  "baseline_policy": "Do not mix original, historical readable and latest upstream measurements; latest main is separate, not a replacement for the frozen original.",
+  "current_upstream_dependencies": {
+    "lean": "v4.37.0-rc1",
+    "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+    "tauceti": "d99245820701158b6963b6129926b5e130c9314a"
+  },
+  "historical_graph": {
+    "run": 45755058155,
+    "artifact": 15087791705,
+    "sha256": "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c",
+    "declarations": 887134
+  },
+  "upstream_recheck": [
+    {
+      "path": "src/New/Congruences/Lifting/ExponentLattices.lean",
+      "historical_blob": "0682df48bc8738f3e6cded5d391939c9940b8b94",
+      "current_blob": "09ddec657599e5d5a75f05a82520de2e068d2a53",
+      "finding": "Old wrapper removed; caller already uses canonical tau_pow_jumpBound_smul_mem_kisinAinf_of_mem_ainfLattice."
+    },
+    {
+      "path": "src/Lib/CM/Integrality/TorsionValues.lean",
+      "historical_blob": "62966a05e63f9e39db890ea0a7ba0d58d6ef06de",
+      "current_blob": "a3ef618d3498d64865859ceee1c2608e4647aecf",
+      "finding": "Old wrapper removed; both caller uses already use mem_valRingCp."
+    }
+  ],
+  "tests": {
+    "core_assertions": 271,
+    "core_runtime": "executed in JavaScript tool isolate",
+    "node_cli": "not yet executed",
+    "real_graph_integration": "workflow configured; not yet confirmed",
+    "lean_kernel": "not executed in this round"
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "external_projects_verified": 0,
+    "upstream_prs_merged": 0
+  },
+  "constraints": "No proof source or protected challenge files modified. Two already-upstream changes not attributed to ProofOpt."
+}

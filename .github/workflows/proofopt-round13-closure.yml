@@ -1,0 +1,38 @@
+name: ProofOpt round 13 root closure counterfactual
+on:
+  push:
+    branches: [proofopt/round13-closure-counterfactual]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  analyze:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test closure engine
+        run: node scripts/proofopt/closure_counterfactual.cjs --self-test
+      - uses: actions/download-artifact@v4
+        with:
+          name: proofopt-readable-baseline
+          repository: ZhangJ83/riemann-hypothesis
+          run-id: 45755058155
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/round11-artifact
+      - name: Score all historical twin pairs on actual graph
+        run: |
+          set -euo pipefail
+          GRAPH="$(find "$RUNNER_TEMP/round11-artifact" -name kernel-graph.jsonl.gz -print -quit)"
+          test -n "$GRAPH"
+          /usr/bin/time -v node --max-old-space-size=6144 scripts/proofopt/closure_counterfactual.cjs "$GRAPH" 5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c scripts/proofopt/baseline_round12.json "$RUNNER_TEMP/closure-counterfactual.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round13-closure-counterfactual
+          path: ${{ runner.temp }}/closure-counterfactual.json
+          retention-days: 14
