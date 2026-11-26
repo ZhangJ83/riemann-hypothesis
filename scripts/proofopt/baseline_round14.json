@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "round": 14,
+  "parent": "7e664692940f991b99a7e34d454b07c776d70881",
+  "branch": "proofopt/round14-expression-dag",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "historical_readable_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "observed_fork_main": "91b273530883b723ef4422436e0dc3557749325a",
+  "observed_upstream_main": "e4098b46b46c934574c0abba2d107d1fd9c8bfcf",
+  "historical_dependencies": {
+    "lean": "v4.37.0-rc1",
+    "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+    "tauceti": "e0e414ce57522ba17560057ad0d7f2edab91bf0c"
+  },
+  "round13_confirmed": {
+    "run": 45768282818,
+    "job": 139734437563,
+    "conclusion": "success",
+    "artifact": 15092652522,
+    "graph_declarations": 887134,
+    "baseline_project_excluding_roots": 49503,
+    "modeled_joint_after": 49500,
+    "modeled_joint_removed": 3,
+    "wall_seconds": 50.25,
+    "cpu_user_seconds": 52.21,
+    "cpu_system_seconds": 1.77,
+    "peak_rss_kib": 1015264,
+    "not_typechecked": true
+  },
+  "normalization": {
+    "erase": [
+      "binder names",
+      "binder annotations",
+      "let nondependency hint",
+      "mdata"
+    ],
+    "retain": [
+      "de Bruijn indices",
+      "constant names",
+      "level syntax and parameter names",
+      "ordered application",
+      "literal values",
+      "projection names and fields"
+    ],
+    "no_reduction": true,
+    "all_scope_includes": "reachable type, available value, recursor rhs",
+    "project_scope_includes": "project-owned declaration type, available value, recursor rhs",
+    "theorem_scope_includes": "project-owned theorem values only",
+    "missing_opaque_policy": "report number; unavailable bodies not counted; not a full kernel proof metric if missing"
+  },
+  "tests": {
+    "scope_isolate_assertions": 1544,
+    "lean_assertions_authored": 12,
+    "ci_status": "pending",
+    "real_scope_status": "pending",
+    "dag_status": "pending"
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "other_projects_verified": 0,
+    "upstream_prs_merged": 0
+  },
+  "limitations": [
+    "Historical imported environment only; do not mix with original baseline or latest upstream.",
+    "Reachability still uses prior reference exporter, not an independent kernel dependency certificate.",
+    "Imported bodies may be unavailable; no new proof substitution or comparator validation.",
+    "This tool is fork-only; upstream README excludes unrelated files."
+  ]
+}
