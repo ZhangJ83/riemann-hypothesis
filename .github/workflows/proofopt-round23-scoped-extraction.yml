@@ -1,0 +1,100 @@
+name: ProofOpt round 23 scoped multi-hole extraction
+on:
+  push:
+    branches: [proofopt/round23-scoped-extraction]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  fixtures:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - run: |
+          set -euo pipefail
+          node scripts/proofopt/extraction.cjs --self-test
+          python3 -m py_compile scripts/proofopt/extract_runner.py
+          cat scripts/proofopt/ScopedExtractCertificate.lean scripts/proofopt/ScopedExtractFixtures.lean > "$RUNNER_TEMP/ExtractTest.lean"
+          lean "$RUNNER_TEMP/ExtractTest.lean" 2>&1 | tee "$RUNNER_TEMP/extract-fixtures.log"
+          python3 scripts/proofopt/scoped_audit.py fixtures "$RUNNER_TEMP/extract-fixtures.log"
+          python3 scripts/proofopt/scoped_audit.py --self-test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round23-scoped-fixtures
+          path: ${{ runner.temp }}/extract-fixtures.log
+  historical:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    needs: fixtures
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      BASE: 2746005d8130ee6d0c82d771ec11d69521a65093
+      GRAPH_SHA: 5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: |
+          git worktree add --detach "$RUNNER_TEMP/base" "$BASE"
+          test "$(git -C "$RUNNER_TEMP/base" rev-parse HEAD)" = "$BASE"
+      - uses: actions/download-artifact@v4
+        with:
+          name: proofopt-readable-baseline
+          repository: ZhangJ83/riemann-hypothesis
+          run-id: 45755058155
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/historical
+      - run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Scope and select pairs from full reference graph
+        run: |
+          set -euo pipefail
+          P="$RUNNER_TEMP/extract"
+          mkdir -p "$P"
+          GRAPH="$(find "$RUNNER_TEMP/historical" -name kernel-graph.jsonl.gz -print -quit)"
+          test -n "$GRAPH"
+          node --max-old-space-size=6144 scripts/proofopt/dag_scope.cjs "$GRAPH" "$GRAPH_SHA" "$P/scope"
+          node --max-old-space-size=6144 scripts/proofopt/extraction.cjs select "$GRAPH" "$GRAPH_SHA" "$P/scope" "$P/pairs.json"
+      - name: Build historical snapshot
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/base"
+          lake exe mathlib/cache get
+          python3 scripts/tauceti-cache-get.py
+          status=0
+          python3 scripts/ci-cache-get.py --baseline "$BASE" || status=$?
+          case "$status" in 0|4) ;; *) exit 1 ;; esac
+          lake build
+      - name: Extract and certify both complete rewritten proof terms, replay graph
+        run: |
+          set -euo pipefail
+          P="$RUNNER_TEMP/extract"
+          GRAPH="$(find "$RUNNER_TEMP/historical" -name kernel-graph.jsonl.gz -print -quit)"
+          python3 scripts/proofopt/extract_runner.py "$P/pairs.json" scripts/proofopt/ScopedExtractCertificate.lean "$RUNNER_TEMP/base" "$P"
+          node --max-old-space-size=6144 scripts/proofopt/extraction.cjs replay "$GRAPH" "$GRAPH_SHA" "$P/scope" "$P/pairs.json" "$P/cert.json" "$P/replay.json"
+          python3 scripts/proofopt/scoped_audit.py report "$P/cert.json" "$P/replay.json" "$P/scoped-report.json"
+          git -C "$RUNNER_TEMP/base" diff --exit-code HEAD -- src Challenge.lean comparator.json comparator export-targets.txt lakefile.toml lake-manifest.json lean-toolchain
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round23-scoped-extraction
+          path: |
+            ${{ runner.temp }}/extract/pairs.json
+            ${{ runner.temp }}/extract/cert.json
+            ${{ runner.temp }}/extract/replay.json
+            ${{ runner.temp }}/extract/scoped-report.json
+            ${{ runner.temp }}/extract/case-*.log
+          retention-days: 14

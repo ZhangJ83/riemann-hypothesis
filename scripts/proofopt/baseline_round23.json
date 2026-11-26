@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "round": 23,
+  "parent": "75fb3f80fad7141901e744df7197cbe59b463715",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "original_lean": "v4.37.0-rc1",
+  "original_mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "observed_upstream_main": "c5451bd3ba92480e05c4218f5221bb2900c58706",
+  "historical_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "historical_graph_sha": "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c",
+  "previous": {
+    "run": 45858010548,
+    "historical_job": 140041564161,
+    "attempted": 32,
+    "kernel_certified": 1,
+    "bounded_no_certificate": 31,
+    "certified_pair": [
+      "New.Fock.oscillatorRep_detTwist_inl",
+      "New.Fock.oscillatorRep_detTwist_inr"
+    ],
+    "model_before": 49503,
+    "model_after": 49504,
+    "model_net": -1,
+    "actual_reduction": null
+  },
+  "tests": {
+    "lean": "pending",
+    "historical": "pending",
+    "audit": "pending"
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "other_projects_verified": 0,
+    "upstream_prs_merged": 0
+  }
+}
