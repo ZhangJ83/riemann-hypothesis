@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "round": 12,
+  "title": "Exact reference-signature twin census",
+  "repository": "ZhangJ83/riemann-hypothesis",
+  "branch": "proofopt/round12-proof-twin-census",
+  "code_commit": "15f49971e5909d90ed3eb0c071e9551a4fe85b19",
+  "workflow_commit": "76e280e19644c4f38578160fe82cf075ee2f5d66",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "readable_integration_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "input": {
+    "actions_run_id": 45755058155,
+    "artifact_id": 15087791705,
+    "artifact_zip_bytes": 169562230,
+    "graph_uncompressed_bytes": 1014162513,
+    "graph_sha256": "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c",
+    "lean": "v4.37.0-rc1",
+    "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+    "tauceti": "e0e414ce57522ba17560057ad0d7f2edab91bf0c"
+  },
+  "census": {
+    "declarations": 887134,
+    "project_theorems": 52065,
+    "exact_reference_signature_groups_all": 2175,
+    "exact_reference_signature_members_all": 16636,
+    "groups_excluding_generated_names": 43,
+    "members_excluding_generated_names": 88,
+    "cross_module_groups_excluding_generated_names": 3,
+    "cross_module_members_excluding_generated_names": 6,
+    "candidates": [
+      {
+        "members": [
+          {
+            "module": "New.Appendix.DiscreteSeries.Localization",
+            "name": "New.DiscreteSeries.conjTranspose_signMatrix"
+          },
+          {
+            "module": "Lib.Weil.Fock.Basic",
+            "name": "New.Fock.conjTranspose_signMatrix"
+          }
+        ],
+        "assessment": "Same explicit reference signature; likely shared elementary matrix fact, but exact Expr/type equality and import visibility must be checked."
+      },
+      {
+        "members": [
+          {
+            "module": "New.Congruences.Lifting.ExponentLattices",
+            "name": "New.Lift.KummerChart.JumpLattice.tau_pow_smul_mem_kisinAinf"
+          },
+          {
+            "module": "Lib.PadicHodge.Kisin.FrameTheorem",
+            "name": "New.Lift.KummerChart.JumpLattice.tau_pow_jumpBound_smul_mem_kisinAinf_of_mem_ainfLattice"
+          }
+        ],
+        "assessment": "One is a wrapper around L.frame_theorem.tau_pow_smul_mem_kisinAinf; it has one observed in-project value-edge caller. Candidate for direct field use, not yet changed."
+      },
+      {
+        "members": [
+          {
+            "module": "Lib.CM.Integrality.TorsionValues",
+            "name": "New.CMLattice.mem_valRingCp_iff_norm_le_one"
+          },
+          {
+            "module": "Lib.General.Algebra.AdicCompletion",
+            "name": "New.mem_valRingCp"
+          }
+        ],
+        "assessment": "Same reference signature and both state membership iff norm <= 1; import availability and exact type equality remain to be checked."
+      }
+    ],
+    "limitations": [
+      "Reference-name signatures are not Lean Expr equality certificates.",
+      "They do not prove definitional equality of theorem types or equality of proof terms.",
+      "The exporter omits expression DAGs and may omit implicit kernel dependencies.",
+      "Generated-name exclusion is heuristic."
+    ]
+  },
+  "tests": {
+    "local_unit_tests": 9,
+    "local_unit_tests_result": "PASS",
+    "real_graph_integration": "PASS",
+    "real_graph_wall_seconds": 12.62,
+    "real_graph_peak_rss_mib": 541.2,
+    "remote_workflow": "Added; no run result confirmed in this report"
+  },
+  "line_budget": {
+    "target": 2000,
+    "unit": "nonblank, noncomment Lean source lines",
+    "scope": "All project-owned Lean source files containing at least one declaration reachable from the five final roots.",
+    "exclusions": "External Mathlib/TauCeti code is not counted as project-owned LOC, but versions and dependency burden must be reported; moving project proof obligations into a new external package is forbidden.",
+    "current_status": "Not measured. Requires complete root-reachable module mapping and source-span/line accounting.",
+    "note": "The 2,000-line target is an additional goal, not a substitute for dependency closure, proof DAG and CPU-cost targets."
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "external_projects_verified": 0,
+    "upstream_prs_merged": 0
+  }
+}
