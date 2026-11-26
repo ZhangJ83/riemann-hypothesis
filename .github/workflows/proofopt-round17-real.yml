@@ -1,0 +1,114 @@
+name: ProofOpt round 17 real shared lemma
+on:
+  push:
+    branches: [proofopt/round17-real-refactor]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  preflight:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test JavaScript passes
+        run: |
+          node scripts/proofopt/dag_scope.cjs --self-test
+          node scripts/proofopt/anti_unify.cjs --self-test
+          node scripts/proofopt/typed_driver.cjs --self-test
+          node scripts/proofopt/compare_refactor.cjs --self-test
+      - name: Install pinned Lean
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Check DAG engine independent of Mathlib
+        run: |
+          lean scripts/proofopt/KernelDag.lean
+          lean --run scripts/proofopt/KernelDag.lean --self-test
+      - name: Kernel-check typed fixtures
+        run: |
+          set -euo pipefail
+          cat scripts/proofopt/TypedExtract.lean scripts/proofopt/TypedFixtures.lean > "$RUNNER_TEMP/TypedTest.lean"
+          lean "$RUNNER_TEMP/TypedTest.lean" 2>&1 | tee "$RUNNER_TEMP/typed-fixtures.log"
+          test "$(grep -c PROOFOPT_FIXTURE_PASS "$RUNNER_TEMP/typed-fixtures.log")" = 3
+          test "$(grep -c PROOFOPT_FIXTURE_REJECT "$RUNNER_TEMP/typed-fixtures.log")" = 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round17-fixtures
+          path: ${{ runner.temp }}/typed-fixtures.log
+  real-refactor:
+    if: github.repository == 'ZhangJ83/riemann-hypothesis'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      BASE: 2746005d8130ee6d0c82d771ec11d69521a65093
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Audit immutable inputs and exactly three approved source files
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/refactor/before" "$RUNNER_TEMP/refactor/after"
+          node scripts/proofopt/snapshot_cli.mjs "$BASE" "$RUNNER_TEMP/refactor" src/Lib/General/Groups/CongruenceSubgroups.lean src/Lib/Weil/Fock/Basic.lean src/New/Appendix/DiscreteSeries/Localization.lean
+          if git grep -nE 'New\.(Fock|DiscreteSeries)\.conjTranspose_signMatrix' -- src; then exit 1; fi
+      - uses: actions/download-artifact@v4
+        with:
+          name: proofopt-readable-baseline
+          repository: ZhangJ83/riemann-hypothesis
+          run-id: 45755058155
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/historical
+      - name: Reproduce historical closure from verified graph
+        run: |
+          set -euo pipefail
+          GRAPH="$(find "$RUNNER_TEMP/historical" -name kernel-graph.jsonl.gz -print -quit)"
+          test -n "$GRAPH"
+          node --max-old-space-size=6144 scripts/proofopt/dag_scope.cjs "$GRAPH" 5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c "$RUNNER_TEMP/refactor/before"
+      - name: Install pinned Lean
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o "$RUNNER_TEMP/elan-init.sh"
+          sh "$RUNNER_TEMP/elan-init.sh" -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore cache and rebuild modified proof
+        run: |
+          set -euo pipefail
+          lake exe mathlib/cache get
+          python3 scripts/tauceti-cache-get.py
+          status=0
+          python3 scripts/ci-cache-get.py --baseline "$BASE" || status=$?
+          case "$status" in 0|4) ;; *) exit 1 ;; esac
+          # Lake may otherwise see a baseline cache for the same source names.
+          # Delete changed modules' oleans and traces; Lake rebuilds dependents.
+          for m in Lib/General/Groups/CongruenceSubgroups Lib/Weil/Fock/Basic New/Appendix/DiscreteSeries/Localization; do
+            find .lake/build -type f -path "*/$m.*" -delete
+          done
+          /usr/bin/time -v lake build 2>&1 | tee "$RUNNER_TEMP/refactor/build.log"
+          git diff --exit-code HEAD -- src Challenge.lean comparator.json comparator export-targets.txt lakefile.toml lake-manifest.json lean-toolchain
+      - name: Export fresh actual kernel graph and compare five roots
+        run: |
+          set -euo pipefail
+          P="$RUNNER_TEMP/refactor"
+          lake env lean --run scripts/proofopt/KernelGraph.lean "$P/after.jsonl" "$P/modules.txt" riemannHypothesis riemannZeta_eq_zero_re LFunction_ne_zero_of_half_lt_re LFunction_eq_zero_re LFunction_eq_zero_re_of_isPrimitive
+          HASH="$(sha256sum "$P/after.jsonl" | cut -d' ' -f1)"
+          gzip "$P/after.jsonl"
+          node --max-old-space-size=6144 scripts/proofopt/dag_scope.cjs "$P/after.jsonl.gz" "$HASH" "$P/after"
+          node scripts/proofopt/compare_refactor.cjs "$P/before" "$P/after" "$P/comparison.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofopt-round17-refactor
+          path: |
+            ${{ runner.temp }}/refactor/snapshot.json
+            ${{ runner.temp }}/refactor/before/scope.json
+            ${{ runner.temp }}/refactor/after/scope.json
+            ${{ runner.temp }}/refactor/comparison.json
+            ${{ runner.temp }}/refactor/build.log
+          retention-days: 14

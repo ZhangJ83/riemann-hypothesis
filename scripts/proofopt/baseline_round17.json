@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "round": 17,
+  "parent": "fa11427fb76f03b1a5850eebdf748450e6c1bb7c",
+  "branch": "proofopt/round17-real-refactor",
+  "original_experiment_baseline": "91b273530883b723ef4422436e0dc3557749325a",
+  "observed_upstream_main": "de458307ca8942be9820466417994828a369cbce",
+  "observed_fork_main": "91b273530883b723ef4422436e0dc3557749325a",
+  "historical_comparison_base": "2746005d8130ee6d0c82d771ec11d69521a65093",
+  "lean": "v4.37.0-rc1",
+  "mathlib": "31ce06eaadf4a200c0e1407c5f10953cf606b8f8",
+  "historical_graph": {
+    "run": 45755058155,
+    "sha256": "5a1f971e33e3c0449137327e7ed46ae4d8742c31e4c0e8449525005d03c5591c",
+    "union_project_excluding_roots": 49503
+  },
+  "prior_runs": [
+    {
+      "round": 14,
+      "run": 45775725654,
+      "conclusion": "failure"
+    },
+    {
+      "round": 15,
+      "run": 45782874242,
+      "conclusion": "failure"
+    },
+    {
+      "round": 16,
+      "run": 45791437288,
+      "conclusion": "failure"
+    }
+  ],
+  "allowed_source_changes": [
+    "src/Lib/General/Groups/CongruenceSubgroups.lean",
+    "src/Lib/Weil/Fock/Basic.lean",
+    "src/New/Appendix/DiscreteSeries/Localization.lean"
+  ],
+  "tests": {
+    "compare_isolate_assertions": 782,
+    "lean": "pending",
+    "actual_graph": "pending",
+    "comparator": "not run"
+  },
+  "expected": {
+    "old_declarations_removed": 2,
+    "canonical_declarations_added": 1,
+    "expected_if_both_live_net_removed": 1
+  },
+  "flagship": {
+    "dependency_reduction": null,
+    "dag_reduction": null,
+    "cpu_reduction": null,
+    "other_projects_verified": 0,
+    "upstream_prs_merged": 0
+  }
+}

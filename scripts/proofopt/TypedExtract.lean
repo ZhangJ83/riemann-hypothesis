@@ -110,8 +110,7 @@ private partial def bindHoles (pending : Array Pair)
     let t ← mkForallFVars xs typ
     let v ← mkLambdaFVars xs val
     unless closed t && closed v do throwError "generalized declaration is not closed"
-    return { typ := t, proof := v, argsL := ps.map (fun p => p.1.1),
-      argsR := ps.map (fun p => p.1.2) }
+    return { typ := t, proof := v, argsL := ps.map (fun p => p.1.1), argsR := ps.map (fun p => p.1.2) }
   for i in [:pending.size] do
     let p := pending[i]!
     let tl ← inferType p.1
@@ -147,7 +146,7 @@ private def mentions (e : Expr) (a b : Name) : Bool :=
 -- Each candidate is a sandbox transaction. Three *actual* theorem declarations
 -- must pass Lean's kernel: the shared lemma and both original statements proved
 -- using only its application. No theorem is installed into project source.
-private def certify (left right prefix : Name) : MetaM Nat := do
+private def certify (left right certPrefix : Name) : MetaM Nat := do
   if left == right then throwError "identical source declaration"
   let l ← readTheorem left
   let r ← readTheorem right
@@ -166,12 +165,11 @@ private def certify (left right prefix : Name) : MetaM Nat := do
   if mentions plan.typ left right || mentions plan.proof left right ||
       (plan.argsL ++ plan.argsR).any (fun e => mentions e left right) then
     throwError "direct circular replacement"
-  let shared := prefix.str "shared"
-  let a := prefix.str "left"
-  let b := prefix.str "right"
+  let shared := certPrefix.str "shared"
+  let a := certPrefix.str "left"
+  let b := certPrefix.str "right"
   let levels := l.levelParams.map Level.param
-  addDecl (.thmDecl { name := shared, levelParams := l.levelParams,
-    type := plan.typ, value := plan.proof })
+  addDecl (.thmDecl { name := shared, levelParams := l.levelParams, type := plan.typ, value := plan.proof })
   assertAllowed shared
   for (name, typ, args) in #[(a,l.type,plan.argsL),(b,r.type,plan.argsR)] do
     let value := mkAppN (mkConst shared levels) args
@@ -184,8 +182,8 @@ private def certify (left right prefix : Name) : MetaM Nat := do
 private def transaction (l r : Name) : MetaM (Except String Nat) := do
   let env ← getEnv
   try
-    let prefix ← mkFreshUserName (Name.mkSimple "ProofOptCertificate")
-    return .ok (← certify l r prefix)
+    let certPrefix ← mkFreshUserName (Name.mkSimple "ProofOptCertificate")
+    return .ok (← certify l r certPrefix)
   catch e =>
     return .error (← e.toMessageData.toString)
   finally

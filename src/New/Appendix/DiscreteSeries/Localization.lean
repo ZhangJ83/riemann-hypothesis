@@ -134,15 +134,12 @@ lemma norm_sub_one_sq (g : USign ε) :
     _ = 2 * ‖y‖ ^ 2 - 2 * x.trace.re := by
       simp [frobenius_norm_sq_eq_sum, trace, re_sum, mul_sum, sum_sub_distrib]
 
-omit [Fintype n] in
-lemma conjTranspose_signMatrix : (signMatrix ε)ᴴ = signMatrix ε := by simp [signMatrix]
-
 lemma norm_signMatrix_mul (A : Matrix n n ℂ) : ‖signMatrix ε * A‖ = ‖A‖ :=
-  frobenius_norm_mul_of_unitary (by rw [conjTranspose_signMatrix, signMatrix_mul_self]) A
+  frobenius_norm_mul_of_unitary (by rw [New.conjTranspose_signMatrix, signMatrix_mul_self]) A
 
 lemma norm_signMatrix_mul_conjTranspose_mul_signMatrix (A : Matrix n n ℂ) :
     ‖signMatrix ε * Aᴴ * signMatrix ε‖ = ‖A‖ := by
-  rw [mul_assoc, norm_signMatrix_mul, ← conjTranspose_signMatrix (ε := ε), ← conjTranspose_mul,
+  rw [mul_assoc, norm_signMatrix_mul, ← New.conjTranspose_signMatrix (ε := ε), ← conjTranspose_mul,
     frobenius_norm_conjTranspose, norm_signMatrix_mul]
 
 /-- For `g` in `U(ε)`, the noncompact parts of `g⁻¹` and of `g` have the same Frobenius norm. -/
@@ -247,7 +244,7 @@ lemma exists_unitary_sub_one_eq_inclMatrix {u : Matrix X X ℂ} {Y : Type} [Fint
     ext i x
     by_cases hi : i = f (.inl x) <;> simp [hQ, inclMatrix, signMatrix, Matrix.one_apply, hε, hi]
   have hQ_sgn' : Qᴴ * signMatrix ε = Qᴴ := by
-    rw [← conjTranspose_signMatrix, ← conjTranspose_mul, hQ_sgn]
+    rw [← New.conjTranspose_signMatrix, ← conjTranspose_mul, hQ_sgn]
   have h_expand : (uᴴ - 1) + (u - 1) + (uᴴ - 1) * (u - 1) = uᴴ * u - 1 := by noncomm_ring
   suffices h_form : (1 + Q * (u - 1) * Qᴴ)ᴴ * signMatrix ε * (1 + Q * (u - 1) * Qᴴ) =
       signMatrix ε from

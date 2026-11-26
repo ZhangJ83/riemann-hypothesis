@@ -49,7 +49,7 @@ private def internKey (key : Key) : StateM Dag Nat :=
                     keys := s.keys.push key, marks := s.marks.push 0 })
 
 private partial def intern (e : Expr) : StateM Dag Nat := do
-  if let some id := (← get).memo[⟨e⟩]? then return id
+  if let some id := (← get).memo[ExprStructEq.mk e]? then return id
   let id ← match e with
     | .bvar i => internKey (.bvar i)
     | .sort u => internKey (.sort u)
@@ -63,7 +63,7 @@ private partial def intern (e : Expr) : StateM Dag Nat := do
     | .proj n i b => do internKey (.proj n i (← intern b))
     | .mdata _ b => intern b
     | .fvar _ | .mvar _ => internKey .invalid
-  modify fun s => { s with memo := s.memo.insert ⟨e⟩ id }
+  modify fun s => { s with memo := s.memo.insert (ExprStructEq.mk e) id }
   return id
 
 private def mark (s : Dag) (id mask : Nat) : Dag :=
@@ -246,8 +246,7 @@ unsafe def main (args : List String) : IO UInt32 := do
       if isProject && isTheorem then
         theoremValues := theoremValues + 1
         if exportPath.isSome && hash name % 16 == 0 then
-          exportRoots := exportRoots.push { name := name, moduleName := m.toString,
-            typeId := tid, proofId := vid, levels := c.levelParams }
+          exportRoots := exportRoots.push { name := name, moduleName := m.toString, typeId := tid, proofId := vid, levels := c.levelParams }
         let key := (tid, vid, c.levelParams)
         twins := twins.insert key ((twins[key]?.getD #[]).push (name, m.toString))
     | none =>
