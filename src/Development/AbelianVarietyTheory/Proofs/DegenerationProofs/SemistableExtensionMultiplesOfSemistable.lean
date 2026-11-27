@@ -1,4 +1,0 @@
-module
-
-public import Mathlib.Combinatorics.Quiver.ReflQuiver
-public import ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.SemiabelianSchemes.AbelianSchemeQuotients.IsAbelianScheme

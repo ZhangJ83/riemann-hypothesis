@@ -1,4 +1,0 @@
-module
-
-public import Development.AbelianVarietyTheory.Definitions.Jets.SideFam
-public import Formalism.HermitianCurvature.HermitianCurvatureProofs.ContinuousMulMt

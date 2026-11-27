@@ -1,8 +1,0 @@
-module
-
-public import Development.AbelianVarietyTheory.Definitions.Divisors.MulSmulIdemMem
-public import Development.AbelianVarietyTheory.BlockTheory.DivisorBase.ComponentMassSum
-public import Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.LiftLambdaBound
-public import Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.FlatVal
-
-@[expose] public section

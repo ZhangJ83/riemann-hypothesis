@@ -1,3 +1,0 @@
-module
-
-public import Development.AbelianVarietyTheory.Definitions.ThetaMetrics.ExistsLinearIndependentNormLeSuccMin

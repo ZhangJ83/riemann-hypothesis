@@ -1,8 +1,0 @@
-module
-
-public import Development.EtaleCohomology.TateTwists.EtaleInjectiveResolutionBasicProperties
-import Development.AbelianVarietyTheory.Proofs.DivisorProofs.ChosenInjectiveResolutionEtaleSheafProperties
-
-public theorem LateralTheory.EtaleFoundations.etaleSheaf_injectiveResolution_properties_of_mathlib :
-    LateralTheory.EtaleFoundations.EtaleInjectiveResolutionBasicProperties :=
-  GlobalTheory.EtC.ResBasic.res_basic

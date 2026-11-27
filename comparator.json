@@ -8,9 +8,11 @@
     "LFunction_eq_zero_re",
     "LFunction_eq_zero_re_of_isPrimitive"
   ],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
-  "external_kernels": {
-    "Lean paranoid": ["leanchecker-paranoid", "--silent", "--from-export"],
-    "nanoda": ["nanoda_bin"]
-  }
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
 }

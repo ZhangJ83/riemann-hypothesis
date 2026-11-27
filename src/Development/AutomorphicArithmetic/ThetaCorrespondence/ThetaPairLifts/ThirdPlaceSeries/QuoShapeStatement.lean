@@ -1,8 +1,0 @@
-module
-
-public import Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.LiftLambdaBound
-public import Development.AbelianVarietyTheory.Definitions.Divisors.EightDvdNCol
-public import Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.QuoShape
-import Development.AbelianVarietyTheory.Definitions.PlaceAdaptation.AdaptStd
-
-@[expose] public section

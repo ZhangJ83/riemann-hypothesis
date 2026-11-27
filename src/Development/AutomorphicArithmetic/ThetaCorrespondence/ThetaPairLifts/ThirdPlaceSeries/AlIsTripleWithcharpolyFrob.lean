@@ -1,8 +1,0 @@
-module
-
-public import Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.IsTripleAtOfConj
-public import Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.SGalRead
-
-@[expose] public section
-
-alias GlobalTheory.Triple.IsGaloisTripleWithReduction.charpoly_frob := _root_.GlobalTheory.Triple.IsGaloisTripleWithReduction.charpoly_frob_of_isTriple
